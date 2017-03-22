@@ -15,26 +15,10 @@
     </div>
 
     <div class="banner clear">
-        <ul>
-            <li style="background: url(img/banner/banner-01.jpg) center 0 no-repeat"><a href="#" class="link"></a></li>
-            <li style="background: url(img/banner/banner-02.jpg) center 0 no-repeat"><a href="#" class="link"></a></li>
-            <li style="background: url(img/banner/banner-03.jpg) center 0 no-repeat"><a href="#" class="link"></a></li>
-            <li style="background: url(img/banner/banner-04.jpg) center 0 no-repeat"><a href="#" class="link"></a></li>
-            <li style="background: url(img/banner/banner-05.jpg) center 0 no-repeat"><a href="#" class="link"></a></li>
-            <li style="background: url(img/banner/banner-06.jpg) center 0 no-repeat"><a href="#" class="link"></a></li>
-            <li style="background: url(img/banner/banner-07.jpg) center 0 no-repeat"><a href="#" class="link"></a></li>
-        </ul>
+        <ul id=bannerImg></ul>
         <span class="cut prev"></span>
         <span class="cut next"></span>
-        <div class="indicator">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <div class="indicator"></div>
         <!--模态框-->
         <div class="landbox">
             <div class="land">
@@ -53,30 +37,14 @@
         <wbr ms-widget="{is:'safe',txt:@txt}">
     </div>
 
-    <div class="home-record">
-        <div class="home-main">
-            <div class="quick_record">
-                平台累计成交额 <span>8</span>亿<span>2396</span>万<span>7916</span>元
-            </div>
-            <div class="quick_record">
-                用户累计收益 <span>2413</span>万<span>7475</span>元
-            </div>
-            <div class="quick_record">
-                平台用户 <span>5</span>万<span>1592</span>人
-            </div>
-            <div class="quick_record warning">
-                <span style="font-size: 14px;">温馨提示：</span>市场有风险，投资需谨慎！
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
+    <div class="home-record"></div>
 
     <div ms-controller="mainCtrl" class="home-main">
-        <wbr ms-widget="{is:'sxb',sxbContent:@sxbContent,ztxmContent:@ztxmContent}">
+        <wbr ms-widget="{is:'main',shengxinbao:@shengxinbao,zhitou:@zhitou}">
     </div>
 
     <div ms-controller="newsCtrl" class="home-news">
-        <wbr ms-widget="{is:'news',newsObj:@newsObj,callObj:@callObj}">
+        <wbr ms-widget="{is:'news',newsCenter:@newsCenter,plateformNotice:@plateformNotice}">
     </div>
 
 
@@ -110,7 +78,7 @@
         txt:[
             {strongTxt:"稳健运营",txtArr:"完善的业务闭环，历史100%兑付"},
             {strongTxt:"江西银行资金存管",txtArr:"平台与用户资金分离，借贷双方交易信息安全"},
-            {strongTxt:"上市公司旗下",txtArr:"上市公司控股，专业互联网理财"},
+            {strongTxt:"Pre-A轮融资",txtArr:"获战略投资方—五星资本Pre-A轮融资"},
             {strongTxt:"多重风控保障",txtArr:"多级风控审核，抵押信息真实透明"}
         ]
     });
@@ -118,36 +86,16 @@
     //home-main
     var vm4=avalon.define({
        $id:"mainCtrl",
-       sxbContent:[
-           {title:"升薪宝A1",moneyStyle:"等额本息",timeLimit:3,targetMoney:100,progress:"46%",balance:111111},
-           {title:"升薪宝A2",moneyStyle:"先息后本",timeLimit:3,targetMoney:200,progress:"47%",balance:222222},
-           {title:"升薪宝A3",moneyStyle:"先息后本",timeLimit:3,targetMoney:300,progress:"48%",balance:333333}
-       ],
-       ztxmContent:[
-           {title:"抵押贷1",moneyStyle:"等额本息",timeLimit:6,targetMoney:100,progress:"46%",balance:111111},
-           {title:"抵押贷2",moneyStyle:"先息后本",timeLimit:12,targetMoney:200,progress:"47%",balance:222222},
-           {title:"抵押贷3",moneyStyle:"先息后本",timeLimit:12,targetMoney:300,progress:"48%",balance:333333},
-           {title:"抵押贷4",moneyStyle:"先息后本",timeLimit:6,targetMoney:400,progress:"48%",balance:333333}
-       ]
+       xinshoubiao: [],
+       shengxinbao:[],
+       zhitou:[]
     });
 
     //home-news
     var vm5=avalon.define({
         $id:"newsCtrl",
-        newsObj:[
-            {href:"#",imgUrl:"img/index/media-photo-01.jpg",title:"海投汇好友邀请：千五荐面礼 史上最高霸气来袭",time:"2017/2/1"},
-            {href:"#",imgUrl:"img/index/media-photo-01.jpg",title:"理财大揭秘，海投汇新手标,老带新活动感恩来...",time:"2017/3/1"},
-            {href:"#",imgUrl:"img/index/media-photo-01.jpg",title:"海投汇引领P2P合规时代，银行存管不是终点...",time:"2017/4/1"},
-            {href:"#",imgUrl:"img/index/media-photo-01.jpg",title:"海投汇第二届投资人见面会成功举办",time:"2017/5/1"},
-            {href:"#",imgUrl:"img/index/media-photo-01.jpg",title:"海投汇李鲁一：修己惠人 笃行致远",time:"2017/6/1"}
-        ],
-        callObj:[
-            {href:"#",content:"【2017-1-8日】融资方还款情况报告"},
-            {href:"#",content:"【2017-2-8日】融资方还款情况报告"},
-            {href:"#",content:"【2017-3-8日】融资方还款情况报告"},
-            {href:"#",content:"【2017-4-8日】融资方还款情况报告"},
-            {href:"#",content:"【2017-5-8日】融资方还款情况报告"}
-        ]
+        newsCenter:[],
+        plateformNotice:[]
     });
 
 
