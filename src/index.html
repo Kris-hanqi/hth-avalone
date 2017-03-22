@@ -48,6 +48,47 @@
     </div>
 
 
+    <div class="home-investor" ms-controller="investor">
+        <div class="home-main">
+            <h1>他们都在海投汇</h1>
+            <div class="investor-box unfold" ms-for="el in @arr">
+                <i class="investor-head">
+                    <img ms-attr="{src: el.headPicUrl}"/>
+                </i>
+                <span>{{el.nickName}}</span>
+                <span>{{el.work}}</span>
+                <p>{{el.leaveMsg}}</p>
+                <img class="unfoldImg" src="img/index/unfold.png"/>
+            </div>
+        </div>
+    </div>
+    <div class="home-news">
+        <div class="home-main">
+            <div class="media_list">
+                <h3 class="news-title">媒体报道</h3>
+                <div id="featureContainer" ms-controller="mediaList">
+                    <div id="feature">
+                        <div id="block">
+                            <div id="button-scroll">
+                                <ul class="featureUL">
+                                    <li class="featureBox" ms-for="el in @media">
+                                        <div class="box"><a ms-attr="{href: el.mediaPicUrl}"><img ms-attr="{src: el.mediaPic}" class="media-img"/></a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="prev" href="javascript:void(0);"></a>
+                        <a class="next" href="javascript:void(0);"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <wbr ms-widget="{is:'footer'}" />
+    </div>
+
 
 
 <script src="../dist/bundle.js"></script>

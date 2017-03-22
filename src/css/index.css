@@ -610,7 +610,136 @@ p.ztxm_des span strong {
     text-align: right;
     color: #b6b6b6;
 }
-
+/*----- 我们的投资者  -----*/
+.home-investor {
+    width: 100%;
+    height: 519px;
+    padding-top: 1px;
+    background: url(../img/index/investor_bg.jpg) no-repeat center;
+}
+.home-investor h1{
+    font-weight: normal;
+    text-align: center;
+    color: #5f6265;
+    font-size: 36px;
+    margin: 20px 0;
+}
+.investor-box {
+    width: 20%;
+    float: left;
+    margin-top: 70px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    min-height: 200px;
+    height: auto;
+    font-size: 12px;
+    line-height: 19px;
+    color: #fff;
+    background: url(../img/index/investor_box_bg1.png) no-repeat top center;
+    position: relative;
+}
+.investor-box:nth-child(2n-1) {
+    background: url(../img/index/investor_box_bg2.png) no-repeat top center;
+}
+.investor-head {
+    position: absolute;
+    top: -65px;
+    left: 50%;
+    display: block;
+    width: 113px;
+    height: 113px;
+    margin-left: -57px;
+    border-radius: 55px;
+    overflow: hidden;
+    text-align: center;
+}
+.investor-box span{
+    display: block;
+    text-align: center;
+    line-height: 18px;
+    font-size: 14px;
+}
+.investor-box p{
+    padding: 5px 10px;
+}
+.investor-box >img {
+    position: absolute;
+    bottom: 25px;
+    left: 28px;
+}
+.unfold p{
+    height: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*----- 媒体报道  -----*/
+.media_list {
+    margin-bottom: 15px;
+}
+#featureContainer {
+    margin: 0 auto;
+    width: 1080px;
+}
+#feature {
+    position: relative;
+    margin-bottom: 20px;
+}
+#feature .prev {
+    width: 30px;
+    display: block;
+    background: url(../img/index/feature_left.png) no-repeat center;
+    float: left;
+    height: 58px;
+    top: -58px;
+    position: relative;
+}
+#feature .next {
+    width: 30px;
+    display: block;
+    background: url(../img/index/feature_right.png) no-repeat center;
+    float: right;
+    height: 58px;
+    top: -58px;
+    position: relative;
+}
+.featureUL {
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    width: 2800px;
+    float: left;
+    left: 0;
+}
+.featureBox {
+    width: 200px;
+    float: left;
+    height: 60px;
+    overflow: hidden;
+}
+#button-scroll {
+    z-index: 0;
+    margin: 0 auto;
+    width: 1000px!important;
+    float: left;
+}
+#block {
+    z-index: 0;
+    position: relative;
+    margin: 0 auto;
+    width: 1000px;
+    height: 60px;
+    overflow: hidden;
+}
+#block .box {
+    margin: 0 10px;
+    float: left;
+}
+img.media-img {
+    width: 175px;
+    height: 58px;
+    border: 1px solid #e3e3e3;
+}
 
 
 
