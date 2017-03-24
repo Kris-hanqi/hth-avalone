@@ -1,7 +1,18 @@
 * text=auto !eol
 dist/bundle.js -text
+dist/header_footer.bundle.js -text
+dist/index.bundle.js -text
+dist/login.bundle.js -text
+dist/register.bundle.js -text
+src/css/backtop.css -text
 src/css/base.css -text
+src/css/findPassward.css -text
 src/css/index.css -text
+src/css/login.css -text
+src/css/register.css -text
+src/find_pwd_by_email.html -text
+src/find_pwd_by_mobile.html -text
+src/forgetPassward.html -text
 src/img/banner/banner-01.jpg -text
 src/img/banner/banner-02.jpg -text
 src/img/banner/banner-03.jpg -text
@@ -54,12 +65,16 @@ src/img/smart_download.png -text
 src/img/up_arrow.png -text
 src/img/weixin-upload.png -text
 src/index.html -text
+src/js/header_footer.js -text
 src/js/index.js -text
 src/js/lib/avalon.js -text
+src/js/lib/backtop.js -text
 src/js/lib/jquery-1.11.3.js -text
 src/js/lib/jquery.mockjax.js -text
-src/js/pageA.js -text
+src/js/login.js -text
 src/js/pageB.js -text
-src/pageA.html -text
+src/js/register.js -text
+src/login.html -text
 src/pageB.html -text
 src/pathmap.json -text
+src/register.html -text

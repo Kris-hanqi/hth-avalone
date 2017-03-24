@@ -1,0 +1,139 @@
+/*Õ¸º«√‹¬Î“≥√Ê*/
+.main {
+    border:1px solid transparent;
+}
+.h-main {
+    height: 460px;
+    background: #fff;
+    border: 1px solid #e2e0e1;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.title {
+    width: 940px;
+}
+.title ul li a {
+    border-bottom:2px solid #2173dc;
+    color: #2173dc;
+}
+.find_center{
+    width: 620px;
+    height: 155px;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+.find_center a{
+    width: 282px;
+    height: 48px;
+    font-size: 24px;
+    color: #fff;
+    background: #1da4f5;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    margin-left: 25px;
+    line-height: 48px;
+}
+.find_center a:hover{
+    background: #0890e1;
+}
+.find_center span{
+    font-size: 14px;
+    color: #a4a4a4;
+    display: block;
+    float: left;
+    margin-top: 50px;
+    margin-left: 140px;
+}
+
+/*∞Û∂®” œ‰’“ªÿ√‹¬Î*/
+.find-tab {
+    margin-top: 60px;
+    color: #a3a3a3;
+    font-size: 16px;
+}
+.find-tab table tr {
+    height: 50px;
+}
+.find-tab table {
+    margin: 0 auto;
+}
+.find-tab .input-txt {
+    width: 160px;
+    height: 30px;
+    border: 1px solid #b3b9bd;
+    margin-top: 5px;
+    margin-left: 15px;
+    padding-left: 7px;
+    font-size: 14px;
+    float: left;
+    border-radius: 5px;
+    font-family: "Œ¢»Ì—≈∫⁄";
+}
+.find-tab .imgCode {
+    width: 90px;
+    height: 35px;
+    border-radius: 6px;
+    margin-left: 15px;
+    margin-top: 7px;
+    cursor: pointer;
+}
+.submit-btn {
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 41px;
+    text-align: center;
+    color: #efefef;
+    background: #2173dc;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    margin-left: 83px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background: #fe6e4c;
+}
+.find_call{
+    width: 372px;
+    height: 40px;
+    font-size: 14px;
+    color: #a4a4a4;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/*∞Û∂® ÷ª˙∫≈’“ªÿ√‹¬Î*/
+.find-tab .getSmsCode {
+    border: none;
+    width: 108px;
+    height: 39px;
+    margin-left: 5px;
+    margin-top: 5px;
+    line-height: 31px;
+    color: #777;
+    background: #DDDDDD;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

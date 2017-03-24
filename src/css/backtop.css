@@ -1,0 +1,82 @@
+.cbbfixed {
+	width: 50px;
+	position: fixed;
+	right: 0;
+	transition: bottom ease .3s;
+	bottom: -185px;
+	z-index: 3;
+	cursor: pointer;
+}
+
+/*right_qq*/
+.right_qq{z-index:50;position:fixed;bottom:140px;}
+.right_qq ul{position:relative;}
+.right_qq li{height:53px;position:relative;}
+.right_qq li span.right_qq_on{display:block;width:50px;height:50px;overflow:hidden;position:relative;margin-bottom: 5px;}
+.right_qq li .right_qq_on a{display:block;width:50px;height:50px;background-image:url(../img/index/icon_home.png);position:absolute;top:0;left:0;z-index:52;transition: all 200ms ease-in-out;}
+.right_qq li .right_qq_hid,.right_qq li span.right_qq_hid{display:none;position:absolute;top:0;right:0;z-index:51; line-height:20px;}
+.right_qq a.right_qq_zx{background-position:-350px 0;}
+.right_qq a.right_qq_app{background-position:-400px 0;}
+.right_qq a.right_qq_wx{background-position:-450px 0;}
+.right_qq a.goTop {background-position: -500px 0;}
+
+.right_qq a.right_qq_zx:hover{background-position:-350px -50px;}
+.right_qq a.right_qq_app:hover{background-position:-400px -50px;}
+.right_qq a.right_qq_wx:hover{background-position:-450px -50px;}
+.right_qq a.goTop:hover{background-position:-500px -50px;}
+
+.right_qq .right_qq_wx_pic{padding:10px;border:1px solid #e8e8e8;text-align:center;background:#fff;color: #7b7b7b;}
+.right_qq .right_qq_wx_pic img{width: 125px;}
+.right_qq .right_qq_wx_pic span{display:block;white-space: nowrap;}
+.right_qq li .right_qq_hid i{
+	width: 8px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -7px;
+    display: block;
+    z-index: 52;
+    background: url(../img/index/icon_home.png) no-repeat top;
+    background-position: -550px 0;
+}
+/*手机扫码下载*/
+/*.download{
+    width: 280px;
+    padding: 20px 5px 10px 15px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+}
+.download div{
+	float: left;
+}
+.download .smart_download {border: 1px solid #dedede;}
+.download .right_down {
+	margin-left: 10px;
+}
+.download .right_down span{
+	display: block;
+	text-align: center;
+	color: #a3a3a3;
+}
+.download .right_down .version{
+    background: #fb6e52;
+    width: 100px;
+    margin: 6px auto 25px;
+    color: #fff;
+}
+.download .right_down img{
+	width: 120px;
+	-webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);    
+    -ms-filter: grayscale(100%);  
+    -o-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+}
+.download .right_down img:hover{
+	width: 120px;
+	-webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);    
+    -ms-filter: grayscale(0%); 
+    -o-filter: grayscale(0%);  
+    filter: grayscale(0%);  
+}*/

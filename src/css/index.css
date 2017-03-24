@@ -1,3 +1,8 @@
+/*header*/
+.nav .nLi.selectMenu >a {
+    color: #2875d9;
+    border-bottom: 4px solid #2875d9;
+}
 /*轮播*/
 .banner{
     min-height:300px;
@@ -469,7 +474,6 @@ p.ztxm_des span strong {
     width: 100%;
     padding: 11px 0;
     background: #fff;
-    margin-top: 15px;
 }
 /*---- 平台公告 ----*/
 .board{
@@ -610,6 +614,7 @@ p.ztxm_des span strong {
     text-align: right;
     color: #b6b6b6;
 }
+
 /*----- 我们的投资者  -----*/
 .home-investor {
     width: 100%;
@@ -740,6 +745,7 @@ img.media-img {
     height: 58px;
     border: 1px solid #e3e3e3;
 }
+
 
 
 

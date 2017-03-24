@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/register.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="main clear">
+        <div class="h-main">
+            <form id="form" class="register">
+                <div class="box_title">
+                    <a href="login.html">会员登录</a>
+                    <a style="width:1px; height:24px; margin-top: 8px;border-left:1px solid #ccc;"></a>
+                    <a href="javascript:void(0)">
+                        <span class="thisRegister">快速注册</span>
+                    </a>
+                </div>
+                <div class="register_box">
+                    <div class="register_message">
+                        <i class="userPhone_bg"></i>
+                        <input class="userPhone" id="userPhone" type="text" maxlength="11" placeholder="请输入手机号码"/>
+                    </div>
+                    <div class="register_message">
+                        <i class="userPassward_bg"></i>
+                        <input class="userPassward" id="userPassward" type="password" maxlength="16" placeholder="6至16位字母和数字组合"/>
+                    </div>
+                    <div class="register_message">
+                        <i class="userPassward_bg"></i>
+                        <input class="userPassward_again" id="userPassward_again" type="password" maxlength="16" placeholder="再次输入密码"/>
+                    </div>
+                    <div class="register_message">
+                        <i class="imgCode_bg"></i>
+                        <input class="imgCode" id="imgCode" type="text"  placeholder="请输入图片验证码"/>
+                        <img style="margin-top: 18px; margin-left: 20px;" alt="点击刷新" src="">
+                    </div>
+                    <div class="register_message">
+                        <i class="smsCode_bg"></i>
+                        <input class="smsCode" id="smsCode" type="text" maxlength="6" placeholder="请输入验证码"/>
+                        <button class="getSmsCode" >获取短信验证码</button>
+                    </div>
+                    <div class="register_message">
+                        <i class="referrerPhone_bg"></i>
+                        <input class="referrerPhone" id="referrerPhone" type="text" maxlength="50" placeholder="请输入推荐人手机号（选填）"/>
+                    </div>
+                    <div class="register_message">
+                        <p class="serviceAgreement reg">
+                            <input id="checkbox" type="checkbox" checked="checked"/>
+                            我已经阅读并同意 <a href="https://www.htouhui.com/hetong/registerService" target="_blank">《网站服务协议》</a>
+                        </p>
+                    </div>
+                    <div class="register_message">
+                        <button class="register_btn">注册</button>
+                    </div>
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/register.bundle.js"></script>
+</body>
+</html>

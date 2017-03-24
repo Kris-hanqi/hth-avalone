@@ -8,6 +8,7 @@
     <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/backtop.css"/>
 </head>
 <body>
     <div ms-controller="headerCtrl" class="header">
@@ -43,15 +44,14 @@
         <wbr ms-widget="{is:'main',shengxinbao:@shengxinbao,zhitou:@zhitou}">
     </div>
 
-    <div ms-controller="newsCtrl" class="home-news">
+    <div ms-controller="newsCtrl" class="hone-new home-news">
         <wbr ms-widget="{is:'news',newsCenter:@newsCenter,plateformNotice:@plateformNotice}">
     </div>
 
-
-    <div class="home-investor" ms-controller="investor">
-        <div class="home-main">
+    <div ms-controller="investor" class="home-investor">
+        <div class="home-main investor">
             <h1>他们都在海投汇</h1>
-            <div class="investor-box unfold" ms-for="el in @arr">
+            <div class="investor-box unfold" ms-for="el in @data">
                 <i class="investor-head">
                     <img ms-attr="{src: el.headPicUrl}"/>
                 </i>
@@ -62,11 +62,12 @@
             </div>
         </div>
     </div>
+
     <div class="home-news">
         <div class="home-main">
             <div class="media_list">
                 <h3 class="news-title">媒体报道</h3>
-                <div id="featureContainer" ms-controller="mediaList">
+                <div ms-controller="mediaList" id="featureContainer">
                     <div id="feature">
                         <div id="block">
                             <div id="button-scroll">
@@ -85,64 +86,13 @@
         </div>
     </div>
 
-    <div class="footer">
-        <wbr ms-widget="{is:'footer'}" />
+    <div ms-controller="footer" class="footer">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
     </div>
 
+    <!--start-backtop-->
 
-
-<script src="../dist/bundle.js"></script>
-<script type="text/javascript">
-    //header
-    var vm1=avalon.define({
-       $id:"headerCtrl",
-       headerRightArr:[
-           "立即登录",
-           "免费注册",
-           "活动中心",
-           "新手指引",
-           "教育栏目"
-       ],
-       navArr:[
-           "我要投资",
-           "债权转让",
-           "风控措施",
-           "关于我们"
-       ]
-    });
-
-    //banner
-
-    //home-safe
-    var vm3=avalon.define({
-       $id:"safeCtrl",
-        txt:[
-            {strongTxt:"稳健运营",txtArr:"完善的业务闭环，历史100%兑付"},
-            {strongTxt:"江西银行资金存管",txtArr:"平台与用户资金分离，借贷双方交易信息安全"},
-            {strongTxt:"Pre-A轮融资",txtArr:"获战略投资方—五星资本Pre-A轮融资"},
-            {strongTxt:"多重风控保障",txtArr:"多级风控审核，抵押信息真实透明"}
-        ]
-    });
-
-    //home-main
-    var vm4=avalon.define({
-       $id:"mainCtrl",
-       xinshoubiao: [],
-       shengxinbao:[],
-       zhitou:[]
-    });
-
-    //home-news
-    var vm5=avalon.define({
-        $id:"newsCtrl",
-        newsCenter:[],
-        plateformNotice:[]
-    });
-
-
-
-
-
-</script>
+<script src="../dist/index.bundle.js"></script>
+<script src="../dist/header_footer.bundle.js"></script>
 </body>
 </html>

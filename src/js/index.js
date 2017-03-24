@@ -1,61 +1,9 @@
 var avalon = require('avalon');
 var $ = require("jquery");
+var backTop = require("backTop");
 var mockjax = require("mockjax")($, window);
 
-//header
-avalon.component('header', {
-    template: (function(){
-        var slideContent="<div class='header'>"+
-            "<div class='header_box'>"+
-            "<div class=\"header_left\"><span>客服热线：400-698-8810 （工作日 09:00 - 18:00）</span></div>"+
-            "<div class=\"header_right1\">"+
-            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"img/header_phone.png\"/>手机客户端</span>"+
-            "<div class=\"qrcode-outer header-arrow\">"+
-            "<i></i>"+
-            "<div class=\"qrcode\"><img src=\"img/smart_download.png\"/><span>手机客户端下载</span></div>"+
-            "</div>"+
-            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"img/header_weixin.png\"/>微信公众号</span>"+
-            "<div class=\"qrcode-weixin header-arrow\">"+
-            "<i></i>"+
-            "<div class=\"qrcode\"><img src=\"img/weixin-upload.png\"/><span>微信公众号</span></div>"+
-            "</div>"+
-            "</div>"+
-            "<div class=\"header_right2\">"+
-            "<a href=\"#\" ms-for=\"el in @headerRightArr\">{{el}}</a>"  +
-            "</div>"    +
-            "</div>"+
-            "<div class=\"top\">"+
-            "<div class=\"top_box\">"+
-            "<div class=\"logo\">"+
-            "<a href=\"#\"><img src=\"img/logo.png\"/></a>"+
-            "</div>"+
-            "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
-            "<ul class=\"nav\">"+
-            "<li class=\"nLi selectMenu\"><a href=\"#\">首页</a></li>"+
-            "<li class=\"nLi\" ms-for='el in @navArr'><a href=\"#\">{{el}}</a></li>"+
-            "</ul>"    +
-            "</div>"    +
-            "</div>"+
-            "</div>";
-        return slideContent;
-    }).call(this),
-    defaults: {
-        headerRightArr:[],
-        navArr:[],
-        outerMouseover:function(){
-            $(".qrcode-outer").stop().slideDown(100);
-        },
-        outerMouseout:function(){
-            $(".qrcode-outer").stop().slideUp(100);
-        },
-        weixinMouseover:function(){
-            $('.qrcode-weixin').stop().slideDown(100);
-        },
-        weixinMouseout:function(){
-            $('.qrcode-weixin').stop().slideUp(100);
-        }
-    }
-});
+
 
 //banner
 (function (){
@@ -166,6 +114,15 @@ avalon.component("safe",{
     defaults: {
         txt:[]
     }
+});
+var vmSafe=avalon.define({
+    $id:"safeCtrl",
+    txt:[
+        {strongTxt:"稳健运营",txtArr:"完善的业务闭环，历史100%兑付"},
+        {strongTxt:"江西银行资金存管",txtArr:"平台与用户资金分离，借贷双方交易信息安全"},
+        {strongTxt:"Pre-A轮融资",txtArr:"获战略投资方—五星资本Pre-A轮融资"},
+        {strongTxt:"多重风控保障",txtArr:"多级风控审核，抵押信息真实透明"}
+    ]
 });
 
 //home-record
@@ -450,15 +407,20 @@ avalon.component("main",{
         zhitou:[]
     }
 });
+var vmMain=avalon.define({
+    $id:"mainCtrl",
+    xinshoubiao: [],
+    shengxinbao:[],
+    zhitou:[]
+});
 $.ajax({
    url:'http://XXX/web-api/loanRecommend',
    success:function(response){
-       vm4.xinshoubiao=response.data.xinshoubiao;
-       vm4.shengxinbao=response.data.shengxinbao;
-       vm4.zhitou=response.data.zhitou;
+       vmMain.xinshoubiao=response.data.xinshoubiao;
+       vmMain.shengxinbao=response.data.shengxinbao;
+       vmMain.zhitou=response.data.zhitou;
    }
 });
-
 
 //home-news
 /*模拟接口*/
@@ -558,107 +520,81 @@ avalon.component("news",{
         plateformNotice:[]
     }
 });
+var vmNews=avalon.define({
+    $id:"newsCtrl",
+    newsCenter:[],
+    plateformNotice:[]
+});
 $.ajax({
     url:'http://XXX/web-api/platformInfo',
     success:function(response){
-        vm5.newsCenter=response.data.newsCenter;
-        vm5.plateformNotice=response.data.plateformNotice;
+        vmNews.newsCenter=response.data.newsCenter;
+        vmNews.plateformNotice=response.data.plateformNotice;
     }
 });
 
-
 //投资者风采
-avalon.define({
-    $id: "investor",
-    arr: [
-        {
-            headPicUrl: 'img/index/29481485055670889.png',
-            nickName: "昵称",
-            work: "职业",
-            leaveMsg: "留言"
-        },
-        {
-            headPicUrl: 'img/index/33551485055652270.png',
-            nickName: "昵称",
-            work: "职业",
-            leaveMsg: "留言"
-        },
-        {
-            headPicUrl: 'img/index/29481485055670889.png',
-            nickName: "昵称",
-            work: "职业",
-            leaveMsg: "留言"
-        },
-        {
-            headPicUrl: 'img/index/29481485055670889.png',
-            nickName: "昵称",
-            work: "职业",
-            leaveMsg: "留言"
-        },
-        {
-            headPicUrl: 'img/index/29481485055670889.png',
-            nickName: "昵称",
-            work: "职业",
-            leaveMsg: "留言"
-        }
-    ]
-});
 $(function(){
-    $(".investor-box").mouseover(function(){
+    $(".investor").on('mouseover','.investor-box',function(){
         $(this).find(".unfoldImg").hide();
         $(this).removeClass("unfold");
         var index = $(this).parent().find("div").index(this);
         $(this).parent().find(".investor-box").addClass("unfold");
         $(this).parent().find(".investor-box").slice(index,index+1).removeClass("unfold");
-    }).mouseout(function(){
+    });
+    $(".investor").on('mouseout','.investor-box',function(){
         $(this).find(".unfoldImg").show();
         $(this).addClass("unfold");
     })
 });
-
-/* -- footer --  */
-avalon.component('footer', {
-    template: '<div class="footer" ms-controller="footer">' +
-    '<div class="footer_box clearfix">' +
-    '<div class="logo02"><a href="#"><img src="img/logo02.png"/></a><span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span></div>'+
-    '<ul class="footer_ul"><li ms-for="el in @array"><ul class="footer_ul_li"><li ms-for="elem in el.arr"><a ms-attr="{href: elem.path}">{{elem.name}}</a></li></ul></li>' +
-    '<li><span>扫二维码下载APP</span><br /><img src="img/smart_download.png" style="width: 125px;"/></li>'+
-    '</ul></div>'+
-    '<div class="belw clearfix"><div class="copy">' +
-    '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>'+
-    '<div ms-for="el in @copy"><a target="_blank" ms-attr="{href: el.path}"><img class="chengxin" ms-attr="{src: el.img}" /></a></div>'+
-    '</div></div>' +
-    '</div>'
+/*模拟接口*/
+$.mockjax({
+    url:'http://XXX/web-api/investorSaid',
+    status: 200,
+    responseText: {
+        "data":[
+            {
+                headPicUrl: 'img/index/29481485055670889.png',
+                nickName: "许女士",
+                work: "全职太太",
+                leaveMsg: "经身边已经在海投汇投资的朋友强烈推荐，开始关注海投汇。了解到海投汇自成立后业绩一直增长，没有一笔坏账，比较放心，自此与海投汇结缘。去年底资金存管也上线了，刚刚又得知海投汇获得融资，衷心希望海投汇的影响力越来越大、越做做强、越办越好，发布更多更好的产品给大家，给广大的客户带来福利！"
+            },
+            {
+                headPicUrl: 'img/index/33551485055652270.png',
+                nickName: "好好好老师",
+                work: "教师",
+                leaveMsg: "2015年开始接触互联网金融平台并投资，陆续接触了很多家成熟的互金平台。海投汇不管是安全上还是管理上都比较严谨，借款人的身份证、基本信息、借款用途和借款资料等等都会有明确披露，可以说风控很成熟，资料也很全面。在比较了多个互金平台后，最终选择了海投汇作为我的大部分资金的首选，虽然鸡蛋不可能放在同一个篮子里，但是多年的经验告诉我，海投汇是一个值得信赖的互金投资平台。"
+            },
+            {
+                headPicUrl: 'img/index/56131485055626978.png',
+                nickName: "惠明",
+                work: "家庭主妇",
+                leaveMsg: "从2015年海投汇初成立起就深深的关注着他。开头有点担心，小心翼翼试探的小投几把。日子久了，更多的关注着互金相关新闻；一有空就搜索海投汇的消息，看到海投汇各项功能日趋完善，银行资金存管也上线了，越来越符合国家相关规定。每个月都有各种活动开展，我也越来越信赖他了。祝海投汇越办越好，安安全全，成为日久传承的“老店”。"
+            },
+            {
+                headPicUrl: 'img/index/35311485055688654.png',
+                nickName: "一切皆好",
+                work: "厨师",
+                leaveMsg: "我与海投汇的缘分要感谢空中网的一款游戏《坦克世界》。海投汇经常推出投资送金币、送装备的活动，从未让我失望！每一次，我不但获得了游戏各种配件，投资的本金、利息也都如期回来了，投资稳健和收益可观，很靠谱！海投汇微信公众账号后期也开始搞活动，现在我已经把大中小号“小海公仔”都纳入囊中。谢谢海投汇给我一个投资的渠道。希望海投汇做的更好，走的更远。"
+            },
+            {
+                headPicUrl: 'img/index/4561485055715766.png',
+                nickName: "小华",
+                work: "IT 运营经理",
+                leaveMsg: "我也算《坦克世界》的老玩家了，去年一个偶然的机会看到海投汇和坦克世界合作搞活动，因为我一直在投资互联网金融平台理财，所以毫不犹豫的就注册了帐号，开始了投资，于是期期活动都参加，也给海投汇提了好多的意见和建议，大部分都惊喜地被海投汇采纳了。我想今后我会更积极的参与到海投汇的发展中，也希望海投汇越做越大，生意兴隆，更希望海投汇在稳定中发展，为投资人开创美好未来。"
+            }
+        ]
+    }
 });
-avalon.define({
-    $id: "footer",
-    array: [
-        {arr: [
-            {path:'http://www.htouhui.com/about/aboutus',name:'关于我们'},
-            {path:'http://www.htouhui.com/about/aboutus',name:'企业介绍'},
-            {path:'http://www.htouhui.com/about/team',name:'管理团队'},
-            {path:'http://www.htouhui.com/about/partners',name:'合作伙伴'},
-            {path:'http://www.htouhui.com/about/joinus',name:'联系我们'},
-            {path:'http://www.htouhui.com/about/contactus',name:'加入我们'}
-        ]},
-        {arr: [
-            {path:'http://www.htouhui.com/falv/flgw',name:'法律法规'},
-            {path:'http://www.htouhui.com/falv/flgw',name:'法律顾问'},
-            {path:'http://www.htouhui.com/falv/flxy',name:'法律协议'},
-            {path:'http://www.htouhui.com/falv/flsm',name:'法律声明'}
-        ]},
-        {arr: [
-            {path:'',name:'帮助中心'},
-            {path:'',name:'投资人必读'},
-            {path:'',name:'充值提现必读'},
-            {path:'',name:'怎样债权转让'}
-        ]}
-    ],
-    copy:[
-        {path:'',img:'img/icons_itrust.png'},
-        {path:'',img:'img/icons_norton.png'},
-        {path:'',img:'img/icons_chengxin.png'}
-    ]
+var vmInvestor=avalon.define({
+    $id: "investor",
+    data: []
+});
+$.ajax({
+    url:'http://XXX/web-api/investorSaid',
+    success:function(response){
+        vmInvestor.data=response.data;
+    }
 });
 
 // 媒体报道滚动
@@ -669,8 +605,7 @@ $(function() {
         btnPrev: ".prev"
     });
 });
-//投资者风采
-avalon.define({
+var vm7=avalon.define({
     $id: "mediaList",
     media: [
         {mediaPicUrl: '#',mediaPic: 'img/index/media-01.jpg'},
@@ -681,10 +616,6 @@ avalon.define({
         {mediaPicUrl: '#',mediaPic: 'img/index/media-06.jpg'}
     ]
 });
-
-
-
-
 
 
 

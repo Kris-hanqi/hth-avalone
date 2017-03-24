@@ -51,61 +51,6 @@
 
 
 
-	//header
-	avalon.component('header', {
-	    template: (function(){
-	        var slideContent="<div class='header'>"+
-	            "<div class='header_box'>"+
-	            "<div class=\"header_left\"><span>客服热线：400-698-8810 （工作日 09:00 - 18:00）</span></div>"+
-	            "<div class=\"header_right1\">"+
-	            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"img/header_phone.png\"/>手机客户端</span>"+
-	            "<div class=\"qrcode-outer header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/smart_download.png\"/><span>手机客户端下载</span></div>"+
-	            "</div>"+
-	            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"img/header_weixin.png\"/>微信公众号</span>"+
-	            "<div class=\"qrcode-weixin header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/weixin-upload.png\"/><span>微信公众号</span></div>"+
-	            "</div>"+
-	            "</div>"+
-	            "<div class=\"header_right2\">"+
-	            "<a href=\"#\" ms-for=\"el in @headerRightArr\">{{el}}</a>"  +
-	            "</div>"    +
-	            "</div>"+
-	            "<div class=\"top\">"+
-	            "<div class=\"top_box\">"+
-	            "<div class=\"logo\">"+
-	            "<a href=\"#\"><img src=\"img/logo.png\"/></a>"+
-	            "</div>"+
-	            "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
-	            "<ul class=\"nav\">"+
-	            "<li class=\"nLi selectMenu\"><a href=\"#\">首页</a></li>"+
-	            "<li class=\"nLi\" ms-for='el in @navArr'><a href=\"#\">{{el}}</a></li>"+
-	            "</ul>"    +
-	            "</div>"    +
-	            "</div>"+
-	            "</div>";
-	        return slideContent;
-	    }).call(this),
-	    defaults: {
-	        headerRightArr:[],
-	        navArr:[],
-	        outerMouseover:function(){
-	            $(".qrcode-outer").stop().slideDown(100);
-	        },
-	        outerMouseout:function(){
-	            $(".qrcode-outer").stop().slideUp(100);
-	        },
-	        weixinMouseover:function(){
-	            $('.qrcode-weixin').stop().slideDown(100);
-	        },
-	        weixinMouseout:function(){
-	            $('.qrcode-weixin').stop().slideUp(100);
-	        }
-	    }
-	});
-
 	//banner
 	(function (){
 	    /*模拟接口*/
@@ -215,6 +160,15 @@
 	    defaults: {
 	        txt:[]
 	    }
+	});
+	var vmSafe=avalon.define({
+	    $id:"safeCtrl",
+	    txt:[
+	        {strongTxt:"稳健运营",txtArr:"完善的业务闭环，历史100%兑付"},
+	        {strongTxt:"江西银行资金存管",txtArr:"平台与用户资金分离，借贷双方交易信息安全"},
+	        {strongTxt:"Pre-A轮融资",txtArr:"获战略投资方—五星资本Pre-A轮融资"},
+	        {strongTxt:"多重风控保障",txtArr:"多级风控审核，抵押信息真实透明"}
+	    ]
 	});
 
 	//home-record
@@ -499,12 +453,18 @@
 	        zhitou:[]
 	    }
 	});
+	var vmMain=avalon.define({
+	    $id:"mainCtrl",
+	    xinshoubiao: [],
+	    shengxinbao:[],
+	    zhitou:[]
+	});
 	$.ajax({
 	   url:'http://XXX/web-api/loanRecommend',
 	   success:function(response){
-	       vm4.xinshoubiao=response.data.xinshoubiao;
-	       vm4.shengxinbao=response.data.shengxinbao;
-	       vm4.zhitou=response.data.zhitou;
+	       vmMain.xinshoubiao=response.data.xinshoubiao;
+	       vmMain.shengxinbao=response.data.shengxinbao;
+	       vmMain.zhitou=response.data.zhitou;
 	   }
 	});
 
@@ -606,11 +566,16 @@
 	        plateformNotice:[]
 	    }
 	});
+	var vmNews=avalon.define({
+	    $id:"newsCtrl",
+	    newsCenter:[],
+	    plateformNotice:[]
+	});
 	$.ajax({
 	    url:'http://XXX/web-api/platformInfo',
 	    success:function(response){
-	        vm5.newsCenter=response.data.newsCenter;
-	        vm5.plateformNotice=response.data.plateformNotice;
+	        vmNews.newsCenter=response.data.newsCenter;
+	        vmNews.plateformNotice=response.data.plateformNotice;
 	    }
 	});
 
@@ -667,10 +632,14 @@
 	        ]
 	    }
 	});
+	var vmInvestor=avalon.define({
+	    $id: "investor",
+	    data: []
+	});
 	$.ajax({
 	    url:'http://XXX/web-api/investorSaid',
 	    success:function(response){
-	        vm6.data=response.data;
+	        vmInvestor.data=response.data;
 	    }
 	});
 
@@ -682,21 +651,18 @@
 	        btnPrev: ".prev"
 	    });
 	});
-
-	/* -- footer --  */
-	avalon.component('footer', {
-	    template: '<div class="footer" ms-controller="footer">' +
-	    '<div class="footer_box clearfix">' +
-	    '<div class="logo02"><a href="#"><img src="img/logo02.png"/></a><span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span></div>'+
-	    '<ul class="footer_ul"><li ms-for="el in @array"><ul class="footer_ul_li"><li ms-for="elem in el.arr"><a ms-attr="{href: elem.path}">{{elem.name}}</a></li></ul></li>' +
-	    '<li><span>扫二维码下载APP</span><br /><img src="img/smart_download.png" style="width: 125px;"/></li>'+
-	    '</ul></div>'+
-	    '<div class="belw clearfix"><div class="copy">' +
-	    '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>'+
-	    '<div ms-for="el in @copy"><a target="_blank" ms-attr="{href: el.path}"><img class="chengxin" ms-attr="{src: el.img}" /></a></div>'+
-	    '</div></div>' +
-	    '</div>'
+	var vm7=avalon.define({
+	    $id: "mediaList",
+	    media: [
+	        {mediaPicUrl: '#',mediaPic: 'img/index/media-01.jpg'},
+	        {mediaPicUrl: '#',mediaPic: 'img/index/media-02.jpg'},
+	        {mediaPicUrl: '#',mediaPic: 'img/index/media-03.jpg'},
+	        {mediaPicUrl: '#',mediaPic: 'img/index/media-04.jpg'},
+	        {mediaPicUrl: '#',mediaPic: 'img/index/media-05.jpg'},
+	        {mediaPicUrl: '#',mediaPic: 'img/index/media-06.jpg'}
+	    ]
 	});
+
 
 
 

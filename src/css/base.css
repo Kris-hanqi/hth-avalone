@@ -16,15 +16,34 @@ img, h1, h2, h3, ul, li, dl, dt, dd, p, a {
 input,select,button,a {
     outline: none;
 }
-.clear{
-    clear: both;
-}
+.clear{  clear: both;}
 .font24{ font-size:24px;}
 .clearfix:after { content: ""; display: block; height: 0; clear: both; visibility: hidden; }
 .clearfix { display: inline-table; }
 *html .clearfix { height: 1%; }
 .clearfix { display: block; }
 *+html .clearfix { min-height: 1%; }
+.h-main {
+    width: 1080px;
+    margin: 0 auto;
+}
+.slidings {
+    border-bottom: 2px solid #e7e2e2;
+    height: 50px;
+    margin: 0 auto;
+}
+.slidings li {
+    float: left;
+    text-align: center;
+}
+.slidings li a {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    font-size: 16px;
+    color: #222224;
+}
 
 /*header*/
 .header{
@@ -175,7 +194,7 @@ input,select,button,a {
     font-size: 16px;
     display: block;
 }
-.nav>li:hover >a,.nav .nLi.selectMenu >a{
+.nav>li:hover {
     color:#2875d9;
     border-bottom: 4px solid #2875d9;
 }

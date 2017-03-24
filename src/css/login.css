@@ -1,0 +1,159 @@
+.main {
+    width: 100%;
+    min-height: 100px;
+    background: #f7f6f6;
+    background: url(../img/loginRegister/login_background.jpg) no-repeat center;
+}
+.login {
+    width: 413px;
+    float: right;
+    margin-right: 30px;
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+/*µÇÂ¼×¢²áÑ¡Ôñ*/
+.box_title {
+    width: 412px;
+    height:53px;
+    float:left;
+    border-bottom: 1px solid #e2e0e1;
+}
+.box_title a {
+    color: #3f3a39;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration:none;
+    text-align:center;
+    float:left;
+    display: inline-block;
+    width:205px;
+    height:40px;
+    padding-top:12px;
+}
+/*ÐÅÏ¢ÌîÐ´ÇøÓò*/
+.login_box {
+    background-color: #fff;
+    height: 520px;
+    width: 410px;
+    border: 1px solid #e2e0e1;
+}
+.login_message {
+    padding-left: 48px;
+    width: 320px;
+    clear: both;
+    position: relative;
+    border: 1px solid transparent;
+}
+.login_message > input {
+    width: 259px;
+    height: 35px;
+    line-height: 38px;
+    border: 1px solid #d9d9d9;
+    margin-top: 12px;
+    padding-left: 47px;
+    font-size: 14px;
+    float: left;
+}
+.login_message > i {
+    display: inline-block;
+    position: absolute;
+    left:60px;
+    top:20px;
+    background: url(../img/loginRegister/icon-register.png) no-repeat;
+    width:20px;
+    height: 25px;
+}
+i.userPassward_bg {
+    width:22px;
+    background-position: -21px 0;
+}
+.autoLogin {
+    margin-top: 60px;
+    display: inline-block;
+    float: left;
+    color: #000;
+}
+.autoLogin input {
+    width: 18px;
+    height: 18px;
+    border: solid 1px #cfd1d3;
+    vertical-align: bottom;
+    padding: 0;
+    margin: 0
+}
+.login_btn {
+    display: block;
+    width: 316px;
+    height: 47px;
+    background: #2875d9;
+    line-height: 47px;
+    text-align: center;
+    font-size: 21px;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 2px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border:none;
+}
+.login_btn:hover {
+    background: #fe6e4c;
+}
+.kongzhongLogin{
+    color: #9b9b9b;
+    margin-right: 10px;
+}
+.kongzhongLogin_icon {
+    width: 25px;
+    height:25px;
+    display: inline-block;
+    margin: 6px;
+    background: url(../img/loginRegister/ico-kz.png);
+    background-position: -25px 0;
+    vertical-align: middle;
+}
+.kongzhongLogin_icon:hover {
+    background-position: 0 0;
+}
+.forget {
+    float: right;
+    color: #2875d9;
+    margin-right: 2px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.thisLogin {
+    text-align: center;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    border-bottom: 2px solid #2875d9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

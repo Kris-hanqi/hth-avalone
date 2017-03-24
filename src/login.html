@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="main clear">
+        <div class="h-main">
+            <form id="form" class="login">
+                <div class="box_title">
+                    <a href="javascript:void(0)">
+                        <span class="thisLogin">会员登录</span>
+                    </a>
+                    <a style="width:1px; height:24px; margin-top: 8px;border-left:1px solid #ccc;"></a>
+                    <a href="register.html">快速注册</a>
+                </div>
+                <div class="login_box border">
+                    <div class="login_message">
+                        <i class="userPhone_bg"></i>
+                        <input class="userPhone" type="text" maxlength="16" placeholder="请输入用户名/手机号"/>
+                    </div>
+                    <div class="login_message">
+                        <i class="userPassward_bg"></i>
+                        <input class="userPassward" type="password" maxlength="16" placeholder="请输入密码"/>
+                    </div>
+                    <div class="login_message">
+                        <p class="autoLogin">
+                            <input type="checkbox" checked="checked"/>下次自动登录
+                        </p>
+                    </div>
+                    <div class="login_message">
+                        <a type="submit" href="#" class="login_btn">登录</a>
+                    </div>
+                    <div class="login_message">
+                        <a class="kongzhongLogin">空中网账号登录</a>
+                        <a class="kongzhongLogin_icon" href="#"></a>
+                        <a class="forget" href="forgetPassward.html">忘记密码？</a>
+                    </div>
+                </div>
+            </form>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/login.bundle.js"></script>
+</body>
+</html>
