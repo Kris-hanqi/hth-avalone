@@ -9,152 +9,139 @@
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/backtop.css"/>
     <link rel="stylesheet" href="css/aboutUs.css"/>
-    <style type="text/css">
-        #focus_Box{position:relative;width:900px;margin:20px auto;}
-        #focus_Box ul{position:relative;width:900px;}
-        #focus_Box li{z-index:0;position:absolute; width:0px;background:#787878;height:0px;top:146px;cursor:pointer;left:377px;border-radius:4px;}
-        #focus_Box li img{width:100%;height:100%;vertical-align:top; border: 1px solid #fff;}
-        #focus_Box li p{position:relative;left:0;bottom:0px;width:85%;height:40px;line-height:40px;text-align:center;color:#979696;font-size: 16px;text-indent: 0;}
-        #focus_Box li p span{display:inline-block;width:100%;height:40px;overflow:hidden;}
-        #focus_Box .prev,#focus_Box .next{display:block;z-index:100;overflow:hidden;cursor:pointer;position:absolute;width:52px;height:52px;top:175px;}
-        #focus_Box .prev{background:url(img/aboutUs/btn.png) left bottom no-repeat;left:-25px}
-        #focus_Box .next{background:url(img/aboutUs/btn.png) right bottom no-repeat;right:18px}
-        #focus_Box .prev:hover{background-position:left top;}
-        #focus_Box .next:hover{background-position:right top;}
-    </style>
 </head>
 <body>
-<div ms-controller="headerCtrl" class="header">
-    <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
-</div>
+    <div ms-controller="headerCtrl" class="header">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
 
-<div class="h-main clear">
-    <!-- start -->
-    <div class="tag">
-        <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">加入我们</a>
-    </div>
-    <div ms-controller="about" class="about">
-        <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
-    </div>
-    <!--管理团队-->
-    <div class="about_center gltd"  ms-controller="teamCtrl">
-        <div class="gltd-div">
-            <h3 class="gltd-title">我们的团队<em>海投汇，创造你我价值</em></h3>
-            <div class="core">
-                <div id="focus_Box">
-                    <span class="prev"></span>
-                    <span class="next"></span>
-                    <ul>
-                        <li ms-for="el in @teamArray">
-                            <img ms-attr="{src: el.teamPic}"/>
-                            <p><span>{{el.teamDesc}}</span></p>
-                        </li>
-                    </ul>
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">加入我们</a>
+        </div>
+        <div ms-controller="about" class="about">
+            <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
+        </div>
+        <!--管理团队-->
+        <div class="about_center gltd"  ms-controller="teamCtrl">
+            <div class="gltd-div">
+                <h3 class="gltd-title">我们的团队<em>海投汇，创造你我价值</em></h3>
+                <div class="core">
+                    <div id="focus_Box">
+                        <span class="prev"></span>
+                        <span class="next"></span>
+                        <ul>
+                            <li ms-for="el in @teamArray">
+                                <img ms-attr="{src: el.teamPic}"/>
+                                <p><span>{{el.teamDesc}}</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
+                <h3 class="gltd-title">海投汇团队介绍<em>自律创新 | 专业专精 | 尽心尽责 | 共赢共担</em></h3>
+                <ul class="about-team-ul">
+                    <li>
+                        <img src="img/aboutUs/management-Li.jpg" style="display: block;"/>
+                        <p>
+                        <h4>李鲁一 <em>CEO</em></h4>
+                        历任 空中网（NASDAQ:KZ）副总裁;<br />
+                        TOM在线（香港上市公司）副总经理;<br />
+                        长达科技控股有限公司（香港上市公司）执行董事、首席执行官;<br />
+                        具备丰富的互联网与金融行业经验，专业的上市公司管理运营经验;<br />
+                        2015年任海投汇首席执行官，全面负责海投汇日常运营工作;<br />
+                        上海同济大学学士，香港大学金融与投资管理硕士。
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <ul class="about-team-ul">
+                    <li>
+                        <img src="img/aboutUs/management-Yao.jpg" style="display: block;"/>
+                        <p>
+                        <h4>幺博迪 <em>COO</em></h4>
+                        2007 年进入无线互联网领域，供职于美国风险投资机构DCM投资的创业公司，于业内最先打造出拥有数千万级用户的手机社区产品;<br />
+                        长达科技集团（HK:08026）历任新业务部总经理、副总裁;<br />
+                        上市公司空中网（NASDAQ :KZ）历任技术部、无线互联网事业部高级经理;<br />
+                        2015 年任海投汇COO;<br />
+                        北京理工大学计算机应用硕士。
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <ul class="about-team-ul">
+                    <li>
+                        <img src="img/aboutUs/Hanpeng.jpg" style="display: block;"/>
+                        <p>
+                        <h4>韩鹏 <em>高级副总裁</em></h4>
+                        拥有近10年互联网产品及运营经验，曾先后任职于国内老牌游戏企业目标软件及纳斯达克上市企业杭州斯凯（NASDAQ：mobi），在移动互联网运营、大数据、SNS等领域有丰富的经验并富有创新精神。
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <ul class="about-team-ul">
+                    <li>
+                        <img src="img/aboutUs/Hongxing.jpg" style="display: block;"/>
+                        <p>
+                        <h4>洪星 <em>研发总监</em></h4>
+                        具有15年以上的互联网业务的架构设计和研发经验。曾先后就职于空中网，阿里巴巴等互联网企业。在淘宝网工作期间，曾负责淘宝旅行客户端的技术开发工作；在支付宝工作期间曾负责支付宝钱包的多个大型项目的研发工作。
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <ul class="about-team-ul team-last">
+                    <li>
+                        <p>
+                        <h4>王鸿亚<em>风控总监</em></h4>
+                        8年银行及P2P、互联网金融风控经验。曾先后任职于北京银行总行核算中心、宜信集团、捷越联合、新浪分期。在宜信集团孵化宜农贷、农商贷项目，拥有丰富的风险管理经验。<br />
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                        <h4>吴宏浩 <em>法律顾问</em></h4>
+                        吴宏浩律师连续三年被评为盈科北京优秀律师、盈科全国优秀律师。<br />
+                        现为北京总部高级合伙人，目前兼任盈科全国互联网金融专委会秘书长、盈科全国财税金融法专委会副主任、盈科风控委员会主任委员。<br />
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <ul class="about-team-ul">
+                    <li>
+                        <img src="img/aboutUs/Chenyan.jpg" style="display: block;"/>
+                        <p>
+                        <h4>陈岩 <em>技术总监</em></h4>
+                        十年互联网科技公司技术生涯，曾先后就职于掌中万维、结信、冠城瑞富公司，历任软件工程师、高级软件工程师、技术经理，负责公司核心项目的总体架构设计和核心功能开发，并带领团队高质量完成项目。
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <ul class="about-team-ul">
+                    <li>
+                        <img src="img/aboutUs/Zhulin.jpg" style="display: block;"/>
+                        <p>
+                        <h4>朱琳 <em>资产总监</em></h4>
+                        曾任职于国内知名会计师事务所审计经理，具有丰富财务及企业管理知识。从事风控工作多年，有丰富的风控经验；拥有有丰富的银行、担保公司等金融公司的渠道资源。在财务、风险控制、法务及合规领域具有丰富经验。
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
             </div>
-            <h3 class="gltd-title">海投汇团队介绍<em>自律创新 | 专业专精 | 尽心尽责 | 共赢共担</em></h3>
-            <ul class="about-team-ul">
-                <li>
-                    <img src="img/aboutUs/management-Li.jpg" style="display: block;"/>
-                    <p>
-                    <h4>李鲁一 <em>CEO</em></h4>
-                    历任 空中网（NASDAQ:KZ）副总裁;<br />
-                    TOM在线（香港上市公司）副总经理;<br />
-                    长达科技控股有限公司（香港上市公司）执行董事、首席执行官;<br />
-                    具备丰富的互联网与金融行业经验，专业的上市公司管理运营经验;<br />
-                    2015年任海投汇首席执行官，全面负责海投汇日常运营工作;<br />
-                    上海同济大学学士，香港大学金融与投资管理硕士。
-                    </p>
-                </li>
-                <div class="clear"></div>
-            </ul>
-            <ul class="about-team-ul">
-                <li>
-                    <img src="img/aboutUs/management-Yao.jpg" style="display: block;"/>
-                    <p>
-                    <h4>幺博迪 <em>COO</em></h4>
-                    2007 年进入无线互联网领域，供职于美国风险投资机构DCM投资的创业公司，于业内最先打造出拥有数千万级用户的手机社区产品;<br />
-                    长达科技集团（HK:08026）历任新业务部总经理、副总裁;<br />
-                    上市公司空中网（NASDAQ :KZ）历任技术部、无线互联网事业部高级经理;<br />
-                    2015 年任海投汇COO;<br />
-                    北京理工大学计算机应用硕士。
-                    </p>
-                </li>
-                <div class="clear"></div>
-            </ul>
-            <ul class="about-team-ul">
-                <li>
-                    <img src="img/aboutUs/Hanpeng.jpg" style="display: block;"/>
-                    <p>
-                    <h4>韩鹏 <em>高级副总裁</em></h4>
-                    拥有近10年互联网产品及运营经验，曾先后任职于国内老牌游戏企业目标软件及纳斯达克上市企业杭州斯凯（NASDAQ：mobi），在移动互联网运营、大数据、SNS等领域有丰富的经验并富有创新精神。
-                    </p>
-                </li>
-                <div class="clear"></div>
-            </ul>
-            <ul class="about-team-ul">
-                <li>
-                    <img src="img/aboutUs/Hongxing.jpg" style="display: block;"/>
-                    <p>
-                    <h4>洪星 <em>研发总监</em></h4>
-                    具有15年以上的互联网业务的架构设计和研发经验。曾先后就职于空中网，阿里巴巴等互联网企业。在淘宝网工作期间，曾负责淘宝旅行客户端的技术开发工作；在支付宝工作期间曾负责支付宝钱包的多个大型项目的研发工作。
-                    </p>
-                </li>
-                <div class="clear"></div>
-            </ul>
-            <ul class="about-team-ul team-last">
-                <li>
-                    <p>
-                    <h4>王鸿亚<em>风控总监</em></h4>
-                    8年银行及P2P、互联网金融风控经验。曾先后任职于北京银行总行核算中心、宜信集团、捷越联合、新浪分期。在宜信集团孵化宜农贷、农商贷项目，拥有丰富的风险管理经验。<br />
-                    </p>
-                </li>
-                <li>
-                    <p>
-                    <h4>吴宏浩 <em>法律顾问</em></h4>
-                    吴宏浩律师连续三年被评为盈科北京优秀律师、盈科全国优秀律师。<br />
-                    现为北京总部高级合伙人，目前兼任盈科全国互联网金融专委会秘书长、盈科全国财税金融法专委会副主任、盈科风控委员会主任委员。<br />
-                    </p>
-                </li>
-                <div class="clear"></div>
-            </ul>
-            <ul class="about-team-ul">
-                <li>
-                    <img src="img/aboutUs/Chenyan.jpg" style="display: block;"/>
-                    <p>
-                    <h4>陈岩 <em>技术总监</em></h4>
-                    十年互联网科技公司技术生涯，曾先后就职于掌中万维、结信、冠城瑞富公司，历任软件工程师、高级软件工程师、技术经理，负责公司核心项目的总体架构设计和核心功能开发，并带领团队高质量完成项目。
-                    </p>
-                </li>
-                <div class="clear"></div>
-            </ul>
-            <ul class="about-team-ul">
-                <li>
-                    <img src="img/aboutUs/Zhulin.jpg" style="display: block;"/>
-                    <p>
-                    <h4>朱琳 <em>资产总监</em></h4>
-                    曾任职于国内知名会计师事务所审计经理，具有丰富财务及企业管理知识。从事风控工作多年，有丰富的风控经验；拥有有丰富的银行、担保公司等金融公司的渠道资源。在财务、风险控制、法务及合规领域具有丰富经验。
-                    </p>
-                </li>
-                <div class="clear"></div>
-            </ul>
+            <div class="clear"></div>
         </div>
         <div class="clear"></div>
+        <!-- end -->
     </div>
-    <div class="clear"></div>
-    <!-- end -->
-</div>
 
-<div ms-controller="footer" class="footer">
-    <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
-</div>
+    <div ms-controller="footer" class="footer">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
 
-<!--start-backtop-->
+    <!--start-backtop-->
 
 <script src="../dist/header_footer.bundle.js"></script>
-<script src="../dist/aboutUs.bundle.js"></script>
-<script src="../dist/zoomPic.bundle.js"></script>
+<script src="../dist/aboutUs_nav.bundle.js"></script>
+<script src="../dist/about_team.bundle.js"></script>
 
 </body>
 </html>

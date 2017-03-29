@@ -11,53 +11,54 @@
     <link rel="stylesheet" href="css/aboutUs.css"/>
 </head>
 <body>
-<div ms-controller="headerCtrl" class="header">
-    <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
-</div>
+    <div ms-controller="headerCtrl" class="header">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
 
-<div class="h-main clear">
-    <!-- start -->
-    <div class="tag">
-        <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">加入我们</a>
-    </div>
-    <div ms-controller="about" class="about">
-        <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
-    </div>
-    <!--加入我们-->
-    <div class="about_center jrwm" ms-controller="joinUs">
-        <h3 class="gltd-title">加入我们</h3>
-        <p style="text-indent: 0;">我们正在热招以下职位，如果你的背景与我们的需求契合，请给我们打个电话或发封邮件，<br/>我们相关部门的人员会第一时间联系你。</p>
-        <p>地址：北京市海淀区丹棱街18号创富大厦1604室</p>
-        <p>邮编：100080</p>
-        <p>邮箱：xiaoou.chen@htouhui.com</p>
-        <p>人力资源部电话：010-82605990</p>
-        <div class="jobs" ms-for="el in @job">
-            <hr />
-            <div class="jobBox">
-                <span>{{el.jobTitle}}</span>
-                <h3>岗位职责：</h3>
-                <div ms-for="elem in el.jobDesc">
-                    <p>{{elem.descList}}</p>
-                </div>
-                <h3>任职要求：</h3>
-                <div ms-for="elem in el.jobRequest">
-                    <p>{{elem.requestList}}</p>
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">加入我们</a>
+        </div>
+        <div ms-controller="about" class="about">
+            <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
+        </div>
+        <!--加入我们-->
+        <div class="about_center jrwm" ms-controller="joinUs">
+            <h3 class="gltd-title">加入我们</h3>
+            <p style="text-indent: 0;">我们正在热招以下职位，如果你的背景与我们的需求契合，请给我们打个电话或发封邮件，<br/>我们相关部门的人员会第一时间联系你。</p>
+            <p>地址：北京市海淀区丹棱街18号创富大厦1604室</p>
+            <p>邮编：100080</p>
+            <p>邮箱：xiaoou.chen@htouhui.com</p>
+            <p>人力资源部电话：010-82605990</p>
+            <div class="jobs" ms-for="el in @job">
+                <hr />
+                <div class="jobBox">
+                    <span>{{el.jobTitle}}</span>
+                    <h3>岗位职责：</h3>
+                    <div ms-for="elem in el.jobDesc">
+                        <p>{{elem}}</p>
+                    </div>
+                    <h3>任职要求：</h3>
+                    <div ms-for="elem in el.jobRequest">
+                        <p>{{elem}}</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="clear"></div>
+        <!-- end -->
     </div>
-    <div class="clear"></div>
-    <!-- end -->
-</div>
 
-<div ms-controller="footer" class="footer">
-    <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
-</div>
+    <div ms-controller="footer" class="footer">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
 
-<!--start-backtop-->
+    <!--start-backtop-->
 
 <script src="../dist/header_footer.bundle.js"></script>
-<script src="../dist/aboutUs.bundle.js"></script>
+<script src="../dist/aboutUs_nav.bundle.js"></script>
+<script src="../dist/about_joinus.bundle.js"></script>
 
 </body>
 </html>

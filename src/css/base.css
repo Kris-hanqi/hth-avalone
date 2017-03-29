@@ -135,6 +135,7 @@ input,select,button,a {
     min-height:32px;
 }
 
+
 /*客服热线*/
 .header_left{
     line-height: 32px;
@@ -272,8 +273,12 @@ input,select,button,a {
     font-size: 16px;
     display: block;
 }
-.nav>li:hover {
+.nav>li>a:hover {
     color:#2875d9;
+    border-bottom: 4px solid #2875d9;
+}
+.nav>li>a.chooseNav{
+    color: #2875d9;
     border-bottom: 4px solid #2875d9;
 }
 

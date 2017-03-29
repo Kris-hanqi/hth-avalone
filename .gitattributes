@@ -1,5 +1,10 @@
 * text=auto !eol
 dist/aboutUs.bundle.js -text
+dist/aboutUs_nav.bundle.js -text
+dist/about_accompany.bundle.js -text
+dist/about_joinus.bundle.js -text
+dist/about_partners.bundle.js -text
+dist/about_team.bundle.js -text
 dist/activityCenter.bundle.js -text
 dist/bundle.js -text
 dist/header_footer.bundle.js -text
@@ -9,6 +14,7 @@ dist/login.bundle.js -text
 dist/netLoanClass.bundle.js -text
 dist/newUserGuide.bundle.js -text
 dist/register.bundle.js -text
+/package.json -text
 src/about_accompany.html -text
 src/about_contactus.html -text
 src/about_htouhui.html -text
@@ -186,8 +192,11 @@ src/img/smart_download.png -text
 src/img/up_arrow.png -text
 src/img/weixin-upload.png -text
 src/index.html -text
-src/js/aboutUs.js -text
-src/js/aboutUs_leftNav.js -text
+src/js/aboutUs_nav.js -text
+src/js/about_accompany.js -text
+src/js/about_joinus.js -text
+src/js/about_partners.js -text
+src/js/about_team.js -text
 src/js/activityCenter.js -text
 src/js/header_footer.js -text
 src/js/index.js -text

@@ -46,186 +46,134 @@
 
 	var avalon = __webpack_require__(1);
 	var $ = __webpack_require__(2);
-	var backTop = __webpack_require__(5);
 	var mockjax = __webpack_require__(3)($, window);
 
-	//header
+	//加入我们
 
 	/*模拟接口*/
 	$.mockjax({
-	    url:"http://XXX/web-api/header",
+	    url:"http://XXX/web-api/aboutUs",
 	    status: 200,
-	    responseText:{
-	        headerTop:[
-	            {"title":"立即登录","href":"login.html"},
-	            {"title":"免费注册","href":"register.html"},
-	            {"title":"活动中心","href":"activityCenter.html"},
-	            {"title":"新手指引","href":"newUserGuide.html"},
-	            {"title":"网贷课堂","href":"netLoanClass.html"}
-	        ],
-	        headerBottom:[
-	            {"title":"首页","href":"index.html"},
-	            {"title":"我要投资","href":"loans.html"},
-	            {"title":"债权转让","href":""},
-	            {"title":"风控措施","href":""},
-	            {"title":"信息披露","href":""},
-	            {"title":"关于我们","href":"about_htouhui.html"}
+	    responseText: {
+	        "aboutJoinUs":[
+	            {
+	                jobTitle:"市场推广专员",
+	                jobDesc:[
+	                    "1、负责在社区开拓高净值个人客户，为客户提供全方面金融理财服务；",
+	                    "2、根据客户的资产规模、生活目标、预期收益目标和风险承受能力进行需求分析，出具专业的理财计划方案，推荐合适的理财产品；",
+	                    "3、每季度完成一定指标的销售业绩；",
+	                    "4、维护新老客户关系，提升客户对公司品牌的信任度和认知度；",
+	                    "5、协助和配合公司其他部门开展各类市场营销活动。"
+	                ],
+	                jobRequest:[
+	                    "1、大专及以上学历，与金融有关的从业经验优先考虑；",
+	                    "2、有过服务过高净值人群者，或从事过金融、保险、房地产等专业优先考虑；",
+	                    "3、具有敏锐的市场洞察力和准确的客户分析能力，能够有；",
+	                    "4、具备自我约束、激励并勇于承担、完成目标责任的能力，能在一定的压力下胜任工作；",
+	                    "5、强烈的时间观念和服务意识，灵活熟练的沟通技巧；6.强有力的自律和自我驱动力，具有高度的团队合作精神和高度的工作热情。"
+	                ]
+	            },
+	            {
+	                jobTitle:"产品专员（实习）",
+	                jobDesc:[
+	                    "1、完成项目上线前的验收测试工作；",
+	                    "2、协助产品经理定期或不定期编写发布产品月报和研究月报；负责金融产品研究，形成专题研究报告、竞品分析报告；",
+	                    "3、协助产品经理分析来自市场和公司内部的业务需求。",
+	                    "4、维护新老客户关系，提升客户对公司品牌的信任度和认知度；",
+	                    "5、协助和配合公司其他部门开展各类市场营销活动。"
+	                ],
+	                jobRequest:[
+	                    "1、大学本科以上学历，有互联网相关工作经验的优先，金融专业优先；",
+	                    "2、了解web网站设计，同时对android、ios手机客户端有较多使用经验；",
+	                    "3、良好的沟通协调技巧和团队合作意识，能承受较大的工作压力；",
+	                    "4、有较强的学习能力、沟通能力和团队意识；",
+	                    "5、诚实、敬业、积极、认真，能够承担一定的工作压力；6、会使用word、excel等办公软件，具有文档撰写能力、逻辑思维能力。"
+	                ]
+	            },
+	            {
+	                jobTitle:"客服专员",
+	                jobDesc:[
+	                    "1、供通过电话及网络等多元化渠道与客户进行有效沟通，解决客户咨询问题，提高质量理财咨询服务，定期总结客户需求及意见，并记录整理及汇报；",
+	                    "2、定期进行回访工作，开发潜在理财投资客户，与客户建立良好的联系，挖掘客户需求，维护后期客户关系；",
+	                    "3、对公司产品进行推广，具备处理问题、安排进度、跟进进程、沟通及疑难问题服务的意识能力，最大限度的提高客户满意度；",
+	                    "4、接受及处理客户投诉，记录客户投诉内容，按照相应流程给予客户及时反馈；",
+	                    "5、建立客户档案，并做好日常维护工作；6、完成上级临时安排的其他工作任务。"
+	                ],
+	                jobRequest:[
+	                    "1、熟悉各种网供通过电话及网络等多元化渠道与客户进行有效沟通，解决客户咨询问题，提高质量理财咨询服务，定期总结客户需求及意见，并记录整理及汇报；",
+	                    "2、定期进行回访工作，开发潜在理财投资客户，与客户建立良好的联系，挖掘客户需求，维护后期客户关系；",
+	                    "3、对公司产品进行推广，具备处理问题、安排进度、跟进进程、沟通及疑难问题服务的意识能力，最大限度的提高客户满意度；",
+	                    "4、接受及处理客户投诉，记录客户投诉内容，按照相应流程给予客户及时反馈；",
+	                    "5、建立客户档案，并做好日常维护工作；",
+	                    "6、完成上级临时安排的其他工作任务。",
+	                    "7、络工具的应用，打字速度尚可；",
+	                    "8、具有良好的客户服务意识，善于了解和化解客户心理顾虑，有较强的语言沟通技巧；有一定的抗压能力，性格开朗，责任心强，有较强的团队合作意识，执行力强，愿意与公司一起成长。"
+	                ]
+	            },
+	            {
+	                jobTitle:"风控主管",
+	                jobDesc:[
+	                    "1、根据公司要求，控制资产质量和项目风险，在完善公司贷款风险控制的指导原则下，不断查审批环节和审查内容，并提出完善建议；",
+	                    "2、根据风控制度和产品手册的要求对借款人及借款标的尽职调查，独立出具风控建议及风控报告并对本人的审批意见负责；",
+	                    "3、综合考虑借款人及担保措施等因素，给予如实完整的风控审批意见后并审查担保手续的办理，包括但不限于合同、抵押质押、公证等所有涉及的手续；",
+	                    "4、配合公司的有关安排，在公司内普及相关知识，增强职员的风险意识；",
+	                    "5、领导安排的其他工作。"
+	                ],
+	                jobRequest:[
+	                    "1、3年以上信贷审批的经验，对企业贷款及质押有一定的审批经验；",
+	                    "2、熟悉供应链金融及融资租赁企业贷款行业模式及审批流程；",
+	                    "3、按照要求对借款申请人尽职调查，分析审核借款人资信条件及企业经营情况，独立开展项目风控审核；",
+	                    "4、参与风控制度的修订，提出解决方案；",
+	                    "5、风控中心负责人交办的其他相关工作；",
+	                    "6、有银行从业经验，能适应短期出差；",
+	                    "7、本科以上学历，经济、金融、会计等相关专业。"
+	                ]
+	            },
+	            {
+	                jobTitle:"前端开发工程师",
+	                jobDesc:[
+	                    "1、与设计师、后端工程师紧密工作在一起，负责产出高质量的产品前端层；",
+	                    "2、参与多种平台的应用开发，包括PC端及手机端产品，负责前端交互的实现。"
+	                ],
+	                jobRequest:[
+	                    "1、精通Javascript、HTML/HTML5、CSS/CSS3、等前端开发技术，熟悉W3C标准；",
+	                    "2、能熟练运用一种常见Javascript开发框架；",
+	                    "3、熟悉浏览器渲染原理，精通各种前端调试工具，对Web性能优化有深入了解；",
+	                    "4、对HTML5和手机WEB开发有深入了解者优先；",
+	                    "5、具备良好的学习能力，能够不断学习并引入新的前端技术；",
+	                    "6、相关专业本科毕业，2年以上相关工作经验。"
+	                ]
+	            },
+	            {
+	                jobTitle:"BD拓展/渠道推广",
+	                jobDesc:[
+	                    "1、运用各种途径有效的寻找商机，寻找目标公司和目标客户；",
+	                    "2、与潜在客户沟通，并与之建立联系，进行商务拓展；",
+	                    "3、公司线上、线下活动的渠道拓展，提升用户数量。",
+	                    "4、根据公司业务项目需求，有针对性的发展和拓展合作资源，支持项目执行；",
+	                    "5、负责商务拓展及合作，与其他客户端及推广渠道（各大市场）建立良好的业务合作关系；",
+	                    "6、对推广数据进行分析，有针对性的调整推广策略，提高投资额及活跃度等。"
+	                ],
+	                jobRequest:[
+	                    "1、拥有一年以上BD经验，有相关资源优先；",
+	                    "2、执行力强，良好的沟通能力，能高效贯穿并推动整个方案的落实执行；",
+	                    "3、大专以上学历，熟练使用excel、word、ppt等常用办公软件。"
+	                ]
+	            }
 	        ]
 	    }
 	});
-	avalon.component('header', {
-	    template: (function(){
-	        var slideContent="<div class='header'>"+
-	            "<div class='header_box'>"+
-	            "<div class=\"header_left\"><span>客服热线：400-698-8810 （工作日 09:00 - 18:00）</span></div>"+
-	            "<div class=\"header_right1\">"+
-	            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"img/header_phone.png\"/>手机客户端</span>"+
-	            "<div class=\"qrcode-outer header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/smart_download.png\"/><span>手机客户端下载</span></div>"+
-	            "</div>"+
-	            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"img/header_weixin.png\"/>微信公众号</span>"+
-	            "<div class=\"qrcode-weixin header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/weixin-upload.png\"/><span>微信公众号</span></div>"+
-	            "</div>"+
-	            "</div>"+
-	            "<div class=\"header_right2\">"+
-	            "<a ms-for=\"el in @headerRightArr\" ms-attr='{href:el.href}'>{{el.title}}</a>"  +
-	            "</div>"    +
-	            "</div>"+
-	            "<div class=\"top\">"+
-	            "<div class=\"top_box\">"+
-	            "<div class=\"logo\">"+
-	            "<a href=\"#\"><img src=\"img/logo.png\"/></a>"+
-	            "</div>"+
-	            "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
-	            "<ul class=\"nav\">"+
-	            "<li class=\"nLi\" ms-for='item in @navArr'><a ms-attr='{href:item.href}'>{{item.title}}</a></li>"+
-	            "</ul>"    +
-	            "</div>"    +
-	            "</div>"+
-	            "</div>";
-	        return slideContent;
-	    }).call(this),
-	    defaults: {
-	        headerRightArr:[],
-	        navArr:[],
-	        outerMouseover:function(){
-	            $(".qrcode-outer").stop().slideDown(100);
-	        },
-	        outerMouseout:function(){
-	            $(".qrcode-outer").stop().slideUp(100);
-	        },
-	        weixinMouseover:function(){
-	            $('.qrcode-weixin').stop().slideDown(100);
-	        },
-	        weixinMouseout:function(){
-	            $('.qrcode-weixin').stop().slideUp(100);
-	        }
-	    }
-	});
 
-	//header
-	var vmHeader=avalon.define({
-	    $id:"headerCtrl",
-	    headerRightArr:[],
-	    navArr:[]
+	var vmAboutJoinUs=avalon.define({
+	    $id: "joinUs",
+	    job:[]
 	});
 
 	$.ajax({
-	    url:"http://XXX/web-api/header",
+	    url:"http://XXX/web-api/aboutUs",
 	    success:function(response){
-	        vmHeader.headerRightArr=response.headerTop;
-	        vmHeader.navArr=response.headerBottom;
-
-	        var str=window.location.href;
-	        if(str.lastIndexOf('/')!=-1){
-	            var navArr=str.substr(str.lastIndexOf('/')+1);
-	        }
-
-	        $(".header .nav li a").each(function(){
-	            urlArr = $(this).attr('href');
-	            if(navArr == urlArr){
-	                $(".header .nav li a").removeClass();
-	                $(this).addClass('chooseNav');
-	            }
-	        });
+	        vmAboutJoinUs.job = response.aboutJoinUs;
 	    }
-	});
-
-
-	/* -- footer --  */
-	avalon.component('footer', {
-	    template: (function () {
-	        var footerContent ='<div>'+
-	                             '<div class="footer_box clearfix">' +
-	                                '<div class="logo02">' +
-	                                    '<a href="#"><img src="img/logo02.png"/></a>' +
-	                                    '<span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span>' +
-	                                '</div>' +
-	                                '<ul class="footer_ul">' +
-	                                    '<li ms-for="el in @array">' +
-	                                        '<ul class="footer_ul_li">' +
-	                                            '<li ms-for="elem in el.arr">' +
-	                                                '<a ms-attr="{href: elem.path}">{{elem.name}}</a>' +
-	                                            '</li>' +
-	                                        '</ul>' +
-	                                    '</li>' +
-	                                    '<li>' +
-	                                        '<span>扫二维码下载APP</span>' +
-	                                        '<br />' +
-	                                        '<img src="img/smart_download.png" style="width: 125px;"/>' +
-	                                    '</li>' +
-	                                '</ul>' +
-	                            '</div>' +
-	                            '<div class="belw clearfix">' +
-	                                '<div class="copy">' +
-	                                    '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>' +
-	                                    '<div ms-for="el in @copy">' +
-	                                        '<a target="_blank" ms-attr="{href: el.path}"><img class="chengxin" ms-attr="{src: el.img}" /></a>' +
-	                                    '</div>' +
-	                                '</div>' +
-	                            '</div>'+
-	                          '</div>';
-	        return footerContent;
-	    }).call(this),
-	    defaults: {
-	        array:[],
-	        copy:[]
-	    }
-	});
-
-	//footer
-	var vmFooter=avalon.define({
-	    $id: "footer",
-	    array: [
-	        {arr: [
-	            {path:'http://www.htouhui.com/about/aboutus',name:'关于我们'},
-	            {path:'http://www.htouhui.com/about/aboutus',name:'企业介绍'},
-	            {path:'http://www.htouhui.com/about/team',name:'管理团队'},
-	            {path:'http://www.htouhui.com/about/partners',name:'合作伙伴'},
-	            {path:'http://www.htouhui.com/about/joinus',name:'联系我们'},
-	            {path:'http://www.htouhui.com/about/contactus',name:'加入我们'}
-	        ]},
-	        {arr: [
-	            {path:'http://www.htouhui.com/falv/flgw',name:'法律法规'},
-	            {path:'http://www.htouhui.com/falv/flgw',name:'法律顾问'},
-	            {path:'http://www.htouhui.com/falv/flxy',name:'法律协议'},
-	            {path:'http://www.htouhui.com/falv/flsm',name:'法律声明'}
-	        ]},
-	        {arr: [
-	            {path:'',name:'帮助中心'},
-	            {path:'',name:'投资人必读'},
-	            {path:'',name:'充值提现必读'},
-	            {path:'',name:'怎样债权转让'}
-	        ]}
-	    ],
-	    copy:[
-	        {path:'',img:'img/icons_itrust.png'},
-	        {path:'',img:'img/icons_norton.png'},
-	        {path:'',img:'img/icons_chengxin.png'}
-	    ]
 	});
 
 /***/ },
@@ -19476,105 +19424,6 @@
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	
-	var $ = __webpack_require__(2);
-	function backTop() {
-		this.init();
-		/*$(document).ready(function() {
-			if ($(".main").length != 0) {
-				var xx = 0;
-				var windowWidth = $(window).width();
-				var mainx = $(".main").offset().left + $(".main").width();
-				$(".cbbfixed").css("right", windowWidth - mainx - 160);
-			}
-		});*/
-	}
-
-	backTop.prototype = {
-		constructor : backTop,
-		init : function() {
-			this._initBackTop();
-		},
-		_initBackTop : function() {
-			var url = window.location.href;
-			var kefu = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_zx" rel="nofollow" title="在线客服" href="javascript:;"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><span>工作日</span><span>（9:00-18:00）</span></div>'
-		        	+'</li>';
-			if (url.indexOf('/activity/') != -1) {
-				if (url.indexOf('exclusive-benefits') != -1
-						|| url.indexOf('common-register') != -1
-						|| url.indexOf('beauty-plan-bd') != -1
-						|| url.indexOf('tg') != -1
-						|| url.indexOf('anniversary-financial') != '-1') {
-					kefu='';
-				}
-			}
-			var app = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_app" href="javascript:;" title="手机app"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/smart_download.png"><span>手机客户端下载</span></div>'
-		        	+'</li>';
-			var weixin = '<li>'
-					+'<span class="right_qq_on"><a rel="nofollow" class="right_qq_wx" title="微信公众号"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/weixin-upload.png"><span>微信公众号</span></div>'
-		        	+'</li>';
-			var $backTop = this.$backTop = $('<div class="cbbfixed right_qq"><ul>'
-					+ kefu
-					+ app
-					+ weixin
-					+ '<li class="goTop" style="margin-top: 10px;">'
-					+ '<span class="right_qq_on"><a rel="nofollow" id="goToTop" class="goTop" href="javascript:;" title="返回顶部"></a></span>'
-					+ '</li>'
-					+ '</ul></div>');
-
-			$('body').append($backTop);
-			$($backTop.find("li[class='goTop']")).click(function() {
-				$("html, body").animate({
-					scrollTop : 0
-				}, 120);
-			});
-
-			$(".right_qq_on").mouseover(
-				function() {
-					var index = $(this).parent().find("div[_pic=bt]").index(this);
-						$(this).parent().find("div[_pic=bt]").show();
-						$(this).parent().find("div[_pic=bt]").slice(index,index+1).show();
-				}).mouseout(
-					function() {
-						$(".right_qq_on").parent().find("div[_pic=bt]").hide();
-					});
-					
-			$(".right_qq_hid").mouseover(
-				function() {
-					$(this).show(); 
-				}).mouseout(
-					function() {
-						$(this).hide(); 
-					});
-
-			var timmer = null;
-			$backTop.css("bottom", "140px");
-			$backTop.find(".goTop").hide();
-			$(window).bind("scroll", function() {
-				var d = $(document).scrollTop();
-				if (0 < d) {// 需要出现返回顶部按钮
-					$backTop.find(".goTop").show();
-				} else {// 不需要出现
-					$backTop.find(".goTop").hide();
-				}
-				clearTimeout(timmer);
-				timmer = setTimeout(function() {
-					clearTimeout(timmer);
-				}, 100);
-			});
-		}
-	}
-	var backtop = new backTop();
 
 /***/ }
 /******/ ]);

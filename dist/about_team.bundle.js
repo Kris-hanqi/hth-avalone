@@ -46,187 +46,225 @@
 
 	var avalon = __webpack_require__(1);
 	var $ = __webpack_require__(2);
-	var backTop = __webpack_require__(5);
 	var mockjax = __webpack_require__(3)($, window);
 
-	//header
+	//管理团队
 
 	/*模拟接口*/
 	$.mockjax({
-	    url:"http://XXX/web-api/header",
+	    url:"http://XXX/web-api/aboutUs",
 	    status: 200,
-	    responseText:{
-	        headerTop:[
-	            {"title":"立即登录","href":"login.html"},
-	            {"title":"免费注册","href":"register.html"},
-	            {"title":"活动中心","href":"activityCenter.html"},
-	            {"title":"新手指引","href":"newUserGuide.html"},
-	            {"title":"网贷课堂","href":"netLoanClass.html"}
-	        ],
-	        headerBottom:[
-	            {"title":"首页","href":"index.html"},
-	            {"title":"我要投资","href":"loans.html"},
-	            {"title":"债权转让","href":""},
-	            {"title":"风控措施","href":""},
-	            {"title":"信息披露","href":""},
-	            {"title":"关于我们","href":"about_htouhui.html"}
+	    responseText: {
+	        "aboutTeam": [
+	            {
+	                teamPic:"img/aboutUs/team-6.jpg",
+	                teamDesc:"海投汇团队：2017年度团建蟒山国家森林公园行"
+	            },
+	            {
+	                teamPic:"img/aboutUs/team-1.jpg",
+	                teamDesc:"海投汇精英管理团队"
+	            },
+	            {
+	                teamPic:"img/aboutUs/team-2.jpg",
+	                teamDesc:"海投汇团队：2017年度第一季度策略会"
+	            },
+	            {
+	                teamPic:"img/aboutUs/team-3.jpg",
+	                teamDesc:"海投汇精英管理团队"
+	            },
+	            {
+	                teamPic:"img/aboutUs/team-4.jpg",
+	                teamDesc:"海投汇精英管理团队"
+	            },
+	            {
+	                teamPic:"img/aboutUs/team-5.jpg",
+	                teamDesc:"海投汇团队：2017年度团建蟒山国家森林公园行"
+	            }
 	        ]
 	    }
 	});
-	avalon.component('header', {
-	    template: (function(){
-	        var slideContent="<div class='header'>"+
-	            "<div class='header_box'>"+
-	            "<div class=\"header_left\"><span>客服热线：400-698-8810 （工作日 09:00 - 18:00）</span></div>"+
-	            "<div class=\"header_right1\">"+
-	            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"img/header_phone.png\"/>手机客户端</span>"+
-	            "<div class=\"qrcode-outer header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/smart_download.png\"/><span>手机客户端下载</span></div>"+
-	            "</div>"+
-	            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"img/header_weixin.png\"/>微信公众号</span>"+
-	            "<div class=\"qrcode-weixin header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/weixin-upload.png\"/><span>微信公众号</span></div>"+
-	            "</div>"+
-	            "</div>"+
-	            "<div class=\"header_right2\">"+
-	            "<a ms-for=\"el in @headerRightArr\" ms-attr='{href:el.href}'>{{el.title}}</a>"  +
-	            "</div>"    +
-	            "</div>"+
-	            "<div class=\"top\">"+
-	            "<div class=\"top_box\">"+
-	            "<div class=\"logo\">"+
-	            "<a href=\"#\"><img src=\"img/logo.png\"/></a>"+
-	            "</div>"+
-	            "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
-	            "<ul class=\"nav\">"+
-	            "<li class=\"nLi\" ms-for='item in @navArr'><a ms-attr='{href:item.href}'>{{item.title}}</a></li>"+
-	            "</ul>"    +
-	            "</div>"    +
-	            "</div>"+
-	            "</div>";
-	        return slideContent;
-	    }).call(this),
-	    defaults: {
-	        headerRightArr:[],
-	        navArr:[],
-	        outerMouseover:function(){
-	            $(".qrcode-outer").stop().slideDown(100);
-	        },
-	        outerMouseout:function(){
-	            $(".qrcode-outer").stop().slideUp(100);
-	        },
-	        weixinMouseover:function(){
-	            $('.qrcode-weixin').stop().slideDown(100);
-	        },
-	        weixinMouseout:function(){
-	            $('.qrcode-weixin').stop().slideUp(100);
-	        }
-	    }
-	});
 
-	//header
-	var vmHeader=avalon.define({
-	    $id:"headerCtrl",
-	    headerRightArr:[],
-	    navArr:[]
+	var vmAboutTeam=avalon.define({
+	    $id: "teamCtrl",
+	    teamArray:[]
 	});
 
 	$.ajax({
-	    url:"http://XXX/web-api/header",
+	    url:"http://XXX/web-api/aboutUs",
 	    success:function(response){
-	        vmHeader.headerRightArr=response.headerTop;
-	        vmHeader.navArr=response.headerBottom;
-
-	        var str=window.location.href;
-	        if(str.lastIndexOf('/')!=-1){
-	            var navArr=str.substr(str.lastIndexOf('/')+1);
+	        vmAboutTeam.teamArray = response.aboutTeam;
+	        function ZoomPic () {
+	            this.initialize.apply(this, arguments)
 	        }
+	        ZoomPic.prototype = {
+	            initialize : function (id) {
+	                var _this = this;
+	                this.wrap = typeof id === "string" ? document.getElementById(id) : id;
+	                this.oUl = this.wrap.getElementsByTagName("ul")[0];
+	                this.aLi = this.wrap.getElementsByTagName("li");
+	                this.prev = this.wrap.getElementsByTagName("span")[0];
+	                this.next = this.wrap.getElementsByTagName("span")[1];
+	                this.timer = 1000;
+	                this.aSort = [];
+	                this.iCenter = 2;
+	                this._doPrev = function () {return _this.doPrev.apply(_this)};
+	                this._doNext = function () {return _this.doNext.apply(_this)};
+	                this.options = [
+	                    {width:375, height:250, top:70, left:30, zIndex:1},
+	                    {width:480, height:320, top:40, left:80, zIndex:2},
+	                    {width:600, height:400, top:0, left:130, zIndex:3},
+	                    {width:480, height:320, top:40, left:300, zIndex:2},
+	                    {width:375, height:250, top:70, left:450, zIndex:1},
+	                ];
+	                for (var i = 0; i < this.aLi.length; i++) this.aSort[i] = this.aLi[i];
+	                this.aSort.unshift(this.aSort.pop());
+	                this.setUp();
+	                this.addEvent(this.prev, "click", this._doPrev);
+	                this.addEvent(this.next, "click", this._doNext);
+	                this.doImgClick();
+	                this.timer = setInterval(function ()
+	                {
+	                    _this.doNext()
+	                }, 3000);
+	                this.wrap.onmouseover = function ()
+	                {
+	                    clearInterval(_this.timer)
+	                };
+	                this.wrap.onmouseout = function ()
+	                {
+	                    _this.timer = setInterval(function ()
+	                    {
+	                        _this.doNext()
+	                    }, 3000);
+	                }
+	            },
+	            doPrev : function () {
+	                this.aSort.unshift(this.aSort.pop());
+	                this.setUp()
+	            },
+	            doNext : function () {
+	                this.aSort.push(this.aSort.shift());
+	                this.setUp()
+	            },
+	            doImgClick : function () {
+	                var _this = this;
+	                for (var i = 0; i < this.aSort.length; i++)
+	                {
+	                    this.aSort[i].onclick = function ()
+	                    {
+	                        if (this.index > _this.iCenter)
+	                        {
+	                            for (var i = 0; i < this.index - _this.iCenter; i++) _this.aSort.push(_this.aSort.shift());
+	                            _this.setUp()
+	                        }
+	                        else if(this.index < _this.iCenter)
+	                        {
+	                            for (var i = 0; i < _this.iCenter - this.index; i++) _this.aSort.unshift(_this.aSort.pop());
+	                            _this.setUp()
+	                        }
+	                    }
+	                }
+	            },
+	            setUp : function () {
+	                var _this = this;
+	                var i = 0;
+	                for (i; i < this.aSort.length; i++) this.oUl.appendChild(this.aSort[i]);
+	                for (i = 0; i < this.aSort.length; i++) {
+	                    this.aSort[i].index = i;
+	                    if (i < 5) {
+	                        this.css(this.aSort[i], "display", "block");
+	                        this.doMove(this.aSort[i], this.options[i], function ()
+	                        {
+	                            _this.doMove(_this.aSort[_this.iCenter].getElementsByTagName("img")[0], {opacity:100}, function ()
+	                            {
+	                                _this.doMove(_this.aSort[_this.iCenter].getElementsByTagName("img")[0], {opacity:100}, function (){})
+	                            })
+	                        });
+	                    }
+	                    else {
+	                        this.css(this.aSort[i], "display", "none");
+	                        this.css(this.aSort[i], "width", 0);
+	                        this.css(this.aSort[i], "height", 0);
+	                        this.css(this.aSort[i], "top", 37);
+	                        this.css(this.aSort[i], "left", this.oUl.offsetWidth / 2)
+	                    }
+	                    if (i < this.iCenter || i > this.iCenter) {
+	                        this.css(this.aSort[i].getElementsByTagName("img")[0], "opacity", 100)
+	                        this.aSort[i].onmouseover = function ()
+	                        {
+	                            _this.doMove(this.getElementsByTagName("img")[0], {opacity:100})
+	                        };
+	                        this.aSort[i].onmouseout = function ()
+	                        {
+	                            _this.doMove(this.getElementsByTagName("img")[0], {opacity:100})
+	                        };
+	                        this.aSort[i].onmouseout();
+	                    }
+	                    else {
+	                        this.aSort[i].onmouseover = this.aSort[i].onmouseout = null
+	                    }
+	                }
+	            },
+	            addEvent : function (oElement, sEventType, fnHandler) {
+	                return oElement.addEventListener ? oElement.addEventListener(sEventType, fnHandler, false) : oElement.attachEvent("on" + sEventType, fnHandler)
+	            },
+	            css : function (oElement, attr, value) {
+	                if (arguments.length == 2) {
+	                    return oElement.currentStyle ? oElement.currentStyle[attr] : getComputedStyle(oElement, null)[attr]
+	                }
+	                else if (arguments.length == 3) {
+	                    switch (attr) {
+	                        case "width":
+	                        case "height":
+	                        case "top":
+	                        case "left":
+	                        case "bottom":
+	                            oElement.style[attr] = value + "px";
+	                            break;
+	                        case "opacity" :
+	                            oElement.style.filter = "alpha(opacity=" + value + ")";
+	                            oElement.style.opacity = value / 100;
+	                            break;
+	                        default :
+	                            oElement.style[attr] = value;
+	                            break
+	                    }
+	                }
+	            },
+	            doMove : function (oElement, oAttr, fnCallBack) {
+	                var _this = this;
+	                clearInterval(oElement.timer);
+	                oElement.timer = setInterval(function ()
+	                {
+	                    var bStop = true;
+	                    for (var property in oAttr)
+	                    {
+	                        var iCur = parseFloat(_this.css(oElement, property));
+	                        property == "opacity" && (iCur = parseInt(iCur.toFixed(2) * 100));
+	                        var iSpeed = (oAttr[property] - iCur) / 5;
+	                        iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
 
-	        $(".header .nav li a").each(function(){
-	            urlArr = $(this).attr('href');
-	            if(navArr == urlArr){
-	                $(".header .nav li a").removeClass();
-	                $(this).addClass('chooseNav');
+	                        if (iCur != oAttr[property])
+	                        {
+	                            bStop = false;
+	                            _this.css(oElement, property, iCur + iSpeed)
+	                        }
+	                    }
+	                    if (bStop)
+	                    {
+	                        clearInterval(oElement.timer);
+	                        fnCallBack && fnCallBack.apply(_this, arguments)
+	                    }
+	                }, 30)
 	            }
-	        });
+	        };
+	        new ZoomPic("focus_Box");
 	    }
 	});
 
 
-	/* -- footer --  */
-	avalon.component('footer', {
-	    template: (function () {
-	        var footerContent ='<div>'+
-	                             '<div class="footer_box clearfix">' +
-	                                '<div class="logo02">' +
-	                                    '<a href="#"><img src="img/logo02.png"/></a>' +
-	                                    '<span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span>' +
-	                                '</div>' +
-	                                '<ul class="footer_ul">' +
-	                                    '<li ms-for="el in @array">' +
-	                                        '<ul class="footer_ul_li">' +
-	                                            '<li ms-for="elem in el.arr">' +
-	                                                '<a ms-attr="{href: elem.path}">{{elem.name}}</a>' +
-	                                            '</li>' +
-	                                        '</ul>' +
-	                                    '</li>' +
-	                                    '<li>' +
-	                                        '<span>扫二维码下载APP</span>' +
-	                                        '<br />' +
-	                                        '<img src="img/smart_download.png" style="width: 125px;"/>' +
-	                                    '</li>' +
-	                                '</ul>' +
-	                            '</div>' +
-	                            '<div class="belw clearfix">' +
-	                                '<div class="copy">' +
-	                                    '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>' +
-	                                    '<div ms-for="el in @copy">' +
-	                                        '<a target="_blank" ms-attr="{href: el.path}"><img class="chengxin" ms-attr="{src: el.img}" /></a>' +
-	                                    '</div>' +
-	                                '</div>' +
-	                            '</div>'+
-	                          '</div>';
-	        return footerContent;
-	    }).call(this),
-	    defaults: {
-	        array:[],
-	        copy:[]
-	    }
-	});
 
-	//footer
-	var vmFooter=avalon.define({
-	    $id: "footer",
-	    array: [
-	        {arr: [
-	            {path:'http://www.htouhui.com/about/aboutus',name:'关于我们'},
-	            {path:'http://www.htouhui.com/about/aboutus',name:'企业介绍'},
-	            {path:'http://www.htouhui.com/about/team',name:'管理团队'},
-	            {path:'http://www.htouhui.com/about/partners',name:'合作伙伴'},
-	            {path:'http://www.htouhui.com/about/joinus',name:'联系我们'},
-	            {path:'http://www.htouhui.com/about/contactus',name:'加入我们'}
-	        ]},
-	        {arr: [
-	            {path:'http://www.htouhui.com/falv/flgw',name:'法律法规'},
-	            {path:'http://www.htouhui.com/falv/flgw',name:'法律顾问'},
-	            {path:'http://www.htouhui.com/falv/flxy',name:'法律协议'},
-	            {path:'http://www.htouhui.com/falv/flsm',name:'法律声明'}
-	        ]},
-	        {arr: [
-	            {path:'',name:'帮助中心'},
-	            {path:'',name:'投资人必读'},
-	            {path:'',name:'充值提现必读'},
-	            {path:'',name:'怎样债权转让'}
-	        ]}
-	    ],
-	    copy:[
-	        {path:'',img:'img/icons_itrust.png'},
-	        {path:'',img:'img/icons_norton.png'},
-	        {path:'',img:'img/icons_chengxin.png'}
-	    ]
-	});
+
 
 /***/ },
 /* 1 */
@@ -19476,105 +19514,6 @@
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	
-	var $ = __webpack_require__(2);
-	function backTop() {
-		this.init();
-		/*$(document).ready(function() {
-			if ($(".main").length != 0) {
-				var xx = 0;
-				var windowWidth = $(window).width();
-				var mainx = $(".main").offset().left + $(".main").width();
-				$(".cbbfixed").css("right", windowWidth - mainx - 160);
-			}
-		});*/
-	}
-
-	backTop.prototype = {
-		constructor : backTop,
-		init : function() {
-			this._initBackTop();
-		},
-		_initBackTop : function() {
-			var url = window.location.href;
-			var kefu = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_zx" rel="nofollow" title="在线客服" href="javascript:;"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><span>工作日</span><span>（9:00-18:00）</span></div>'
-		        	+'</li>';
-			if (url.indexOf('/activity/') != -1) {
-				if (url.indexOf('exclusive-benefits') != -1
-						|| url.indexOf('common-register') != -1
-						|| url.indexOf('beauty-plan-bd') != -1
-						|| url.indexOf('tg') != -1
-						|| url.indexOf('anniversary-financial') != '-1') {
-					kefu='';
-				}
-			}
-			var app = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_app" href="javascript:;" title="手机app"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/smart_download.png"><span>手机客户端下载</span></div>'
-		        	+'</li>';
-			var weixin = '<li>'
-					+'<span class="right_qq_on"><a rel="nofollow" class="right_qq_wx" title="微信公众号"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/weixin-upload.png"><span>微信公众号</span></div>'
-		        	+'</li>';
-			var $backTop = this.$backTop = $('<div class="cbbfixed right_qq"><ul>'
-					+ kefu
-					+ app
-					+ weixin
-					+ '<li class="goTop" style="margin-top: 10px;">'
-					+ '<span class="right_qq_on"><a rel="nofollow" id="goToTop" class="goTop" href="javascript:;" title="返回顶部"></a></span>'
-					+ '</li>'
-					+ '</ul></div>');
-
-			$('body').append($backTop);
-			$($backTop.find("li[class='goTop']")).click(function() {
-				$("html, body").animate({
-					scrollTop : 0
-				}, 120);
-			});
-
-			$(".right_qq_on").mouseover(
-				function() {
-					var index = $(this).parent().find("div[_pic=bt]").index(this);
-						$(this).parent().find("div[_pic=bt]").show();
-						$(this).parent().find("div[_pic=bt]").slice(index,index+1).show();
-				}).mouseout(
-					function() {
-						$(".right_qq_on").parent().find("div[_pic=bt]").hide();
-					});
-					
-			$(".right_qq_hid").mouseover(
-				function() {
-					$(this).show(); 
-				}).mouseout(
-					function() {
-						$(this).hide(); 
-					});
-
-			var timmer = null;
-			$backTop.css("bottom", "140px");
-			$backTop.find(".goTop").hide();
-			$(window).bind("scroll", function() {
-				var d = $(document).scrollTop();
-				if (0 < d) {// 需要出现返回顶部按钮
-					$backTop.find(".goTop").show();
-				} else {// 不需要出现
-					$backTop.find(".goTop").hide();
-				}
-				clearTimeout(timmer);
-				timmer = setTimeout(function() {
-					clearTimeout(timmer);
-				}, 100);
-			});
-		}
-	}
-	var backtop = new backTop();
 
 /***/ }
 /******/ ]);

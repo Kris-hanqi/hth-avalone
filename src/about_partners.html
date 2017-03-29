@@ -9,64 +9,60 @@
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/backtop.css"/>
     <link rel="stylesheet" href="css/aboutUs.css"/>
-    <style type="text/css">
-        .hzhb div+div {
-            display: none;
-        }
-    </style>
 </head>
 <body>
-<div ms-controller="headerCtrl" class="header">
-    <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
-</div>
+    <div ms-controller="headerCtrl" class="header">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
 
-<div class="h-main clear">
-    <!-- start -->
-    <div class="tag">
-        <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">企业介绍</a>
-    </div>
-    <div ms-controller="about" class="about">
-        <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
-    </div>
-    <!--合作伙伴-->
-    <div class="about_center hzhb" ms-controller="partners">
-        <h1 class="gltd-title">战略合作</h1>
-        <ul class="partner">
-            <li>
-                <a href="javascript:void(0)" ms-for="el in @partnerArray">
-                    <img ms-attr="{src: el.partnerPic}"/>
-                </a>
-            </li>
-            <li class="clear"></li>
-        </ul>
-        <div _safe="zl" ms-for="el in @partnerArray">
-            <p ms-for="elem in @el.partnerDesc">{{elem.partnerDescPart}}</p>
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">企业介绍</a>
         </div>
-        <h1 class="gltd-title">保障</h1>
-        <ul class="security">
-            <li>
-                <a href="javascript:void(0)" ms-for="el in @securityArray">
-                    <img ms-attr="{src: el.securityPic}"/>
-                </a>
-            </li>
-            <li class="clear"></li>
-        </ul>
-        <div _safe="aq" ms-for="el in @securityArray">
-            <p ms-for="elem in @el.securityDesc">{{elem.securityDescPart}}</p>
+        <div ms-controller="about" class="about">
+            <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
         </div>
+        <!--合作伙伴-->
+        <div class="about_center hzhb" ms-controller="partners">
+            <h1 class="gltd-title">战略合作</h1>
+            <ul class="partner">
+                <li>
+                    <a href="javascript:void(0)" ms-for="el in @partnerArray">
+                        <img ms-attr="{src: el.partnerPic}"/>
+                    </a>
+                </li>
+                <li class="clear"></li>
+            </ul>
+            <div _safe="zl" ms-for="el in @partnerArray">
+                <p ms-for="elem in @el.partnerDesc">{{elem}}</p>
+            </div>
+            <h1 class="gltd-title">保障</h1>
+            <ul class="security">
+                <li>
+                    <a href="javascript:void(0)" ms-for="el in @securityArray">
+                        <img ms-attr="{src: el.securityPic}"/>
+                    </a>
+                </li>
+                <li class="clear"></li>
+            </ul>
+            <div _safe="aq" ms-for="el in @securityArray">
+                <p ms-for="elem in @el.securityDesc">{{elem}}</p>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!-- end -->
     </div>
-    <div class="clear"></div>
-    <!-- end -->
-</div>
 
-<div ms-controller="footer" class="footer">
-    <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
-</div>
+    <div ms-controller="footer" class="footer">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
 
-<!--start-backtop-->
+    <!--start-backtop-->
 
 <script src="../dist/header_footer.bundle.js"></script>
-<script src="../dist/aboutUs.bundle.js"></script>
+<script src="../dist/aboutUs_nav.bundle.js"></script>
+<script src="../dist/about_partners.bundle.js"></script>
 
 </body>
 </html>

@@ -4,6 +4,29 @@ var backTop = require("backTop");
 var mockjax = require("mockjax")($, window);
 
 //header
+
+/*模拟接口*/
+$.mockjax({
+    url:"http://XXX/web-api/header",
+    status: 200,
+    responseText:{
+        headerTop:[
+            {"title":"立即登录","href":"login.html"},
+            {"title":"免费注册","href":"register.html"},
+            {"title":"活动中心","href":"activityCenter.html"},
+            {"title":"新手指引","href":"newUserGuide.html"},
+            {"title":"网贷课堂","href":"netLoanClass.html"}
+        ],
+        headerBottom:[
+            {"title":"首页","href":"index.html"},
+            {"title":"我要投资","href":"loans.html"},
+            {"title":"债权转让","href":""},
+            {"title":"风控措施","href":""},
+            {"title":"信息披露","href":""},
+            {"title":"关于我们","href":"about_htouhui.html"}
+        ]
+    }
+});
 avalon.component('header', {
     template: (function(){
         var slideContent="<div class='header'>"+
@@ -32,7 +55,6 @@ avalon.component('header', {
             "</div>"+
             "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
             "<ul class=\"nav\">"+
-            "<li class=\"nLi selectMenu\"><a href=\"index.html\">首页</a></li>"+
             "<li class=\"nLi\" ms-for='item in @navArr'><a ms-attr='{href:item.href}'>{{item.title}}</a></li>"+
             "</ul>"    +
             "</div>"    +
@@ -59,23 +81,33 @@ avalon.component('header', {
 });
 
 //header
-var vm1=avalon.define({
+var vmHeader=avalon.define({
     $id:"headerCtrl",
-    headerRightArr:[
-        {"title":"立即登录","href":"login.html"},
-        {"title":"免费注册","href":"register.html"},
-        {"title":"活动中心","href":"activityCenter.html"},
-        {"title":"新手指引","href":"newUserGuide.html"},
-        {"title":"网贷课堂","href":"netLoanClass.html"}
-    ],
-    navArr:[
-        {"title":"我要投资","href":"loans.html"},
-        {"title":"债权转让","href":""},
-        {"title":"风控措施","href":""},
-        {"title":"信息披露","href":""},
-        {"title":"关于我们","href":""}
-    ]
+    headerRightArr:[],
+    navArr:[]
 });
+
+$.ajax({
+    url:"http://XXX/web-api/header",
+    success:function(response){
+        vmHeader.headerRightArr=response.headerTop;
+        vmHeader.navArr=response.headerBottom;
+
+        var str=window.location.href;
+        if(str.lastIndexOf('/')!=-1){
+            var navArr=str.substr(str.lastIndexOf('/')+1);
+        }
+
+        $(".header .nav li a").each(function(){
+            urlArr = $(this).attr('href');
+            if(navArr == urlArr){
+                $(".header .nav li a").removeClass();
+                $(this).addClass('chooseNav');
+            }
+        });
+    }
+});
+
 
 /* -- footer --  */
 avalon.component('footer', {
@@ -119,7 +151,7 @@ avalon.component('footer', {
 });
 
 //footer
-var vm8=avalon.define({
+var vmFooter=avalon.define({
     $id: "footer",
     array: [
         {arr: [
