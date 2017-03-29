@@ -64,12 +64,12 @@ var vm1=avalon.define({
     headerRightArr:[
         {"title":"立即登录","href":"login.html"},
         {"title":"免费注册","href":"register.html"},
-        {"title":"活动中心","href":""},
-        {"title":"新手指引","href":""},
-        {"title":"网贷课堂","href":""}
+        {"title":"活动中心","href":"activityCenter.html"},
+        {"title":"新手指引","href":"newUserGuide.html"},
+        {"title":"网贷课堂","href":"netLoanClass.html"}
     ],
     navArr:[
-        {"title":"我要投资","href":""},
+        {"title":"我要投资","href":"loans.html"},
         {"title":"债权转让","href":""},
         {"title":"风控措施","href":""},
         {"title":"信息披露","href":""},

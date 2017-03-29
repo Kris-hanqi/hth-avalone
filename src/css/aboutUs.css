@@ -1,0 +1,414 @@
+.main-list {
+    width: 1080px;
+    height: auto;
+    min-height: 500px;
+    margin: 0 auto;
+}
+.about {
+    width: 150px;
+    float: left;
+    text-align: center;
+    height: auto;
+    background: #ffffff;
+    border: 1px solid#e2e0e1;
+}
+.about ul li a{
+    width: 150px;
+    height: 47px;
+    display: block;
+    line-height: 48px;
+    font-size: 16px;
+    color: #222224;
+}
+.about ul li a.about_hover{
+    width: 143px;
+    color: #fff;
+    border-left:7px solid #2173dc;
+    background:#4594fa;
+}
+.about ul li a:hover{
+    color: #fff;
+    background:#4594fa;
+}
+.about_center{
+    width: 916px;
+    float: left;
+    height: auto;
+    min-height: 500px;
+    background: #ffffff;
+    margin-left: 10px;
+    border: 1px solid#e2e0e1;
+    padding: 30px 0;
+    margin-bottom: 45px;
+}
+.about_center p{
+    font-size: 14px;
+    color: #343434;
+    line-height: 30px;
+    text-align: left;
+    text-indent: 2em;
+    padding: 0 45px;
+}
+.about_center  hr{
+    border-style: dashed;
+    border-color: #ccc;
+    margin: 30px 0;
+}
+.about_center  h1{
+    font-weight: normal;
+    line-height: 45px;
+}
+
+
+/*企业介绍*/
+.introducePic{
+    float: right;
+    margin: 15px 35px;
+}
+.qyjs .introduceList{
+    margin: 30px 50px;
+    padding: 0 20px;
+    text-indent: 0;
+    line-height: 28px;
+    color: #242424;
+    background: url(../img/aboutUs/listIco.png) no-repeat left 7px;
+}
+.qyjs .introduceList span{
+    display: block;
+    font-size: 18px;
+    color: #010109;
+    line-height: 28px;
+}
+.company{
+    float: left;
+    margin: 15px 35px;
+}
+.qyjs p.introduceBG {
+    width: 510px;
+    float: right;
+    padding: 0 45px 0 20px;
+    margin: 20px 0 0;
+}
+
+/*联系我们*/
+.lxwm {
+    width: 855px;
+    padding: 30px;
+}
+.lxwm p {
+    padding: 0;
+    text-indent: 10px;
+    font-size: 16px;
+    line-height: 40px;
+}
+.lxwm p img {
+    width: 32px;
+    float: left;
+    margin: 4px 0 0 25px;
+}
+.lxwm >img{
+    display: block;
+    margin: 20px auto;
+}
+
+/*管理团队*/
+.gltd{
+    padding: 0;
+}
+.gltd-div {
+    padding: 30px;
+}
+.gltd-title {
+    font-size: 28px;
+    font-weight: normal;
+    color: #2584d4;
+    line-height: 50px;
+    border-bottom: 1px solid;
+    position: relative;
+    margin-bottom: 25px;
+}
+.gltd-title em {
+    position: absolute;
+    font-size: 17px;
+    font-style: normal;
+    right: 0;
+}
+.gltd-title:before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 22px;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 12px;
+    background-color: #2584d4;
+}
+.core {
+    margin-top: 25px;
+    height: 455px;
+    position: relative;
+}
+.about-team-ul {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #efeded;
+    min-height: 150px;
+}
+.about-team-ul li img {
+    float: left;
+    width: 150px;
+    margin-right: 32px;
+}
+.about-team-ul li h4 {
+    font-size: 18px;
+    color: #4b4a4a;
+    font-weight: 700;
+}
+.about-team-ul li h4 em {
+    font-size: 14px;
+    color: #979696;
+    margin-left: 12px;
+    font-style: normal;
+}
+.about-team-ul li p {
+    float: left;
+    padding: 0;
+    text-indent: 0;
+    line-height: 24px;
+    color: #515151;
+    font-size: 14px;
+    width: 660px;
+}
+ul.team-last li {
+    width: 40%;
+    float: left;
+    margin: 0 5%;
+}
+ul.team-last li h4{
+    margin-top: 0;
+}
+
+
+/*合作伙伴*/
+.hzhb {
+    width: 855px;
+    padding: 30px;
+    padding-bottom: 50px;
+}
+.hzhb ul li a:hover,.hzhb ul li a.hz-hover{
+    margin: 14px 5px;
+    border: 2px solid #2173dc;
+}
+.hzhb ul li a{
+    display: block;
+    float: left;
+    height: 50px;
+    margin: 15px 6px;
+    min-width: 155px;
+    font-size: 18px;
+    line-height: 52px;
+    color: #343434;
+    border: 1px solid #c6c6c6;
+    overflow: hidden;
+}
+.hzhb ul li img{
+    height: 50px;
+}
+.hzhb div{
+    min-height: 120px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border: 1px solid #cfcfcf;
+}
+.hzhb div p{
+    padding: 0px;
+    font-size: 12px;
+    color: #616161;
+    line-height: 24px;
+}
+
+
+/*加入我们*/
+.jrwm {
+    width: 855px;
+    padding: 30px;
+}
+.jrwm p {
+    text-indent: 3em;
+    font-size: 16px;
+    line-height: 40px;
+}
+.jrwm .jobBox{
+    position: relative;
+    margin: 15px;
+    padding-bottom: 20px;
+    background: #fafafa;
+    color: #393737;
+    border: 1px solid #edebeb;
+}
+.jobBox span{
+    position: absolute;
+    background: #fff;
+    top: -17px;
+    left: 10px;
+    text-align: center;
+    display: block;
+    min-width: 100px;
+    padding: 0 20px;
+    height: 32px;
+    border: 1px solid #dbdcdc;
+    line-height: 32px;
+    font-size: 20px;
+}
+.jobBox h3{
+    padding: 30px 45px 0;
+    line-height: 24px;
+}
+.jobBox p{
+    text-indent: 0;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+/*一路相伴*/
+.ylxb {
+    padding-top: 0;
+}
+.rightBox {
+    width: 640px;
+    padding-left: 28px;
+    margin-left: 180px;
+    margin-top: 80px;
+    border-left: 5px solid #4594fa;
+    position: relative;
+}
+.eventAll {
+    width: 85px;
+    display: block;
+    color: #fb6e52;
+    font-size: 20px;
+    background: url(../img/aboutUs/icon_arrowDown.png) no-repeat right center;
+    position: absolute;
+    left: -125px;
+    top: -35px;
+}
+.clock {
+    position: relative;
+    left: -57px;
+    top: -48px;
+}
+.event {
+    display: block;
+    padding: 30px 25px;
+    position: relative;
+}
+.event-border{
+    border: 1px solid #e2e0e1;
+}
+.left-date {
+    width: 110px;
+    position: absolute;
+    left: -133px;
+    margin-top: 16px;
+    font-size: 18px;
+    color: #535353;
+    background: url(../img/aboutUs/position_icon.jpg) no-repeat right;
+}
+.event span{
+    display: block;
+    padding: 15px 0;
+    color: #535353;
+    line-height: 26px;
+    font-size: 15px;
+    border-top: 1px dashed #f0f0f0;
+}
+.event span.firstEvent {border-top: 0;}
+.evendetail {
+    margin-top: 20px;
+}
+.evendetail a {
+    width: 85px;
+    display: block;
+    color: #fb6e52;
+    font-size: 20px;
+    background: url(../img/aboutUs/icon_arrowDown.png) no-repeat right center;
+    position: absolute;
+    left: -125px;
+    margin-top: 30px;
+}
+.evendetail label {
+    display: block;
+    color: #fb6e52;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.alertBox {
+    display: none;
+    position: absolute;
+    left: -7px;
+    top: -110px;
+    z-index: 1;
+    width: 561px;
+    padding: 5px;
+    padding-left: 12px;
+    height: 326px;
+    text-align: center;
+    background: url(../img/aboutUs/bg_alertImg.png) no-repeat;
+    overflow: hidden;
+}
+.event span:hover .alertBox {
+    display: block;
+}
+
+/*-- 平台背景 --*/
+.ptbj {
+    padding: 0px;
+}
+.ptbj-div {
+    padding: 30px;
+    font-size: 15px;
+    color: #343434;
+    line-height: 26px;
+}
+.ptbj-div >img {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.ptbj p {
+    padding: 0;
+    text-indent: 0;
+}
+.ptbj-div img.blockImg{
+    float: left;
+    margin: 30px 0;
+    margin-right: 30px;
+
+}
+.block {
+    float: left;
+    width: 450px;
+}
+.block p span{
+    font-size: 12px;
+}
+.shuiyin {
+    margin: 20px 0 50px;
+    text-align: center;
+}
+.shuiyin img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+.ptbj label {
+    display: block;
+    margin: 10px 0;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #010109;
+    line-height: 28px;
+    background: url(../img/aboutUs/listIco.png) no-repeat left 7px;
+}

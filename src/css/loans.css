@@ -1,0 +1,251 @@
+/*其余导航*/
+.other_nav {
+    width: 100%;
+    height: 290px;
+    margin-bottom: 15px;
+}
+
+.other_navTop {
+    width: 100%;
+    margin: 0 auto;
+    height: 60px;
+}
+.other_nav ul {
+    width: 1080px;
+    margin: 0 auto;
+}
+.other_navTop ul li span {
+    float: left;
+    height: 26px;
+    margin-top: 18px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #000;
+    line-height: 26px;
+    display: block;
+    padding: 0 15px;
+    position: relative;
+    border-radius: 4px;
+}
+.other_nav ul li span.choose {
+    position: relative;
+    color: #fff;
+    background: #2775D9;
+}
+.other_nav ul li span:hover {
+    background: #ddd;
+    color: #000;
+    cursor: pointer;
+}
+/*
+.other_nav ul li a i {
+    width: 27px;
+    height: 18px;
+    position: absolute;
+    top: -12px;
+    right: -10px;
+}*/
+
+.other_navDown {
+    background: #fff;
+    width: 1080px;
+    height: 230px;
+    margin: 0 auto;
+}
+.other_navDownLeft {
+    width: 680px;
+    float: left;
+    padding-top: 26px;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+.typeBox {
+    padding: 0 0 20px 0;
+}
+.typeBox p {
+    color: #a3a3a3;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    float: left;
+}
+.typeBox ul {
+    height: 26px;
+}
+.typeBox ul li span {
+    color: #000;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 15px;
+    margin-right: 5px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    float: left;
+    display: block;
+    position: relative;
+
+}
+
+.other_navDownRight {
+    width: 240px;
+    height: 190px;
+    margin: 20px 0;
+    margin-right: 20px;
+    padding: 0 30px;
+    float: right;
+    border-left: 1px solid #ccc;
+}
+.other_navDownRight p {
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+}
+.other_navDownRight ul li span {
+    color: #a3a3a3;
+    font-size: 14px;
+    line-height: 28px;
+    display: inline-block;
+}
+.other_navDownRight ul li span.showCount {
+    font-size: 18px;
+    color: #fb6e52;
+    display: inline-block;
+    width: 160px;
+    text-align: right;
+}
+.other_navDownRight ul li span:first-child {
+    text-align: left;
+    width: 100px;
+}
+
+
+
+/*产品列表*/
+.projectList {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    background: #fff;
+    border: 1px #dedede solid;
+}
+
+.order_style {
+    height: 37px;
+    background-color: #fafafa;
+    border-bottom: none;
+}
+.order_style ul li {
+    float: left;
+    width: 79px;
+    font-size: 12px;
+}
+.order_style ul li span {
+    display: block;
+    width: 79px;
+    height: 37px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 37px;
+    color: #898989;
+    box-sizing: border-box;
+    border-right: 1px solid #e2e0e1;
+}
+.order_style ul li span img {
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.order_style ul li a:hover span {
+    background: #fff;
+    color: #2775d9;
+    box-sizing: border-box;
+}
+.order_style ul li a.sort_hover span{
+    background: #fff;
+    color: #2775d9;
+    border-right: 1px solid #e2e0e1;
+}
+
+.box-listPro  {
+    clear: both;
+    padding: 10px 20px;
+    color: #000;
+    border-top: 1px solid #dedede;
+    position: relative;
+}
+.box-listPro:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.box-listPro-img {
+    float:left;
+    margin: 0 40px 0 20px;
+}
+.box-listPro-txt {
+    float:left;
+}
+.box-listPro-title  {
+    height: 50px;
+}
+.box-listPro-title a {
+    float:left;
+    display:inline-block;
+    color: #2a2a2a;
+    font-size: 18px;
+    line-height: 50px;
+}
+.box-listPro-title a:hover {
+    color: #2875d9;
+}
+.box-listPro-detail {
+    clear: both;
+    width: 450px;
+}
+.box-listPro-detail p {
+    float: left;
+    text-align: center;
+    width: 33%;
+}
+.box-listPro-detail p > span {
+    color: #c9c8c8;
+    font-size: 12px;
+    display: block;
+    line-height: 20px;
+}
+.box-listPro-btn {
+    position: absolute;
+    top: 42px;
+    right: 75px;
+}
+.box-listPro-btn .box-btn{
+    display: inline-block;
+    width:150px;
+    height: 40px;
+    background: #2875d9;
+    color: #fff;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    margin-left: 60px;
+    vertical-align: bottom;
+    margin-top: 25px;
+}
+.box-listPro-btn .box-btn:hover{
+    background: #fe6e4c;
+}
+.percent-circle {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    color: #9ec8ff;
+    font-size: 14px;
+    text-align: center;
+}
+.percent-circle label {
+    font-size: 12px;
+    color: #000;
+    display: block;
+}

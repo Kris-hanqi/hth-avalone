@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/loans.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="main clear">
+        <div class="h-main">
+            <div class="other_nav">
+                <div class="other_navTop" ms-controller="OtherNavTopCtrl">
+                    <ul>
+                        <li>
+                            <span class="choose">全部</span>
+                        </li>
+                        <li ms-for="el in @type">
+                            <span>{{el}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="other_navDown">
+                    <div class="other_navDownLeft" ms-controller="OtherNavDownCtrl">
+                        <div class="typeBox clear">
+                            <p>项目状态：</p>
+                            <ul>
+                                <li>
+                                    <span class="choose">全部</span>
+                                </li>
+                                <li ms-for="el in @projectStatus">
+                                    <span>{{el}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="typeBox clear">
+                            <p>项目期限：</p>
+                            <ul>
+                                <li>
+                                    <span class="choose">全部</span>
+                                </li>
+                                <li ms-for="el in @projectTimeLimit">
+                                    <span>{{el}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="typeBox clear">
+                            <p>预期收益：</p>
+                            <ul>
+                                <li>
+                                    <span class="choose">全部</span>
+                                </li>
+                                <li ms-for="el in @earnings">
+                                    <span>{{el}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="typeBox clear">
+                            <p>项目规模：</p>
+                            <ul>
+                                <li>
+                                    <span class="choose">全部</span>
+                                </li>
+                                <li ms-for="el in @projectSize">
+                                    <span>{{el}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="other_navDownRight" ms-controller="totalStationDataCtrl">
+                        <p>全站数据</p>
+                        <ul>
+                            <li ms-for="el in @totalStationData">
+                                <span>{{el.title}}</span>
+                                <span class="showCount">{{el.txt}}</span>
+                                <span> {{el.monad}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="projectList clear" ms-controller="projectListCtrl">
+                <div class="order_style">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" title="综合排序" class="sort_hover">
+                                <span>综合排序</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="收益降序">
+                                <span>预期收益<img src="img/loans/sort_down01.png"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="期限升序">
+                                <span>期限<img src="img/loans/sort_up01.png"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" title="进度降序">
+                                <span>进度<img src="img/loans/sort_down01.png"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-listPro" ms-for="el in @data">
+                    <div class="box-listPro-img">
+                        <a ms-attr="{href:el.targetUrl}">
+                            <img style="width:139px;"  ms-attr="{src:el.imgUrl}">
+                        </a>
+                    </div>
+                    <div class="box-listPro-txt">
+                        <div class="box-listPro-title">
+                            <a ms-attr="{href:el.targetUrl}">
+                                【{{el.loanName}}】{{el.loanNum}}
+                            </a>
+                        </div>
+                        <div class="box-listPro-detail">
+                            <p>
+                                <span>预期年化利率</span>
+                                <label class="font15 color-ms posi-r">
+                                    <span class="font24">{{el.ratePercent}}</span>%
+                                </label>
+                            </p>
+                            <p>
+                                <span>借款期限</span>
+                                <label class="font15">
+                                    <span class="font24">{{el.repayTimePeriod}}</span>个月
+                                </label>
+                            </p>
+                            <p>
+                                <span>项目规模</span>
+                                <label class="font15">
+                                    <span class="font24">{{el.loanMoney}}</span>万
+                                </label>
+                            </p>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="box-listPro-btn">
+                        <div class="fl-l">
+                            <div class="percent-circle0">
+                                <svg height="64" version="1.1" width="128" style="overflow: hidden; position: relative;"></svg>
+                            </div>
+                            <div class="percent-circle">
+                                <span>{{el.sumMoney}}%</span>
+                                <label>项目进度</label>
+                            </div>
+                        </div>
+                        <a class="box-btn" ms-attr="{href:el.targetUrl}">{{el.loanStatus}}</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="pages">
+                <a href="">上一页</a>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">下一页</a>
+            </div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/loans.bundle.js"></script>
+</body>
+</html>
