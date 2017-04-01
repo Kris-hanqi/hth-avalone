@@ -20,9 +20,9 @@ $.mockjax({
         headerBottom:[
             {"title":"首页","href":"index.html"},
             {"title":"我要投资","href":"loans.html"},
-            {"title":"债权转让","href":""},
-            {"title":"风控措施","href":""},
-            {"title":"信息披露","href":""},
+            {"title":"债权转让","href":"transfer.html"},
+            {"title":"风控措施","href":"riskControl.html"},
+            {"title":"信息披露","href":"informationDisclosure.html"},
             {"title":"关于我们","href":"about_htouhui.html"}
         ]
     }
@@ -51,7 +51,7 @@ avalon.component('header', {
             "<div class=\"top\">"+
             "<div class=\"top_box\">"+
             "<div class=\"logo\">"+
-            "<a href=\"#\"><img src=\"img/logo.png\"/></a>"+
+            "<a href=\"index.html\"><img src=\"img/logo.png\"/></a>"+
             "</div>"+
             "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
             "<ul class=\"nav\">"+

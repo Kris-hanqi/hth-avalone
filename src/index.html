@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/backtop.css"/>
 </head>
 <body>
-    <div ms-controller="headerCtrl" class="header">
+    <div ms-controller="headerCtrl" class="header ms-controller">
         <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
     </div>
 
@@ -27,29 +27,29 @@
                 <div class="land_p01">预期年化收益率</div>
                 <div class="land_p02"><span>8</span>% -<span>10</span>%</div>
                 <div class="land_p04">
-                    <a href="#"><span>立即注册</span></a>
+                    <a href="register.html"><span>立即注册</span></a>
                 </div>
-                <div class="land_p05"><a href="#">已有账号登录</a></div>
+                <div class="land_p05"><a href="login.html">已有账号登录</a></div>
             </div>
             <div class="land2"></div>
         </div>
     </div>
 
-    <div ms-controller="safeCtrl" class="home-safe">
+    <div ms-controller="safeCtrl" class="home-safe ms-controller">
         <wbr ms-widget="{is:'safe',txt:@txt}">
     </div>
 
     <div class="home-record"></div>
 
-    <div ms-controller="mainCtrl" class="home-main">
+    <div ms-controller="mainCtrl" class="home-main ms-controller">
         <wbr ms-widget="{is:'main',shengxinbao:@shengxinbao,zhitou:@zhitou}">
     </div>
 
-    <div ms-controller="newsCtrl" class="hone-new home-news">
+    <div ms-controller="newsCtrl" class="hone-new home-news ms-controller">
         <wbr ms-widget="{is:'news',newsCenter:@newsCenter,plateformNotice:@plateformNotice}">
     </div>
 
-    <div ms-controller="investor" class="home-investor">
+    <div ms-controller="investor" class="home-investor ms-controller">
         <div class="home-main investor">
             <h1>他们都在海投汇</h1>
             <div class="investor-box unfold" ms-for="el in @data">
@@ -68,7 +68,7 @@
         <div class="home-main">
             <div class="media_list">
                 <h3 class="news-title">媒体报道</h3>
-                <div ms-controller="mediaList" id="featureContainer">
+                <div ms-controller="mediaList" id="featureContainer ms-controller">
                     <div id="feature">
                         <div id="block">
                             <div id="button-scroll">
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-    <div ms-controller="footer" class="footer">
+    <div ms-controller="footer" class="footer ms-controller">
         <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
     </div>
 

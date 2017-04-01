@@ -46,187 +46,84 @@
 
 	var avalon = __webpack_require__(1);
 	var $ = __webpack_require__(2);
-	var backTop = __webpack_require__(5);
 	var mockjax = __webpack_require__(3)($, window);
 
-	//header
 
-	/*模拟接口*/
-	$.mockjax({
-	    url:"http://XXX/web-api/header",
-	    status: 200,
-	    responseText:{
-	        headerTop:[
-	            {"title":"立即登录","href":"login.html"},
-	            {"title":"免费注册","href":"register.html"},
-	            {"title":"活动中心","href":"activityCenter.html"},
-	            {"title":"新手指引","href":"newUserGuide.html"},
-	            {"title":"网贷课堂","href":"netLoanClass.html"}
-	        ],
-	        headerBottom:[
-	            {"title":"首页","href":"index.html"},
-	            {"title":"我要投资","href":"loans.html"},
-	            {"title":"债权转让","href":"transfer.html"},
-	            {"title":"风控措施","href":"riskControl.html"},
-	            {"title":"信息披露","href":"informationDisclosure.html"},
-	            {"title":"关于我们","href":"about_htouhui.html"}
-	        ]
-	    }
-	});
-	avalon.component('header', {
-	    template: (function(){
-	        var slideContent="<div class='header'>"+
-	            "<div class='header_box'>"+
-	            "<div class=\"header_left\"><span>客服热线：400-698-8810 （工作日 09:00 - 18:00）</span></div>"+
-	            "<div class=\"header_right1\">"+
-	            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"img/header_phone.png\"/>手机客户端</span>"+
-	            "<div class=\"qrcode-outer header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/smart_download.png\"/><span>手机客户端下载</span></div>"+
-	            "</div>"+
-	            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"img/header_weixin.png\"/>微信公众号</span>"+
-	            "<div class=\"qrcode-weixin header-arrow\">"+
-	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/weixin-upload.png\"/><span>微信公众号</span></div>"+
-	            "</div>"+
-	            "</div>"+
-	            "<div class=\"header_right2\">"+
-	            "<a ms-for=\"el in @headerRightArr\" ms-attr='{href:el.href}'>{{el.title}}</a>"  +
-	            "</div>"    +
-	            "</div>"+
-	            "<div class=\"top\">"+
-	            "<div class=\"top_box\">"+
-	            "<div class=\"logo\">"+
-	            "<a href=\"index.html\"><img src=\"img/logo.png\"/></a>"+
-	            "</div>"+
-	            "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
-	            "<ul class=\"nav\">"+
-	            "<li class=\"nLi\" ms-for='item in @navArr'><a ms-attr='{href:item.href}'>{{item.title}}</a></li>"+
-	            "</ul>"    +
-	            "</div>"    +
-	            "</div>"+
-	            "</div>";
-	        return slideContent;
-	    }).call(this),
-	    defaults: {
-	        headerRightArr:[],
-	        navArr:[],
-	        outerMouseover:function(){
-	            $(".qrcode-outer").stop().slideDown(100);
-	        },
-	        outerMouseout:function(){
-	            $(".qrcode-outer").stop().slideUp(100);
-	        },
-	        weixinMouseover:function(){
-	            $('.qrcode-weixin').stop().slideDown(100);
-	        },
-	        weixinMouseout:function(){
-	            $('.qrcode-weixin').stop().slideUp(100);
-	        }
-	    }
+	//其他导航
+	var vmOtherNav=avalon.define({
+	    $id:"otherNavCtrl",
+	    "transferCapital": ["5000以下","5000~1万","1万~2万","2万以下"],
+	    "earnings":["10%以下","10%-15%","15%-20%","20%以上"],
+	    "allowance":["-1000以下","-1000~0","0~1000","1000以上"]
 	});
 
-	//header
-	var vmHeader=avalon.define({
-	    $id:"headerCtrl",
-	    headerRightArr:[],
-	    navArr:[]
-	});
-
-	$.ajax({
-	    url:"http://XXX/web-api/header",
-	    success:function(response){
-	        vmHeader.headerRightArr=response.headerTop;
-	        vmHeader.navArr=response.headerBottom;
-
-	        var str=window.location.href;
-	        if(str.lastIndexOf('/')!=-1){
-	            var navArr=str.substr(str.lastIndexOf('/')+1);
-	        }
-
-	        $(".header .nav li a").each(function(){
-	            urlArr = $(this).attr('href');
-	            if(navArr == urlArr){
-	                $(".header .nav li a").removeClass();
-	                $(this).addClass('chooseNav');
-	            }
-	        });
-	    }
-	});
-
-
-	/* -- footer --  */
-	avalon.component('footer', {
-	    template: (function () {
-	        var footerContent ='<div>'+
-	                             '<div class="footer_box clearfix">' +
-	                                '<div class="logo02">' +
-	                                    '<a href="#"><img src="img/logo02.png"/></a>' +
-	                                    '<span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span>' +
-	                                '</div>' +
-	                                '<ul class="footer_ul">' +
-	                                    '<li ms-for="el in @array">' +
-	                                        '<ul class="footer_ul_li">' +
-	                                            '<li ms-for="elem in el.arr">' +
-	                                                '<a ms-attr="{href: elem.path}">{{elem.name}}</a>' +
-	                                            '</li>' +
-	                                        '</ul>' +
-	                                    '</li>' +
-	                                    '<li>' +
-	                                        '<span>扫二维码下载APP</span>' +
-	                                        '<br />' +
-	                                        '<img src="img/smart_download.png" style="width: 125px;"/>' +
-	                                    '</li>' +
-	                                '</ul>' +
-	                            '</div>' +
-	                            '<div class="belw clearfix">' +
-	                                '<div class="copy">' +
-	                                    '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>' +
-	                                    '<div ms-for="el in @copy">' +
-	                                        '<a target="_blank" ms-attr="{href: el.path}"><img class="chengxin" ms-attr="{src: el.img}" /></a>' +
-	                                    '</div>' +
-	                                '</div>' +
-	                            '</div>'+
-	                          '</div>';
-	        return footerContent;
-	    }).call(this),
-	    defaults: {
-	        array:[],
-	        copy:[]
-	    }
-	});
-
-	//footer
-	var vmFooter=avalon.define({
-	    $id: "footer",
-	    array: [
-	        {arr: [
-	            {path:'http://www.htouhui.com/about/aboutus',name:'关于我们'},
-	            {path:'http://www.htouhui.com/about/aboutus',name:'企业介绍'},
-	            {path:'http://www.htouhui.com/about/team',name:'管理团队'},
-	            {path:'http://www.htouhui.com/about/partners',name:'合作伙伴'},
-	            {path:'http://www.htouhui.com/about/joinus',name:'联系我们'},
-	            {path:'http://www.htouhui.com/about/contactus',name:'加入我们'}
-	        ]},
-	        {arr: [
-	            {path:'http://www.htouhui.com/falv/flgw',name:'法律法规'},
-	            {path:'http://www.htouhui.com/falv/flgw',name:'法律顾问'},
-	            {path:'http://www.htouhui.com/falv/flxy',name:'法律协议'},
-	            {path:'http://www.htouhui.com/falv/flsm',name:'法律声明'}
-	        ]},
-	        {arr: [
-	            {path:'',name:'帮助中心'},
-	            {path:'',name:'投资人必读'},
-	            {path:'',name:'充值提现必读'},
-	            {path:'',name:'怎样债权转让'}
-	        ]}
-	    ],
-	    copy:[
-	        {path:'',img:'img/icons_itrust.png'},
-	        {path:'',img:'img/icons_norton.png'},
-	        {path:'',img:'img/icons_chengxin.png'}
+	//全站数据
+	var vmTotalStationData=avalon.define({
+	    $id:"totalStationDataCtrl",
+	    "totalStationData":[
+	        {title : "融资项目","txt" : "1258" , monad:"个"},
+	        {title : "累计成交金额","txt" : "11亿0834万8100" , monad:"元"},
+	        {title : "平台用户","txt" : "6万0719" , monad:"人"},
+	        {title : "可投项目个数","txt" : "2" , monad:"个"}
 	    ]
 	});
+
+	//列表标题
+	var vmTransferTitle=avalon.define({
+	    $id:"transferTitleCtrl",
+	    "transferTitle":["借款标题","预期收益","折让金","剩余时间","出售价格","债权价值","剩余本金","剩余利息","转让进度"]
+	});
+
+
+	//列表
+	var vmTransferList=avalon.define({
+	    $id:"transferListCtrl",
+	    "data":[
+	        {
+	            "loanId": "标的id",
+	            "loanName":"升薪宝A1",
+	            "loanNum": "111111",
+	            "hrefUrl":"#",
+	            "earnings":"7.2",
+	            "allowance": "110.47",
+	            "remainingTime":"1",
+	            "sellPrice": "80,000",
+	            "creditorValue": "80,489.21",
+	            "remainingCapital":"80,000",
+	            "remainingInterest": "489.21",
+	            "transferSchedule": "0",
+	            "loanStatus" : "购买",
+	            "targetUrl": "#"
+	        },
+	        {
+	            "loanId": "标的id",
+	            "loanName":"升薪宝A2",
+	            "loanNum": "111111",
+	            "hrefUrl":"#",
+	            "earnings":"7.2",
+	            "allowance": "110.47",
+	            "remainingTime":"1",
+	            "sellPrice": "80,000",
+	            "creditorValue": "80,489.21",
+	            "remainingCapital":"80,000",
+	            "remainingInterest": "489.21",
+	            "transferSchedule": "0",
+	            "loanStatus" : "购买",
+	            "targetUrl": "#"
+	        }
+	    ],
+	    "pageNum":1,
+	    "pageCount":"10"
+	});
+
+
+
+
+
+
+
+
+
 
 /***/ },
 /* 1 */
@@ -19476,105 +19373,6 @@
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	
-	var $ = __webpack_require__(2);
-	function backTop() {
-		this.init();
-		/*$(document).ready(function() {
-			if ($(".main").length != 0) {
-				var xx = 0;
-				var windowWidth = $(window).width();
-				var mainx = $(".main").offset().left + $(".main").width();
-				$(".cbbfixed").css("right", windowWidth - mainx - 160);
-			}
-		});*/
-	}
-
-	backTop.prototype = {
-		constructor : backTop,
-		init : function() {
-			this._initBackTop();
-		},
-		_initBackTop : function() {
-			var url = window.location.href;
-			var kefu = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_zx" rel="nofollow" title="在线客服" href="javascript:;"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><span>工作日</span><span>（9:00-18:00）</span></div>'
-		        	+'</li>';
-			if (url.indexOf('/activity/') != -1) {
-				if (url.indexOf('exclusive-benefits') != -1
-						|| url.indexOf('common-register') != -1
-						|| url.indexOf('beauty-plan-bd') != -1
-						|| url.indexOf('tg') != -1
-						|| url.indexOf('anniversary-financial') != '-1') {
-					kefu='';
-				}
-			}
-			var app = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_app" href="javascript:;" title="手机app"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/smart_download.png"><span>手机客户端下载</span></div>'
-		        	+'</li>';
-			var weixin = '<li>'
-					+'<span class="right_qq_on"><a rel="nofollow" class="right_qq_wx" title="微信公众号"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/weixin-upload.png"><span>微信公众号</span></div>'
-		        	+'</li>';
-			var $backTop = this.$backTop = $('<div class="cbbfixed right_qq"><ul>'
-					+ kefu
-					+ app
-					+ weixin
-					+ '<li class="goTop" style="margin-top: 10px;">'
-					+ '<span class="right_qq_on"><a rel="nofollow" id="goToTop" class="goTop" href="javascript:;" title="返回顶部"></a></span>'
-					+ '</li>'
-					+ '</ul></div>');
-
-			$('body').append($backTop);
-			$($backTop.find("li[class='goTop']")).click(function() {
-				$("html, body").animate({
-					scrollTop : 0
-				}, 120);
-			});
-
-			$(".right_qq_on").mouseover(
-				function() {
-					var index = $(this).parent().find("div[_pic=bt]").index(this);
-						$(this).parent().find("div[_pic=bt]").show();
-						$(this).parent().find("div[_pic=bt]").slice(index,index+1).show();
-				}).mouseout(
-					function() {
-						$(".right_qq_on").parent().find("div[_pic=bt]").hide();
-					});
-					
-			$(".right_qq_hid").mouseover(
-				function() {
-					$(this).show(); 
-				}).mouseout(
-					function() {
-						$(this).hide(); 
-					});
-
-			var timmer = null;
-			$backTop.css("bottom", "140px");
-			$backTop.find(".goTop").hide();
-			$(window).bind("scroll", function() {
-				var d = $(document).scrollTop();
-				if (0 < d) {// 需要出现返回顶部按钮
-					$backTop.find(".goTop").show();
-				} else {// 不需要出现
-					$backTop.find(".goTop").hide();
-				}
-				clearTimeout(timmer);
-				timmer = setTimeout(function() {
-					clearTimeout(timmer);
-				}, 100);
-			});
-		}
-	}
-	var backtop = new backTop();
 
 /***/ }
 /******/ ]);

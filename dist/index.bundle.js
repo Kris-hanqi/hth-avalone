@@ -46,7 +46,6 @@
 
 	var avalon = __webpack_require__(1);
 	var $ = __webpack_require__(2);
-	var backTop = __webpack_require__(5);
 	var mockjax = __webpack_require__(3)($, window);
 
 
@@ -643,25 +642,42 @@
 	    }
 	});
 
+
+
 	// 媒体报道滚动
-	$(function($){$.fn.jCarouselLite=function(o){o=$.extend({btnPrev:null,btnNext:null,btnGo:null,mouseWheel:false,auto:1500,speed:1000,easing:null,vertical:false,circular:true,visible:5,start:0,scroll:1,beforeStart:null,afterEnd:null},o||{});return this.each(function(){var b=false,animCss=o.vertical?"top":"left",sizeCss=o.vertical?"height":"width";var c=$(this),ul=$("ul",c),tLi=$("li",ul),tl=tLi.size(),v=o.visible;if(o.circular){ul.prepend(tLi.slice(tl-v-1+1).clone()).append(tLi.slice(0,v).clone());o.start+=v}var f=$("li",ul),itemLength=f.size(),curr=o.start;c.css("visibility","visible");f.css({overflow:"hidden",float:o.vertical?"none":"left"});ul.css({margin:"0",padding:"0",position:"relative","list-style-type":"none","z-index":"1"});c.css({overflow:"hidden",position:"relative","z-index":"2",left:"0px"});var g=o.vertical?height(f):width(f);var h=g*itemLength;var j=g*v;f.css({width:f.width(),height:f.height()});ul.css(sizeCss,h+"px").css(animCss,-(curr*g));c.css(sizeCss,j+"px");if(o.btnPrev)$(o.btnPrev).click(function(){return go(curr-o.scroll)});if(o.btnNext)$(o.btnNext).click(function(){return go(curr+o.scroll)});if(o.btnGo)$.each(o.btnGo,function(i,a){$(a).click(function(){return go(o.circular?o.visible+i:i)})});if(o.mouseWheel&&c.mousewheel)c.mousewheel(function(e,d){return d>0?go(curr-o.scroll):go(curr+o.scroll)});if(o.auto)setInterval(function(){go(curr+o.scroll)},o.auto+o.speed);function vis(){return f.slice(curr).slice(0,v)};function go(a){if(!b){if(o.beforeStart)o.beforeStart.call(this,vis());if(o.circular){if(a<=o.start-v-1){ul.css(animCss,-((itemLength-(v*2))*g)+"px");curr=a==o.start-v-1?itemLength-(v*2)-1:itemLength-(v*2)-o.scroll}else if(a>=itemLength-v+1){ul.css(animCss,-((v)*g)+"px");curr=a==itemLength-v+1?v+1:v+o.scroll}else curr=a}else{if(a<0||a>itemLength-v)return;else curr=a}b=true;ul.animate(animCss=="left"?{left:-(curr*g)}:{top:-(curr*g)},o.speed,o.easing,function(){if(o.afterEnd)o.afterEnd.call(this,vis());b=false});if(!o.circular){$(o.btnPrev+","+o.btnNext).removeClass("disabled");$((curr-o.scroll<0&&o.btnPrev)||(curr+o.scroll>itemLength-v&&o.btnNext)||[]).addClass("disabled")}}return false}})};function css(a,b){return parseInt($.css(a[0],b))||0};function width(a){return a[0].offsetWidth+css(a,'marginLeft')+css(a,'marginRight')};function height(a){return a[0].offsetHeight+css(a,'marginTop')+css(a,'marginBottom')}});
-	$(function() {
-	    $("#button-scroll").jCarouselLite({
-	        btnNext: ".next",
-	        btnPrev: ".prev"
-	    });
+	/*模拟接口*/
+	$.mockjax({
+	    url:'http://XXX/web-api/media',
+	    status: 200,
+	    responseText: {
+	        "data":[
+	            {mediaPicUrl: '#',mediaPic: 'img/index/media-01.jpg'},
+	            {mediaPicUrl: '#',mediaPic: 'img/index/media-02.jpg'},
+	            {mediaPicUrl: '#',mediaPic: 'img/index/media-03.jpg'},
+	            {mediaPicUrl: '#',mediaPic: 'img/index/media-04.jpg'},
+	            {mediaPicUrl: '#',mediaPic: 'img/index/media-05.jpg'},
+	            {mediaPicUrl: '#',mediaPic: 'img/index/media-06.jpg'}
+	        ]
+	    }
 	});
-	var vm7=avalon.define({
+	var vmMedia=avalon.define({
 	    $id: "mediaList",
-	    media: [
-	        {mediaPicUrl: '#',mediaPic: 'img/index/media-01.jpg'},
-	        {mediaPicUrl: '#',mediaPic: 'img/index/media-02.jpg'},
-	        {mediaPicUrl: '#',mediaPic: 'img/index/media-03.jpg'},
-	        {mediaPicUrl: '#',mediaPic: 'img/index/media-04.jpg'},
-	        {mediaPicUrl: '#',mediaPic: 'img/index/media-05.jpg'},
-	        {mediaPicUrl: '#',mediaPic: 'img/index/media-06.jpg'}
-	    ]
+	    media: []
 	});
+	$.ajax({
+	    url:'http://XXX/web-api/media',
+	    success:function(response){
+	        vmMedia.media=response.data;
+	        $(function($){$.fn.jCarouselLite=function(o){o=$.extend({btnPrev:null,btnNext:null,btnGo:null,mouseWheel:false,auto:1500,speed:1000,easing:null,vertical:false,circular:true,visible:5,start:0,scroll:1,beforeStart:null,afterEnd:null},o||{});return this.each(function(){var b=false,animCss=o.vertical?"top":"left",sizeCss=o.vertical?"height":"width";var c=$(this),ul=$("ul",c),tLi=$("li",ul),tl=tLi.size(),v=o.visible;if(o.circular){ul.prepend(tLi.slice(tl-v-1+1).clone()).append(tLi.slice(0,v).clone());o.start+=v}var f=$("li",ul),itemLength=f.size(),curr=o.start;c.css("visibility","visible");f.css({overflow:"hidden",float:o.vertical?"none":"left"});ul.css({margin:"0",padding:"0",position:"relative","list-style-type":"none","z-index":"1"});c.css({overflow:"hidden",position:"relative","z-index":"2",left:"0px"});var g=o.vertical?height(f):width(f);var h=g*itemLength;var j=g*v;f.css({width:f.width(),height:f.height()});ul.css(sizeCss,h+"px").css(animCss,-(curr*g));c.css(sizeCss,j+"px");if(o.btnPrev)$(o.btnPrev).click(function(){return go(curr-o.scroll)});if(o.btnNext)$(o.btnNext).click(function(){return go(curr+o.scroll)});if(o.btnGo)$.each(o.btnGo,function(i,a){$(a).click(function(){return go(o.circular?o.visible+i:i)})});if(o.mouseWheel&&c.mousewheel)c.mousewheel(function(e,d){return d>0?go(curr-o.scroll):go(curr+o.scroll)});if(o.auto)setInterval(function(){go(curr+o.scroll)},o.auto+o.speed);function vis(){return f.slice(curr).slice(0,v)};function go(a){if(!b){if(o.beforeStart)o.beforeStart.call(this,vis());if(o.circular){if(a<=o.start-v-1){ul.css(animCss,-((itemLength-(v*2))*g)+"px");curr=a==o.start-v-1?itemLength-(v*2)-1:itemLength-(v*2)-o.scroll}else if(a>=itemLength-v+1){ul.css(animCss,-((v)*g)+"px");curr=a==itemLength-v+1?v+1:v+o.scroll}else curr=a}else{if(a<0||a>itemLength-v)return;else curr=a}b=true;ul.animate(animCss=="left"?{left:-(curr*g)}:{top:-(curr*g)},o.speed,o.easing,function(){if(o.afterEnd)o.afterEnd.call(this,vis());b=false});if(!o.circular){$(o.btnPrev+","+o.btnNext).removeClass("disabled");$((curr-o.scroll<0&&o.btnPrev)||(curr+o.scroll>itemLength-v&&o.btnNext)||[]).addClass("disabled")}}return false}})};function css(a,b){return parseInt($.css(a[0],b))||0};function width(a){return a[0].offsetWidth+css(a,'marginLeft')+css(a,'marginRight')};function height(a){return a[0].offsetHeight+css(a,'marginTop')+css(a,'marginBottom')}});
+	        $(function() {
+	            $("#button-scroll").jCarouselLite({
+	                btnNext: ".next",
+	                btnPrev: ".prev"
+	            });
+	        });
+	    }
+	});
+
 
 
 
@@ -19935,105 +19951,6 @@
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	
-	var $ = __webpack_require__(2);
-	function backTop() {
-		this.init();
-		/*$(document).ready(function() {
-			if ($(".main").length != 0) {
-				var xx = 0;
-				var windowWidth = $(window).width();
-				var mainx = $(".main").offset().left + $(".main").width();
-				$(".cbbfixed").css("right", windowWidth - mainx - 160);
-			}
-		});*/
-	}
-
-	backTop.prototype = {
-		constructor : backTop,
-		init : function() {
-			this._initBackTop();
-		},
-		_initBackTop : function() {
-			var url = window.location.href;
-			var kefu = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_zx" rel="nofollow" title="在线客服" href="javascript:;"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><span>工作日</span><span>（9:00-18:00）</span></div>'
-		        	+'</li>';
-			if (url.indexOf('/activity/') != -1) {
-				if (url.indexOf('exclusive-benefits') != -1
-						|| url.indexOf('common-register') != -1
-						|| url.indexOf('beauty-plan-bd') != -1
-						|| url.indexOf('tg') != -1
-						|| url.indexOf('anniversary-financial') != '-1') {
-					kefu='';
-				}
-			}
-			var app = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_app" href="javascript:;" title="手机app"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/smart_download.png"><span>手机客户端下载</span></div>'
-		        	+'</li>';
-			var weixin = '<li>'
-					+'<span class="right_qq_on"><a rel="nofollow" class="right_qq_wx" title="微信公众号"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/weixin-upload.png"><span>微信公众号</span></div>'
-		        	+'</li>';
-			var $backTop = this.$backTop = $('<div class="cbbfixed right_qq"><ul>'
-					+ kefu
-					+ app
-					+ weixin
-					+ '<li class="goTop" style="margin-top: 10px;">'
-					+ '<span class="right_qq_on"><a rel="nofollow" id="goToTop" class="goTop" href="javascript:;" title="返回顶部"></a></span>'
-					+ '</li>'
-					+ '</ul></div>');
-
-			$('body').append($backTop);
-			$($backTop.find("li[class='goTop']")).click(function() {
-				$("html, body").animate({
-					scrollTop : 0
-				}, 120);
-			});
-
-			$(".right_qq_on").mouseover(
-				function() {
-					var index = $(this).parent().find("div[_pic=bt]").index(this);
-						$(this).parent().find("div[_pic=bt]").show();
-						$(this).parent().find("div[_pic=bt]").slice(index,index+1).show();
-				}).mouseout(
-					function() {
-						$(".right_qq_on").parent().find("div[_pic=bt]").hide();
-					});
-					
-			$(".right_qq_hid").mouseover(
-				function() {
-					$(this).show(); 
-				}).mouseout(
-					function() {
-						$(this).hide(); 
-					});
-
-			var timmer = null;
-			$backTop.css("bottom", "140px");
-			$backTop.find(".goTop").hide();
-			$(window).bind("scroll", function() {
-				var d = $(document).scrollTop();
-				if (0 < d) {// 需要出现返回顶部按钮
-					$backTop.find(".goTop").show();
-				} else {// 不需要出现
-					$backTop.find(".goTop").hide();
-				}
-				clearTimeout(timmer);
-				timmer = setTimeout(function() {
-					clearTimeout(timmer);
-				}, 100);
-			});
-		}
-	}
-	var backtop = new backTop();
 
 /***/ }
 /******/ ]);

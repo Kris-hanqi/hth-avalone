@@ -14,6 +14,7 @@ dist/login.bundle.js -text
 dist/netLoanClass.bundle.js -text
 dist/newUserGuide.bundle.js -text
 dist/register.bundle.js -text
+dist/transfer.bundle.js -text
 /package.json -text
 src/about_accompany.html -text
 src/about_contactus.html -text
@@ -34,6 +35,7 @@ src/css/login.css -text
 src/css/netLoanClass.css -text
 src/css/newUserGuide.css -text
 src/css/register.css -text
+src/css/transfer.css -text
 src/find_pwd_by_email.html -text
 src/find_pwd_by_mobile.html -text
 src/forgetPassward.html -text
@@ -192,6 +194,7 @@ src/img/smart_download.png -text
 src/img/up_arrow.png -text
 src/img/weixin-upload.png -text
 src/index.html -text
+src/informationDisclosure.html -text
 src/js/aboutUs_nav.js -text
 src/js/about_accompany.js -text
 src/js/about_joinus.js -text
@@ -210,6 +213,7 @@ src/js/netLoanClass.js -text
 src/js/newUserGuide.js -text
 src/js/pageB.js -text
 src/js/register.js -text
+src/js/transfer.js -text
 src/js/zoomPic.js -text
 src/loans.html -text
 src/login.html -text
@@ -218,3 +222,5 @@ src/newUserGuide.html -text
 src/pageB.html -text
 src/pathmap.json -text
 src/register.html -text
+src/riskControl.html -text
+src/transfer.html -text

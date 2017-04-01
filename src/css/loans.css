@@ -70,6 +70,7 @@
     font-size: 14px;
     margin-right: 20px;
     float: left;
+    width: 70px;
 }
 .typeBox ul {
     height: 26px;
@@ -239,7 +240,7 @@
 .percent-circle {
     position: absolute;
     top: 30px;
-    left: 40px;
+    left: -75px;
     color: #9ec8ff;
     font-size: 14px;
     text-align: center;

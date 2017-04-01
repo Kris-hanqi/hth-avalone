@@ -1,3 +1,6 @@
+.ms-controller{
+    visibility: hidden
+}
 body {
     font-family: "微软雅黑";
     font-size: 14px;
@@ -51,6 +54,7 @@ input,select,button,a {
 .h-main {
     width: 1080px;
     margin: 0 auto;
+    margin-top: 74px;
 }
 
 .slidings {

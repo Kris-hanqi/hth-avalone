@@ -12,20 +12,19 @@
     <link rel="stylesheet" href="css/activityCenter.css"/>
 </head>
 <body>
-    <div ms-controller="headerCtrl" class="header">
+    <div ms-controller="headerCtrl" class="header ms-controller">
         <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
     </div>
 
     <div class="h-main clear" id="activityList">
         <div class="tag">
             <a href="index.html">海投汇</a>&gt; <a class="thisPage" href="javascript:void(0)"> 活动中心</a>
-
         </div>
         <div class="list"></div>
         <div class="loadMore clear">点击加载更多</div>
     </div>
 
-    <div ms-controller="footer" class="footer clear">
+    <div ms-controller="footer" class="footer ms-controller">
         <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
     </div>
 

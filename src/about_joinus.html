@@ -12,20 +12,20 @@
     <link rel="stylesheet" href="css/aboutUs.css"/>
 </head>
 <body>
-    <div ms-controller="headerCtrl" class="header">
+    <div ms-controller="headerCtrl" class="header ms-controller">
         <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
     </div>
 
     <div class="h-main clear">
         <!-- start -->
-        <div class="tag">
+        <div class="tag clear">
             <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">加入我们</a>
         </div>
-        <div ms-controller="about" class="about">
+        <div ms-controller="about" class="about ms-controller">
             <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
         </div>
         <!--加入我们-->
-        <div class="about_center jrwm" ms-controller="joinUs">
+        <div class="about_center jrwm ms-controller" ms-controller="joinUs">
             <h3 class="gltd-title">加入我们</h3>
             <p style="text-indent: 0;">我们正在热招以下职位，如果你的背景与我们的需求契合，请给我们打个电话或发封邮件，<br/>我们相关部门的人员会第一时间联系你。</p>
             <p>地址：北京市海淀区丹棱街18号创富大厦1604室</p>
@@ -51,7 +51,7 @@
         <!-- end -->
     </div>
 
-    <div ms-controller="footer" class="footer">
+    <div ms-controller="footer" class="footer ms-controller">
         <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
     </div>
 

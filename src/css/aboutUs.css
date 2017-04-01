@@ -20,12 +20,6 @@
     font-size: 16px;
     color: #222224;
 }
-.about ul li a.about_hover{
-    width: 143px;
-    color: #fff;
-    border-left:7px solid #2173dc;
-    background:#4594fa;
-}
 .about ul li a:hover{
     color: #fff;
     background:#4594fa;

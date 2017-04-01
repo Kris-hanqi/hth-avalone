@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/aboutUs.css"/>
 </head>
 <body>
-    <div ms-controller="headerCtrl" class="header">
+    <div ms-controller="headerCtrl" class="header ms-controller">
         <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
     </div>
 
@@ -21,7 +21,7 @@
         <div class="tag">
             <a href="index.html">海投汇 </a>><a class="thisPage" href="javascript:void(0)">联系我们</a>
         </div>
-        <div ms-controller="about" class="about">
+        <div ms-controller="about" class="about ms-controller">
             <wbr ms-widget="{is:'about',aboutBar:@aboutBar}" />
         </div>
         <!--联系我们-->
@@ -62,7 +62,7 @@
         <!-- end -->
     </div>
 
-    <div ms-controller="footer" class="footer">
+    <div ms-controller="footer" class="footer ms-controller">
         <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
     </div>
 

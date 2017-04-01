@@ -1,0 +1,218 @@
+/*其余导航*/
+.other_nav {
+    width: 100%;
+    height: 190px;
+    background: #fff;
+    margin: 0 auto;
+}
+.other_nav ul {
+    width: 1080px;
+    margin: 0 auto;
+}
+.other_navTop ul li span {
+    float: left;
+    height: 26px;
+    margin-top: 18px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #000;
+    line-height: 26px;
+    display: block;
+    padding: 0 15px;
+    position: relative;
+    border-radius: 4px;
+}
+.other_nav ul li span.choose {
+    position: relative;
+    color: #fff;
+    background: #2775D9;
+}
+.other_nav ul li span:hover {
+    background: #ddd;
+    color: #000;
+    cursor: pointer;
+}
+/*
+.other_nav ul li a i {
+    width: 27px;
+    height: 18px;
+    position: absolute;
+    top: -12px;
+    right: -10px;
+}*/
+
+.other_navLeft {
+    width: 680px;
+    float: left;
+    padding-top: 35px;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+.typeBox {
+    padding: 0 0 20px 0;
+}
+.typeBox p {
+    color: #a3a3a3;
+    font-weight: normal;
+    font-size: 14px;
+    margin-right: 20px;
+    float: left;
+    width: 70px;
+}
+.typeBox ul {
+    height: 26px;
+}
+.typeBox ul li span {
+    color: #000;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 15px;
+    margin-right: 5px;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    float: left;
+    display: block;
+    position: relative;
+
+}
+/*全站数据*/
+.other_navRight {
+    width: 240px;
+    height: 170px;
+    margin: 10px 0;
+    margin-right: 30px;
+    padding: 0 30px;
+    float: right;
+    border-left: 1px solid #ccc;
+}
+.other_navRight p {
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+}
+.other_navRight ul li span {
+    color: #a3a3a3;
+    font-size: 14px;
+    line-height: 28px;
+    display: inline-block;
+}
+.other_navRight ul li span.showCount {
+    font-size: 18px;
+    color: #fb6e52;
+    display: inline-block;
+    width: 160px;
+    text-align: right;
+}
+.other_navRight ul li span:first-child {
+    text-align: left;
+    width: 100px;
+}
+
+
+/*转让表格title*/
+.transfer_title {
+    width: 100%;
+    height: 37px;
+    border: 1px solid #e2e0e1;
+    background-color: #eeeeee;
+    margin-top: 13px;
+    margin-bottom: 9px;
+    padding-left: 5px;
+}
+.transfer_title ul li {
+    float: left;
+    line-height: 38px;
+    width: 10%;
+    color: #757575;
+    font-size: 12px;
+    text-align: center;
+}
+.transfer_title ul li:first-child+li+li {
+    width: 50px;
+}
+.transfer_title ul li:first-child+li+li+li {
+    width: 125px;
+}
+.transfer_title ul li:first-child+li+li+li+li {
+    width: 75px;
+}
+.transfer_title ul li:first-child+li+li+li+li+li {
+    width: 155px;
+}
+.transfer_title ul li:first-child+li+li+li+li+li+li {
+    width: 90px;
+}
+.transfer_title ul li:first-child+li+li+li+li+li+li+li {
+    width: 140px;
+}
+
+/*转让表格内容*/
+.transfer_content {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+}
+.transfer_content ul li {
+    padding: 25px 5px;
+    font-size: 14px;
+}
+.transfer_content ul li+li {
+    border-top: 1px solid #e0e0e0;
+}
+.transfer_content ul li span {
+    display: inline-block;
+    width: 91px;
+    text-align: center;
+}
+.transfer_content ul li span.content_02{
+    font-size: 20px;
+    color: #fb6e52;
+}
+.transfer_content ul li span.content_02,
+.transfer_content ul li span.content_03,
+.transfer_content ul li span.content_04  {
+    width: 85px;
+}
+.transfer_content ul li span.content_09 {
+    width: 15%;
+}
+.transfer_content ul li span label {
+    color: #fb6e52;
+}
+.transfer_content ul li span {
+    width: 11%;
+}
+.transfer_content ul li span a {
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+}
+.transfer_content ul li span img {
+    vertical-align: middle;
+}
+.transfer_content ul li span a.white {
+    color: #FFF;
+}
+.transfer_content ul li span a.black {
+    color: #000;
+}
+.transfer_btn {
+    width: 62px;
+    height: 31px;
+    line-height: 31px;
+    background: #2875d9;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.transfer_btn:hover{
+    background: #fe6e4c;
+}
+.transfer_content ul li span.content_10 {
+    width: 62px;
+}
