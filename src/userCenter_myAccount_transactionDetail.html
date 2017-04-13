@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link type="text/css" href="css/jquery-ui.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <div class="tag">
+            <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">交易明细</a>
+        </div>
+        <div class="account-center">
+            <!--左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--右侧-->
+            <div class="center_right">
+                <div class="slideBox ms-controller"  ms-controller="slideBoxCtrl">
+                    <h3 class="account_title">交易明细</h3>
+                    <div class="slidings_invitation">
+                        <label>起止时间：</label>
+                        <input id="beginTime" type="text"/> -
+                        <input id="endTime" type="text"/>
+                        <div class="selectOne">
+                            <span>今天</span>
+                            <span>近一个月</span>
+                            <span>近三个月</span>
+                            <span>一年</span>
+                        </div>
+                        <button class="inquire">查询</button>
+                    </div>
+                    <div class="slidings">
+                        <ul>
+                            <li>
+                                <a class="choose_list" type="0">全部</a>
+                            </li>
+                            <li>
+                                <a type="1">投资记录</a>
+                            </li>
+                            <li>
+                                <a type="2">充值记录</a>
+                            </li>
+                            <li>
+                                <a type="3">提现记录</a>
+                            </li>
+                            <li>
+                                <a type="4">还款记录</a>
+                            </li>
+                            <li>
+                                <a type="5">其他</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <table border="0" cellspacing="0" cellpadding="0" class="tableStyle">
+                        <tbody>
+                            <tr>
+                                <th class="table_date">时间</th>
+                                <th>类型</th>
+                                <th class="td_bdje">变动金额</th>
+                                <th class="td_kyje">可用金额 </th>
+                                <th>管理平台</th>
+                                <th class="table_remark">备注</th>
+                            </tr>
+                            <tr ms-for="el in @tradingRecord">
+                                <td class="table_date">{{el.time}}</td>
+                                <td> {{el.type}} </td>
+                                <td style="color: #ff7460;">{{el.changeAmount}}元</td>
+                                <td style="color: #ff7460;">￥{{el.availableBalance}}</td>
+                                <td>{{el.managementPlatform}}</td>
+                                <td class="table_remark text-overflow">{{el.remark}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pages">
+                        <a href="">上一页</a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">下一页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+    <script src="js/lib/jquery-1.11.3.js"></script>
+    <script src="js/timepicker/jquery-ui-1.11.4.js"></script>
+    <script src="js/timepicker/jquery-ui-timepicker-addon.js"></script>
+    <script src="js/timepicker/jquery-ui-timepicker-zh-CN.js"></script>
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myAccount_transactionDetail.bundle.js"></script>
+    <script>
+        //起止时间
+        $("#beginTime").datetimepicker({
+            defaultDate: $('#beginTime').val(),
+            dateFormat: "yy-mm-dd",
+            showSecond: true,
+            timeFormat: 'hh:mm:ss',
+            stepHour: 1,
+            stepMinute: 1,
+            stepSecond: 1
+        });
+        $("#endTime").datetimepicker({
+            defaultDate: $('#endTime').val(),
+            dateFormat: "yy-mm-dd",
+            showSecond: true,
+            timeFormat: 'hh:mm:ss',
+            stepHour: 1,
+            stepMinute: 1,
+            stepSecond: 1
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <div class="tag">
+            <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">账户概览</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="center_summary ms-controller" ms-controller="centerSummaryCtrl">
+                   <!-- <a href="#" class="bank_jx_open"></a>-->
+                    <div class="bank_jx fl-l">
+                        <span id="cardNo">{{bankCard.cardNumber}}</span>
+                        <a href="#">资金查询</a>
+                    </div>
+                    <div class="bank_right fl-l">
+                        <label>同卡进出原则</label><a class="wenhao" href="javascript:void(0)" title="江西银行电子账户将采用同卡进出规则，即账户资金只能提现至已绑定银行卡内，且当您电子账户余额与待收金额同时为零时，才可更换银行卡。"></a><br />
+                        <label style="margin-top: 30px;">江西银行可用余额（元）</label>
+                        <span class="plaintext">{{bankCard.availableBalance}}</span><span class="mask" style="display: none;">**********</span>
+                        <label>易宝账户余额（元）</label>
+                        <span class="plaintext">0</span><span class="mask" style="display: none;">**********</span>
+                    </div>
+                    <div class="bank_btn fl-r">
+                        <i id="eyes" class="eyes-open"></i>
+                        <a href="#" class="cz">充值</a>
+                        <a href="#" class="tx">提现</a>
+                    </div>
+                </div>
+                <div class="center_feature ms-controller" ms-controller="centerFeatureCtrl">
+                    <p ms-for="el in @userMessage">
+                        <i></i>
+                        <span>
+                            {{el.name}}<label>{{el.money}}元</label>
+                        </span>
+                    </p>
+                </div>
+                <div class="center_chart">
+                    <div id="pieChart"></div>
+                    <div id="barChart"></div>
+                </div>
+                <div class="slideBox ms-controller"  ms-controller="slideBoxCtrl">
+                    <div class="slidings_db">
+                        <h3>交易记录</h3>
+                        <table border="0" cellspacing="0" cellpadding="0" class="tableStyle summary">
+                            <tbody>
+                                <tr>
+                                    <th class="table_date">时间</th>
+                                    <th>类型</th>
+                                    <th class="td_bdje">变动金额</th>
+                                    <th class="td_kyje">可用金额 </th>
+                                    <th>管理平台</th>
+                                    <th class="table_remark">备注</th>
+                                </tr>
+                                <tr ms-for="el in @tradingRecord">
+                                    <td class="table_date">{{el.time}}</td>
+                                    <td> {{el.type}} </td>
+                                    <td style="color: #ff7460;">{{el.changeAmount}}元</td>
+                                    <td style="color: #ff7460;">￥{{el.availableBalance}}</td>
+                                    <td>{{el.managementPlatform}}</td>
+                                    <td class="table_remark text-overflow">{{el.remark}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="pages">
+                            <a href="">上一页</a>
+                            <a href="">1</a>
+                            <a href="">2</a>
+                            <a href="">下一页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myAccount_accountSummary.bundle.js"></script>
+
+</body>
+</html>

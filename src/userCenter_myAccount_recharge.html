@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <div class="tag">
+            <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">充值</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="recharge">
+                    <h3 class="account_title">我要充值</h3>
+                    <div class="recharge_center">
+                        <div class="recharge_affix">
+                            <ul>
+                                <li class="active">
+                                    <a data-toggle="item" href="#interbankTransfe">跨行转账</a>
+                                    <i><img src="img/userCenter/myAccount_recharge/recharge_lab1.png"></i>
+                                </li>
+                                <li>
+                                    <a data-toggle="item" href="#alipayTransfe">支付宝转账</a>
+                                </li>
+                                <li>
+                                    <a data-toggle="item" href="#fasteRecharge">快捷充值</a>
+                                    <i style="right: -2px;"><img src="img/userCenter/myAccount_recharge/recharge_lab2.png"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="recharge_container ms-controller" ms-controller="rechargeCtrl">
+                            <div id="interbankTransfe" class="transfer-content active">
+                                <img src="img/userCenter/myAccount_recharge/pay_img01.png">
+                                <p class="transfer-text">您可通过银行转账至您的江西银行电子账户中，转账方式包括：银行柜台转账、网银转账、手机银行转账。</p>
+                                <p>转账时所需信息如下：</p>
+                                <ul class="transfer_ul">
+                                    <li>
+                                        <span>收款方姓名</span>
+                                        <span class="last">{{@message.name}}</span>
+                                    </li>
+                                    <li>
+                                        <span>收款方帐号</span>
+                                        <span class="last">{{@message.accountNumber}}<a href="javascript:void(0)" class="transfer-copy">复制</a></span>
+                                    </li>
+                                    <li>
+                                        <span>收款方银行选择</span>
+                                        <span class="last">{{@message.bank}}</span>
+                                    </li>
+                                    <li>
+                                        <span>收款方开户地</span>
+                                        <span class="last">{{@message.accountOpen}}</span>
+                                    </li>
+                                    <li>
+                                        <span>收款方开户行</span>
+                                        <span class="last">{{@message.accountBank}}<a href="javascript:void(0)" class="transfer-copy">复制</a></span>
+                                    </li>
+                                    <div class="clear"></div>
+                                </ul>
+                                <div class="text_tips">
+                                    <p class="font18">温馨提示</p>
+                                    <p>
+                                        1、严禁信用卡充值、套现等行为；<br>
+                                        <span>2、选择支付宝、网银转账方式充值后请在个人中心手动刷新余额；</span><br>
+                                        <span>3、线下充值流水请在账户概览中的资金查询中查看；</span><br>
+                                        4、在向电子账户转账过程中，若无法查找到“江西银行”，您可换查“南昌银行”，由于在2015年底中国银监会批复南昌银行吸收合并景德镇市商业银行，更名为江西银行。<br>
+                                        5、在向电子账户转账时，必须为银行借记卡，平台暂不支持存折、信用卡转账。<br>
+                                        6、根据银行收费标准，在转账过程可能会收取费用。平台目前不收取任何手续费。
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="alipayTransfe" class="transfer-content">
+                                <img src="img/userCenter/myAccount_recharge/alipay_img01.png">
+                                <img src="img/userCenter/myAccount_recharge/alipay_img02.png">
+                                <p class="transfer-text">
+                                    您可以使用您的银行卡，通过支付宝转账的方式将资金充值到您的江西银行存管帐户（支付宝APP更方便）</p>
+                                <p>转账时所需信息如下：</p>
+                                <ul class="transfer_ul">
+                                    <li><span>收款方姓名</span><span class="last">{{@message.name}}</span></li>
+                                    <li><span>收款方帐号</span> <span class="last">{{@message.accountNumber}}<a href="javascript:void(0)" class="transfer-copy">复制</a></span></li>
+                                    <li><span>收款方开户行</span> <span class="last">{{@message.accountBank}}<a href="javascript:void(0)" class="transfer-copy">复制</a></span></li>
+                                    <div class="clear"></div>
+                                </ul>
+                                <table class="recharge-table" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <th>支付方式</th>
+                                            <th>PC端限额</th>
+                                            <th>App端限额</th>
+                                            <th>限额共享</th>
+                                        </tr>
+                                        <tr>
+                                            <td>余额</td>
+                                            <td>单笔5万，单月20万，单日20万</td>
+                                            <td>单笔5万，单月20万，单日20万</td>
+                                            <td>共享</td>
+                                        </tr>
+                                        <tr>
+                                            <td>余额宝</td>
+                                            <td>暂不支持余额宝转账</td>
+                                            <td>暂不支持余额宝转账</td>
+                                            <td>/</td>
+                                        </tr>
+                                        <tr>
+                                            <td>储蓄卡快捷</td>
+                                            <td colspan="2">储蓄卡快捷支付限额表</td>
+                                            <td>共享</td>
+                                        </tr>
+                                        <tr>
+                                            <td>储蓄卡卡通</td>
+                                            <td style="text-align: left; padding: 15px 25px;">
+                                                有证书：最大为每家银行卡通本身的支付额度<br> 无证书：不支持，收银台页面不显示账户中绑定的卡通<br>
+                                                具体以收银台显示额度为准
+                                            </td>
+                                            <td>具体以收银台显示额度为准</td>
+                                            <td>共享</td>
+                                        </tr>
+                                        <tr>
+                                            <td>储蓄卡网银</td>
+                                            <td style="text-align: left; padding: 15px 25px;">单笔5万元、单日20万元、单月20万元（若银行端限额低于<br>该限额，则以银行限额为准）
+                                            </td>
+                                            <td>不支持</td>
+                                            <td>/</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text_tips">
+                                    <p class="font18">温馨提示</p>
+                                    <p>
+                                        1、严禁信用卡充值、套现等行为；<br> <span>2、选择支付宝、网银转账方式充值后请在个人中心手动刷新余额；</span><br>
+                                        <span>3、线下充值流水请在账户概览中的资金查询中查看；</span><br>
+                                        4、在向电子账户转账过程中，若无法查找到“江西银行”，您可换查“南昌银行”，由于在2015年底中国银监会批复南昌银行吸收合并景德镇市商业银行，更名为江西银行。<br>
+                                        5、在向电子账户转账时，必须为银行借记卡，平台暂不支持存折、信用卡转账。<br>
+                                        6、根据银行收费标准，在转账过程可能会收取费用。平台目前不收取任何手续费。
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="fasteRecharge" class="transfer-content">
+                                <div class="bank_bind clear">
+                                    <img class="bankIMG" src="img/userCenter/myAccount_recharge/CIB.png">
+                                    <span class="bankNum">2222 **** **** 2222</span>
+                                </div>
+                                <table class="bank_recharge">
+                                    <tbody>
+                                        <tr>
+                                            <td><label>账户余额：</label></td>
+                                            <td><span class="color-ms"><label>{{@message.accountBalance}}</label></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>转入金额：</label></td>
+                                            <td><input type="text" class="cz_txt" placeholder="每笔限额具体由银行规定">元</td>
+                                            <td><a href="javascript:void(0);" class="viewBtn">(查看快捷支付银行与限额)</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>充值费用：</label></td>
+                                            <td><span class="color000"><label>0.00</label>元</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>支付金额：</label></td>
+                                            <td><span class="color000"><label class="payMoney">0</label>元</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label></label></td>
+                                            <td><a href="#" class="btn-default">充值</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text_tips">
+                                    <p class="font18">温馨提示</p>
+                                    <p>
+                                        1、请在充值前完成江西银行开户及交易密码设置。<br>
+                                        2、为了您的资金安全，江西银行电子账户将采用同卡进出规则，您的账户资金只能提现至已绑定银行卡内，且当您电子账户余额与待收金额同时为零时，才可更换银行卡。<br>
+                                        3、只有您的海投汇注册手机号与您在发卡行预留手机号一致才可使用快捷充值，如果充值失败，建议拨打您发卡行客服电话，咨询是否已开通代收代付、无卡支付或电子支付业务。<br>
+                                        4、请查看快捷支付银行与限额，其他银行卡不支持快捷充值，但可用于提现。如您绑定其他银行卡，也可使用跨行转账或支付宝转账方式充值。<br>
+                                        5、禁止洗钱、信用卡套现、虚假交易等行为，一经发现并确认，将终止该账户的使用。<br>
+                                        6、如果充值金额没有及时到账，请联系客服，400-698-8810。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--模态弹出框-->
+                    <div class="modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <p class="modal-close"></p>
+                                <h1>支持快捷支付的银行与限额参考表</h1>
+                                <table class="tableStyle alertView" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <th>支持银行</th>
+                                                <th colspan="2">交易限额</th>
+                                                <th>备注</th>
+                                            </tr>
+                                            <tr>
+                                                <td>工商银行</td>
+                                                <td>单笔5.0万</td>
+                                                <td>单日5.0万</td>
+                                                <td title="不支持9558开头的卡，且不支持18位的卡号">不支持9558开头的卡，且不支持18位的卡号</td>
+                                            </tr>
+                                            <tr>
+                                                <td>农业银行</td>
+                                                <td>单笔10.0万</td>
+                                                <td>单日10.0万</td>
+                                                <td title="不支持9559开头的卡">不支持9559开头的卡</td>
+                                            </tr>
+                                            <tr>
+                                                <td>中国银行</td>
+                                                <td>单笔1.0万</td>
+                                                <td>单日1.0万</td>
+                                                <td title="部分中行卡需开通银联无卡支付业务">部分中行卡需开通银联无卡支付业务</td>
+                                            </tr>
+                                            <tr>
+                                                <td>建设建行</td>
+                                                <td>单笔10.0万</td>
+                                                <td>单日10.0万</td>
+                                                <td title="部分需开通银联无卡支付业务，才能提现">部分需开通银联无卡支付业务，才能提现</td>
+                                            </tr>
+                                            <tr>
+                                                <td>兴业银行</td>
+                                                <td>单笔10.0万</td>
+                                                <td>单日10.0万</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>光大银行</td>
+                                                <td>单笔10.0万</td>
+                                                <td>单日10.0万</td>
+                                                <td title="在光大银行柜面或个人网银开通电子支付功能">在光大银行柜面或个人网银开通电子支付功能</td>
+                                            </tr>
+                                            <tr>
+                                                <td>中信银行</td>
+                                                <td>单笔0.5万</td>
+                                                <td>单日1.0万</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>民生银行</td>
+                                                <td>单笔10.0万</td>
+                                                <td>单日10.0万</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>广发银行</td>
+                                                <td>单笔10.0万</td>
+                                                <td>单日10.0万</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>平安银行</td>
+                                                <td>单笔10.0万</td>
+                                                <td>单日10.0万</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>邮储储蓄</td>
+                                                <td>单笔0.0万</td>
+                                                <td>单日0.0万</td>
+                                                <td title="可开户，但只能通过人行二代渠道汇款转入">可开户，但只能通过人行二代渠道汇款转入</td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <span>充值限额可参考上表，具体的额度以发卡银行为准。<br>如果您在发卡银行设置的支付额度低于此表额度，以您的设置为准。</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myAccount_recharge.bundle.js"></script>
+
+</body>
+</html>

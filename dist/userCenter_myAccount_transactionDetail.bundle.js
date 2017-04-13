@@ -48,21 +48,44 @@
 	var $ = __webpack_require__(2);
 	var mockjax = __webpack_require__(3)($, window);
 
-	//���Ѿ��Ķ���ͬ��
-	$(function(){
-	    var register = $(".register_btn");
-	    $("#checkbox").change(function(){
-	        var that = $(this);
-	        that.prop("checked",that.prop("checked"));
-	        if(that.prop("checked")){
-	            register.prop("disabled",false);
-	            register.css("background", "#2875d9");
-	        }else{
-	            register.prop("disabled",true);
-	            register.css("background", "#DDDDDD");
-	        }
-	    });
+
+	//交易明细
+	var vmSlideBox=avalon.define({
+	    $id:"slideBoxCtrl",
+	    "tradingRecord":[]
 	});
+
+	$.mockjax({
+	    url:'http://XXX/web-api/userCenter_myAccount_accountSummary',
+	    status:200,
+	    responseText:{
+	        "tradingRecord":[
+	            {time:"2017-03-29 14:38:26",type:"充值成功",changeAmount:"+100",availableBalance:"585.18",managementPlatform:"江西银行",remark:"充值成功"},
+	            {time:"2017-03-29 14:38:26",type:"充值成功",changeAmount:"+100",availableBalance:"585.18",managementPlatform:"江西银行",remark:"充值成功"},
+	            {time:"2017-03-29 14:38:26",type:"充值成功",changeAmount:"+100",availableBalance:"585.18",managementPlatform:"江西银行",remark:"充值成功"},
+	            {time:"0017-02-15 18:15:03",type:"借款放款",changeAmount:"29,700",availableBalance:"300.96",managementPlatform:"江西银行",remark:"投资成功，取出投资金额, 借款ID：20170214001159"},
+	            {time:"0017-02-15 18:15:03",type:"借款放款",changeAmount:"29,700",availableBalance:"300.96",managementPlatform:"江西银行",remark:"投资成功，取出投资金额, 借款ID：20170214001159"},
+	            {time:"0017-02-15 18:15:03",type:"借款放款",changeAmount:"29,700",availableBalance:"300.96",managementPlatform:"江西银行",remark:"投资成功，取出投资金额, 借款ID：20170214001159"}
+	        ]
+	    }
+	});
+
+
+	$.ajax({
+	    url:'http://XXX/web-api/userCenter_myAccount_accountSummary',
+	    success:function(response){
+	        vmSlideBox.tradingRecord = response.tradingRecord;
+	    }
+	});
+
+
+
+
+
+
+
+
+
 
 /***/ },
 /* 1 */

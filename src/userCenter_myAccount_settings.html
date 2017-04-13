@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <div class="tag">
+            <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">账户设置</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="settings ms-controller" ms-controller="settingsCtrl">
+                    <h3 class="account_title">账户设置</h3>
+                        <ul class="ul-list">
+                            <li>
+                                <p>
+                                    <span class="color000">存管开户</span>
+                                    <span class="font12" id="uNameNumber">{{@data.name}}|{{data.openNumber}}</span>
+                                    <label class="set_lab">保障账户安全，确认投资身份</label>
+                                </p>
+                                <p class="link-style">
+                                    <label class="btn-text">已开户</label>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="color000">银行卡绑定</span>
+                                    <span class="font12" id="bindNumber">{{data.bindBank}}（尾号{{data.bindNumber}}）</span>
+                                    <label class="set_lab">保障资金安全，转入、转出资金同卡进出</label>
+                                </p>
+                                <p class="link-style">
+                                    <a href="#" class="btn-xiugai">解绑</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="color000">交易密码</span>
+                                    <span class="font12 color-m" id="dealPassword">{{@data.dealPassword}}</span>
+                                    <label class="set_lab">保障资金安全，转入、转出、投资等资金相关操作时使用</label>
+                                </p>
+                                <p class="link-style">
+                                    <a href="#" class="btn-xiugai">修改</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="color000">自动还款授权</span>
+                                    <span class="font12 color-m" id="autoRefundAccredit">{{@data.autoRefundAccredit}}</span>
+                                    <label class="set_lab">确保账户资金充足，系统自动操作还款，授权开启后，次日生效</label>
+                                </p>
+                                <p class="link-style">
+                                    <a href="#" class="btn-xiugai">授权</a></p>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <span class="color000">手机认证</span>
+                                    <span class="font12" id="phoneApprove">{{data.phoneApprove}}</span>
+                                    <label class="set_lab">保障资金安全，是您在海投汇的重要的身份凭证，获取账户资金变动通知</label>
+                                </p>
+                                <p class="link-style">
+                                    <a href="#" class="btn-xiugai">修改</a></p>
+                            </li>
+                            <p></p>
+
+                            <li>
+                                <p>
+                                    <span class="color000">登录密码</span>
+                                    <span class="font12 color-m" id="password">{{@data.password}}</span>
+                                    <label class="set_lab">上次登录时间：{{data.time}}</label>
+                                </p>
+                                <p class="link-style">
+                                    <a class="btn-xiugai" href="#">修改</a>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="color000">邮箱认证</span>
+                                    <span class="font12" id="email">{{data.email}}</span>
+                                    <label class="set_lab">保障资金安全，转入、转出、投资等资金相关操作时使用</label>
+                                </p>
+                                <p class="link-style">
+                                    <a class="btn-xiugai" href="#">修改</a>
+                                </p>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myAccount_settings.bundle.js"></script>
+
+</body>
+</html>

@@ -1,6 +1,5 @@
 var avalon = require('avalon');
 var $ = require("jquery");
-var backTop = require("backTop");
 var mockjax = require("mockjax")($, window);
 
 //我已经阅读并同意

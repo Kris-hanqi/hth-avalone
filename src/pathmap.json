@@ -2,5 +2,6 @@
   "jquery": "js/lib/jquery-1.11.3.js",
   "avalon": "js/lib/avalon.js",
   "mockjax":"js/lib/jquery.mockjax.js",
-  "backTop":"js/lib/backtop.js"
+  "backTop":"js/lib/backtop.js",
+  "echarts":"js/lib/echarts.min.js"
 }

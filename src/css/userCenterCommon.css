@@ -1,0 +1,934 @@
+/*我的账户中心*/
+.h-main {
+    width: 1200px;
+}
+.account-center {
+    background: #fff url(../img/userCenter/account_bg.jpg) repeat-y left top;
+    margin-bottom: 30px;
+    border: 1px solid #e2e0e1;
+}
+/*我的账户--左侧导航*/
+.account_left {
+    width: 285px;
+}
+.center_left {
+    width: 285px;
+    height: auto;
+    float: left;
+    padding-bottom: 65px;
+    background: #747474 url(../img/userCenter/account_left_bg.jpg) no-repeat top center;
+}
+.account_person {
+    padding-top: 35px;
+    text-align: center;
+}
+img.person-img{
+    width: 109px;
+    border-radius: 50%;
+}
+.person-name{
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    line-height: 30px;
+}
+.person-ico-prove {
+    width: 136px;
+    margin: 0 auto;
+}
+.person-ico-prove a {
+    width: 34px;
+    height: 34px;
+    display: block;
+    float: left;
+    background: url(../img/userCenter/center_icon-1.png);
+}
+.person-ico-prove a.person_ico1{background-position: 0 0;}
+.person-ico-prove a.person_ico2{background-position: -34px 0;}
+.person-ico-prove a.person_ico3{background-position: -68px 0;}
+.person-ico-prove a.person_ico4{background-position: -102px 0;}
+/*鼠标移入效果*/
+.person-ico-prove a.person_ico1:hover {background-position: 0 -68px;}
+.person-ico-prove a.person_ico2:hover {background-position: -34px -68px;}
+.person-ico-prove a.person_ico3:hover {background-position: -68px -68px;}
+.person-ico-prove a.person_ico4:hover {background-position: -102px -68px;}
+/*操作后效果*/
+.person-ico-prove a.person-ico1-hover{background-position: 0 -34px;}
+.person-ico-prove a.person-ico2-hover {background-position: -34px -34px;}
+.person-ico-prove a.person-ico3-hover {background-position: -68px -34px;}
+.person-ico-prove a.person-ico4-hover {background-position: -102px -34px;}
+/* 优惠券-站内通知-推荐好友*/
+.person-quota {
+    width: 100%;
+    height: 74px;
+    margin: 10px 0 0;
+    border-top: 1px solid #979797;
+    border-bottom: 1px solid #979797;
+}
+.person-quota a {
+    width: 95px;
+    height: 73px;
+    display: block;
+    float: left;
+    background: url(../img/userCenter/center_icon-2.png) no-repeat;
+}
+.person-quota a.person-qt01{background-position: 0 -75px;}
+.person-quota a.person-qt02{
+    width: 93px;
+    border-left: 1px solid #979797;
+    border-right: 1px solid #979797;
+    background-position: -95px -75px;
+}
+.person-quota a.person-qt03{background-position: -190px -75px;}
+/*鼠标移入-点击后效果*/
+.person-quota a.person-qt01:hover,.person-qt a.person-qt01.person-qt-hover {background-position: 0 0;}
+.person-quota a.person-qt02:hover,.person-qt a.person-qt02.person-qt-hover {background-position: -95px 0;}
+.person-quota a.person-qt03:hover,.person-qt a.person-qt03.person-qt-hover {background-position: -190px 0;}
+/* 菜单 */
+.account_nav{
+    padding-left: 40px;
+}
+.account_nav h3{
+    color: #fff;
+    font-size: 18px;
+    line-height: 48px;
+    font-weight: normal;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+.mlnav li {
+    padding-left: 10px;
+    line-height: 30px;
+    height: 30px;
+    display: block;
+}
+.mlnav li a {
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    padding-left: 30px;
+}
+.mlnav li a i{
+    width: 25px;
+    height: 30px;
+    margin-right: 5px;
+    float: left;
+    display: block;
+    background: url(../img/userCenter/center_icon-3.png) no-repeat;
+}
+.mlnav li:first-child i{background-position: -25px 0;}
+.mlnav li:first-child+li i{background-position: -25px -30px;}
+.mlnav li:first-child+li+li i{background-position: -25px -60px;}
+.mlnav li:first-child+li+li+li i{background-position: -25px -90px;}
+.mlnav li:first-child+li+li+li+li i{background-position: -25px -120px;}
+.mlnav li:first-child+li+li+li+li+li i{background-position: -25px -150px;}
+.mlnav li:first-child+li+li+li+li+li+li i{background-position: -25px -180px;}
+.mlnav li:first-child+li+li+li+li+li+li+li i{background-position: -25px -210px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li i{background-position: -25px -240px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li i{background-position: -25px -270px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -300px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -330px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -360px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -390px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -420px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -30px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -30px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -90px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li i{background-position: -25px -120px;}
+
+/*鼠标移入-当前页 -li效果*/
+.mlnav li:first-child a:hover i,.mlnav li:first-child a.mlhover i{background-position: 0 0;}
+.mlnav li:first-child+li a:hover i,.mlnav li:first-child+li a.mlhover i{background-position: 0 -30px;}
+.mlnav li:first-child+li+li a:hover i,.mlnav li:first-child+li+li a.mlhover i{background-position: 0 -60px;}
+.mlnav li:first-child+li+li+li a:hover i,.mlnav li:first-child+li+li+li a.mlhover i{background-position: 0 -90px;}
+.mlnav li:first-child+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li a.mlhover i{background-position: 0 -120px;}
+.mlnav li:first-child+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li a.mlhover i{background-position: 0 -150px;}
+.mlnav li:first-child+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li a.mlhover i{background-position: 0 -180px;}
+.mlnav li:first-child+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -210px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -240px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -270px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -300px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -330px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -360px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -390px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -420px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -30px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -30px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -90px;}
+.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a:hover i,.mlnav li:first-child+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li+li a.mlhover i{background-position: 0 -120px;}
+
+/*点击后 -当前页-a的效果*/
+.mlnav li a:hover,.mlnav li a.mlhover {
+    color: #434343;
+    background-color: #fff;
+}
+
+/*我的账户-右侧*/
+.center_right{
+    width: 912px;
+    float: left;
+}
+/*账户概览-总资产统计区域*/
+.center_summary {
+    width: 873px;
+    height: 245px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e2e0e1;
+}
+.bank_jx {
+    float: left;
+    width: 413px;
+    height: 243px;
+    margin-right: 20px;
+    text-align: center;
+    background: url(../img/userCenter/myAccount_accountSummary/bank_jx-hth.png) no-repeat;
+}
+/*未开户状态*/
+.bank_jx_open {
+    float: left;
+    display: block;
+    width: 413px;
+    height: 243px;
+    margin-right: 20px;
+    text-align: center;
+    background: url(../img/userCenter/myAccount_accountSummary/bank_jx-hth_cover.png) no-repeat;
+}
+/*开户状态*/
+.bank_jx span{
+    color: #fff;
+    font-size: 31px;
+    font-family: arial;
+    font-weight: bold;
+    display: block;
+    margin-top: 100px;
+}
+.bank_jx a{
+    width: 120px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    display: block;
+    margin-top: 39px;
+    margin-left: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+.bank_jx a:hover{
+    color: #fff;
+    border: 1px solid #fff;
+}
+.bank_right label {
+    display: inline-block;
+    font-size: 14px;
+    color: #a6a6a6;
+    line-height: 35px;
+}
+.wenhao{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 0 5px;
+    background: url(../img/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
+    background-position: 0 0;
+}
+.wenhao:hover{
+    background-position: -15px 0;
+}
+.bank_right span {
+    display: block;
+    font-size: 32px;
+    color: #fe6e4c;
+    font-family: arial;
+    font-weight: bold;
+}
+.bank_btn i.eyes-open {
+    width: 38px;
+    height: 38px;
+    display: block;
+    cursor: pointer;
+    background: url(../img/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
+    background-position: -38px -15px;
+    margin-bottom: 55px;
+    margin-left: 90px;
+}
+.bank_btn i.eyes-close {
+    width: 38px;
+    height: 38px;
+    display: block;
+    cursor: pointer;
+    background: url(../img/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
+    background-position: 0 -15px;
+    margin-bottom: 55px;
+    margin-left: 90px;
+}
+.bank_btn a {
+    display: block;
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.cz{background: #2875d9;color: #fff;border: 1px solid #2875d9;}
+.cz:hover{background: #2063b9;}
+.tx{background: #fff;color: #ccc;border: 1px solid #ccc;}
+.tx:hover{background: #f1f1f1;}
+
+.center_feature {
+    width: 913px;
+    height: 72px;
+    padding: 0;
+    border-bottom: 1px solid #e2e0e1;
+}
+.center_feature p{
+    width: 175px;
+    padding: 10px 25px;
+    float: left;
+    color: #a6a6a6;
+    font-size: 12px;
+    line-height: 24px;
+    border-left: 1px solid #e2e0e1;
+}
+.center_feature p:first-child{border: none;}
+.center_feature p i {
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+    height: 52px;
+    width: 52px;
+    background: url(../img/userCenter/myAccount_accountSummary/icon.png) no-repeat center;
+    background-position: 0 0;
+}
+.center_feature p:first-child+p i {
+    background-position: -52px 0;
+}
+.center_feature p:first-child+p+p i {
+    background-position: -105px 0;
+}
+.center_feature p:first-child+p+p+p i {
+    background-position: -158px 0;
+}
+.center_feature p span{
+    display: block;
+    float: left;
+}
+.center_feature p span label{
+    display: block;
+    color: #3f3a39;
+    font-size: 20px;
+}
+
+/*图表*/
+.center_chart {
+    width: 913px;
+    height: 305px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e0e1;
+}
+#pieChart {
+    width:350px;
+    height:300px;
+    float:left;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+#barChart {
+    width:500px;
+    height:300px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+/* 表格-查询*/
+.slidings_condition{
+    padding: 20px 0;
+}
+/*-- table表格 --*/
+.slidings_db {
+    margin: 20px;
+}
+.slidings_db h3{
+    color: #3f3a39;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 48px;
+}
+table.tableStyle{
+    width: 100%;
+    border-top: 1px solid #e7e2e2;
+    border-left: 1px solid #e7e2e2;
+    border-right: 1px solid #e7e2e2;
+    margin-top: 20px;
+}
+table.tableStyle tr{
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+table.tableStyle tr th{
+    background: #f5f5f5;
+    color: #000;
+    font-weight: normal;
+    border-bottom: 1px solid #e7e2e2;
+}
+table.title-height tr th{
+    height: 45px;
+}
+table.tableStyle tr td{
+    color: #aeaeae;
+    border-bottom: 1px solid #e7e2e2;
+}
+table.tableStyle th.table_date,table.tableStyle td.table_date{
+    width:145px;
+    padding: 0 10px;
+}
+table.tableStyle th.table_remark,table.tableStyle td.table_remark{
+    width:200px;
+    padding: 0 15px;
+}
+table.tableStyle th.td_bdje,table.tableStyle th.td_kyje{
+    width:120px;
+}
+
+table.tableStyle tr:hover {background: #e8f7ff;}
+table.tableStyle tr td a:hover {
+    color: #0044cc;
+}
+table.tableStyle tr td a {
+    color: #2875d9;
+}
+
+/*我的账户--交易记录***************************************/
+.slideBox {
+    padding: 20px;
+}
+.slidings_invitation{
+    padding: 25px 0;
+    border-top: 1px solid #e2e0e1;
+    border-bottom: 1px solid #e2e0e1;
+    margin-top: 20px;
+}
+.slidings_invitation label{
+    font-size: 14px;
+    color: #2875d9;
+    margin-left: 15px;
+    padding-left: 20px;
+    background: url(../img/userCenter/myAccount_transactionDetail/invitation-calender.png) no-repeat left;
+}
+
+.selectOne {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 33px;
+    margin: 0 10px;
+    border: none;
+    background: none;
+}
+.selectOne span {
+    padding: 0 10px;
+}
+.selectOne span:hover{
+    color: #2875d9;;
+    cursor: pointer;
+}
+.inquire {
+    display: inline-block;
+    border-radius: 5px;
+    width: 70px;
+    height: 33px;
+    font-size: 16px;
+    color: #fff;
+    background: #2875d9;
+    line-height: 33px;
+    text-align: center;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+}
+.inquire:hover {
+    background: #2063b9;
+}
+
+.slidings ul li a.choose_list {
+    color: #2875d9;
+    border-bottom: 2px solid #2875d9;
+}
+.slidings ul li a:hover {
+    cursor: pointer;
+    color: #2875d9;
+    border-bottom: 2px solid #2875d9;
+}
+
+/*我的账户--充值******************************************/
+.recharge {
+    padding: 20px;
+}
+.account_title {
+    font-size: 22px;
+    color: #3f3a39;
+    font-weight: normal;
+}
+.recharge_center {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+.recharge_affix {
+    border-bottom: 1px solid #dedede;
+    height: 50px;
+    margin-bottom: 30px;
+}
+.recharge_affix ul li {
+    float: left;
+    text-align: center;
+    position: relative;
+}
+.recharge_affix ul li i {
+    position: absolute;
+    top: -23px;
+    right: -25px;
+}
+.recharge_affix ul li a {
+    width: 170px;
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    font-size: 18px;
+    color: #222224;
+}
+.recharge_affix ul li a:hover {
+    border-bottom: 3px solid #2173dc;
+    color: #2173dc;
+}
+.recharge_affix ul li.active a {
+    border-bottom: 3px solid #2173dc;
+    color: #2173dc;
+    margin-bottom: -1px;
+}
+
+.transfer-content {
+    color: #a6a6a6;
+}
+.transfer-content img {
+    margin: 10px 0;
+}
+.transfer-content p {
+    line-height: 35px;
+}
+.transfer-text {
+    color: #3f3a39;
+    font-size: 15px;
+}
+.transfer_ul {
+    padding: 20px;
+    background: #f7f7f7;
+}
+.transfer_ul li {
+    font-size: 14px;
+    clear: both;
+}
+.transfer_ul li span {
+    width: 15%;
+    float: left;
+    text-align: right;
+    color: #aeaeae;
+    line-height: 35px;
+}
+.transfer_ul li span.last {
+    width: 60%;
+    margin-left: 60px;
+    text-align: left;
+    color: #3f3a39;
+}
+.transfer_ul .transfer-copy {
+    width: 58px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 15px;
+    display: inline-block;
+    margin-left: 20px;
+    color: #fb6e52;
+    border: 1px solid #fb6e52;
+    border-radius: 2px;
+
+}
+.transfer_ul .transfer-copy:hover {
+    background: #fb6e52;
+    color: #fff;
+}
+
+.text_tips {
+    font-size: 14px;
+    line-height: 35px;
+    color: #8a8a8a;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+.text_tips span {
+    color: #fb6e52;
+}
+
+.recharge-table {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #d2d2d2;
+}
+.recharge-table tr th, .recharge-table tr td:first-child {
+    font-weight: normal;
+    color: #000;
+    background: #f5f5f5;
+}
+.recharge-table tr th, .recharge-table tr td {
+    border: 1px solid #d2d2d2;
+    padding: 8px 15px;
+}
+.recharge-table tr th, .recharge-table tr td:first-child {
+    font-weight: normal;
+    color: #000;
+    background: #f5f5f5;
+}
+.recharge-table tr th, .recharge-table tr td {
+    border: 1px solid #d2d2d2;
+    padding: 8px 15px;
+}
+
+.bank_bind {
+    width: 300px;
+    height: 165px;
+    color: #fff;
+    position: relative;
+}
+.bank_bind .bankIMG {
+    float: left;
+    margin:0;
+    margin-right: 10px;
+}
+.bank_bind .bankNum {
+    position: absolute;
+    top: 55px;
+    left: 20px;
+    line-height: 60px;
+    font-size: 28px;
+}
+.bank_recharge tr {
+    color: #a6a6a6;
+    line-height: 55px;
+}
+.bank_recharge tr td>label {
+    width: 75px;
+    display: inline-block;
+    text-align: right;
+}
+.cz_txt {
+    width: 320px;
+    height: 50px;
+    margin-right: 10px;
+    line-height: 50px;
+    border: 1px solid #b3b9bd;
+    margin-top: 5px;
+    padding-left: 7px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.viewBtn {
+    color: #2875d9;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.btn-default {
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    background: #2875d9;
+    border: none;
+    cursor: pointer;
+}
+.btn-default:hover {
+    background: #2063b9;
+}
+.recharge_container>div { display: none;}
+.recharge_container div.active { display: block; }
+
+/*模态弹出框*/
+.modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0, .7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+    display: none;
+}
+.modal-dialog {
+    width: 769px;
+    margin: 100px auto;
+}
+.modal-content {
+    background:#fff;
+    width: 720px;
+    padding:25px 30px;
+    margin: 0 auto;
+    border-radius: 10px;
+    position: relative;
+}
+.modal-close {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    right: -16px;
+    top:-16px;
+    cursor: pointer;
+    font-size: 40px;
+    background: url(../img/userCenter/myAccount_recharge/idialog_s.png) no-repeat;
+    background-position: 0 -60px;
+}
+.modal-close:hover {
+    background-position: 0 -94px;
+}
+.modal-content h1 {
+    text-align: center;
+    font-size: 22px;
+    color: #3f3a39;
+    line-height: 30px;
+    font-weight: normal;
+    border:none;
+}
+table.alertView {
+    margin-top: 15px;
+}
+table.alertView tr td span {
+    line-height: 20px;
+    color: #f00;
+}
+
+/*我的账户--提现******************************************/
+.withdraw {
+    padding: 20px;
+}
+.withdraw_center {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+}
+.bank_withdraw tr {
+    color: #a6a6a6;
+    line-height: 55px;
+}
+.bank_withdraw tr td>label {
+    width: 75px;
+    display: inline-block;
+    text-align: right;
+}
+.tx_txt {
+    width: 320px;
+    height: 50px;
+    margin-right: 10px;
+    line-height: 50px;
+    border: 1px solid #b3b9bd;
+    margin-top: 5px;
+    padding-left: 7px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+
+/*我的账户--账户设置***************************************/
+.settings {
+    padding: 20px;
+}
+.ul-list {
+    margin-top: 20px;
+    border-top: 1px solid #e7e2e2;
+}
+.ul-list li{
+    clear: both;
+    padding-left: 50px;
+    font-size: 16px;
+    color: #999999;
+    height: 105px;
+    border-bottom: 1px dashed #e7e2e2;
+}
+.ul-list li p{
+    width: 650px;
+    float: left;
+    vertical-align: middle;
+}
+.ul-list li p span{
+    width: 49%;
+    float: left;
+    line-height: 40px;
+    margin-top: 18px;
+    vertical-align: middle;
+}
+label.set_lab {
+    float: left;
+    font-size: 12px;
+    clear: both;
+}
+.ul-list li p.link-style{
+    width: 140px;
+    float: right;
+    margin-right: 30px;
+}
+a.btn-xiugai {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    margin-top: 28px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    font-size: 16px;
+    color: #ccc;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+a.btn-xiugai:hover {color: #fff;background: #2875d9;border: none;}
+.btn-text {
+    display: block;
+    width: 130px;
+    height: 50px;
+    margin-top: 28px;
+    line-height: 50px;
+    text-align: center;
+    color: #2875d9;
+}
+
+/*我的投资--投资记录***************************************/
+.investHistory {
+    padding: 20px;
+}
+.investHistory table.repaying tr th, table.repaying tr td {
+    line-height: 18px;
+    padding: 2px 0;
+}
+.investHistory table.repaying tr th:first-child+th+th+th+th+th {
+    width: 60px;
+}
+
+/*我的投资--H计划******************************************/
+.hPlan {
+    padding: 20px;
+}
+.center_hplan {
+    width: 870px;
+    height: 220px;
+    background: #fff;
+    padding: 20px 0;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 1px solid #e3e3e3;
+}
+.center_hplan_01 {
+    width: 260px;
+    margin-top: 10px;
+    float: left;
+}
+.center_hplan >div p {
+    float: left;
+    font-size: 14px;
+    color: #a3a3a3;
+    width: 260px;
+}
+.center_hplan_01 p {
+    text-align: center;
+}
+.center_hplan_01 p span:first-child+span {
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+.center_hplan_01 p span:first-child+span a {
+    color: #2173dc;
+}
+.center_hplan_02 {
+    width: 210px;
+    height: 145px;
+    padding: 25px 20px 0 50px;
+    float: left;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+}
+.center_hplan_top li {
+    width: 210px;
+    float: left;
+    font-size: 18px;
+    color: #a3a3a3;
+    margin-top: 10px;
+}
+.center_hplan_top li span {
+    display: block;
+}
+.center_hplan_03 {
+    width: 250px;
+    padding: 25px 25px 0 25px;
+    float: left;
+}
+.center_hplan_03 p span {
+    display: block;
+}
+.center_hplan_txt input {
+    border-radius: 5px;
+    width: 230px;
+    height: 45px;
+    border: 1px solid #b3b9bd;
+    margin-top: 5px;
+    padding-left: 7px;
+    font-size: 14px;
+}
+.center_hplan_no_invest {
+    width: 76px;
+    height: 34px;
+    background: #c0c0c0;
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 5px;
+    margin: 5px 10px;
+}
+table.tableHPlan tr th {
+    width: 33%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
