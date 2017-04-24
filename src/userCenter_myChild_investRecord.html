@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">我的账户</a>><a class="thisPage" href="javascript:void(0)">子账户投资记录</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="childInvestRecord ms-controller" ms-controller="childInvestRecord">
+                    <h3 class="account_title">投资记录</h3>
+                    <div class="slidings_invitation">
+                        <span class="childAccount">请选择个人账户</span>
+                        <select class="childSelectMenu" size="1">
+                            <option value="fueyue">fueyue(13911239872)</option>
+                        </select>
+                    </div>
+                    <div class="slidings">
+                        <ul>
+                            <li>
+                                <a href="#" class="choose_list"  type="0">还款中</a>
+                            </li>
+                            <li>
+                                <a href="#" type="1">已结清</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <table border="0" cellspacing="0" cellpadding="0" class="tableStyle">
+                        <tr>
+                            <th>项目名称</th>
+                            <th>投资时间</th>
+                            <th>投资金额</th>
+                            <th>待收本息 </th>
+                            <th>年利率</th>
+                            <th>已还期数/总期数</th>
+                            <th>下次还款日</th>
+                            <th>下次还款数</th>
+                            <th>管理平台</th>
+                            <th>查看</th>
+                        </tr>
+                        <tr ms-for="el in @repayingArray">
+                            <td><a target="_blank" ms-attr="{href: el.loanUrl}">{{el.loanName}}</a></td>
+                            <td>{{el.time}}</td>
+                            <td style="color:#ea544a;">{{el.investmentAccount}}</td>
+                            <td>{{el.dueInPrincipalInterest}}</td>
+                            <td>{{el.annualInterestRate}}</td>
+                            <td>{{el.periods}}</td>
+                            <td>{{el.nextDay}}</td>
+                            <td>{{el.nextMoney}}</td>
+                            <td>{{el.managementPlatform}}</td>
+                            <td><a ms-for="elem in @el.others" ms-attr="{href: elem.othersUrl}">{{elem.othersName}}</a></td>
+                        </tr>
+                    </table>
+                    <div class="pages">
+                        <a href="">上一页</a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">下一页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- end -->
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myChild_investRecord.bundle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link type="text/css" href="css/jquery-ui.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">存管开户</a>
+        </div>
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="openAccount ms-controller" ms-controller="openAccountCtrl">
+                    <h3 class="account_title">存管开户</h3>
+                    <div class="withdraw_center">
+                        <table cellpadding="0px" cellspacing="0px" class="bank_withdraw open-account">
+                            <tbody>
+                                <tr class="open-userName">
+                                    <td>
+                                        <label>用户名</label>
+                                    </td>
+                                    <td>
+                                        <span class="color000"><label>{{@data.userName}}</label></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>真实姓名</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="cz_txt open_txt" placeholder="请输入真实姓名">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>身份证号</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="cz_txt open_txt" placeholder="请输入身份证号码">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>银行卡号</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="cz_txt open_txt" placeholder="请输入银行卡号">
+                                    </td>
+                                </tr>
+                                <tr style="display: none">
+                                    <td>
+                                        <label>手机号</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" ms-attr="{value:@data.mobileNumber}" class="cz_txt open_txt" placeholder="请输入手机号">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label></label></td>
+                                    <td>
+                                        <button class="btn-default btn-open" type="submit" role="button" aria-disabled="false">确认开户</button>
+                                        <a target="_blank" href="#" class="xieyi">《银行存管协议》</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text_tips">
+                        <p class="font18">温馨提示</p>
+                        <p>
+                            1、开户需填写姓名、身份证号、银行卡号<br>
+                            2、请填写真实有效的身份信息与银行卡信息，一旦认证成功，您的身份信息将不可更改！ 请确保您填写的资料真实有效，所有资料将会严格保密。<br>
+                            3、老用户开户，姓名与身份证号需与易宝账户实名认证信息保持一致。<br>
+                            4、江西银行电子账户将采用同卡进出原则，即账户资金只能体现至已绑定银行卡内，且当您的电子账户余额与待收金额同事为0时，才可更换银行卡。<br>
+                            5、不支持信用卡绑卡。<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- end -->
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_openAccount.bundle.js"></script>
+</body>
+</html>

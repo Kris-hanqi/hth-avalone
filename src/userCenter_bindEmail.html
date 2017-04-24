@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">我的账户</a>><a class="thisPage" href="javascript:void(0)">绑定邮箱</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="bindEmail">
+                    <h3 class="account_title">绑定邮箱</h3>
+                    <div class="withdraw_center">
+                        <table class="bank_withdraw change_email">
+                            <tr>
+                                <td><label>用户名：</label></td>
+                                <td>
+                                    <span class="color000">普通12345</span>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><label>邮箱：</label></td>
+                                <td>
+                                    <input type="text" name="" class="cz_txt"/>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><label>验证码：</label></td>
+                                <td>
+                                    <input type="text" name="" class="cz_txt" />
+                                </td>
+                                <td>
+                                    <input type="button" name="" value="获取验证码" class="get-mobileCode" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <a href="#" class="btn-default" />提交</a>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="text_tips">
+                        <p class="font18">温馨提示</p>
+                        <p>
+                            请填写真实有效的邮箱地址，以保证及时收到邮件信息。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- end -->
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_coupon.bundle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <div class="tag">
+            <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">子账户提现</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="withdraw ms-controller"  ms-controller="withdrawCtrl">
+                    <h3 class="account_title">我要提现</h3>
+                    <div class="slidings_invitation">
+                        <span class="childAccount">请选择个人账户</span>
+                        <select class="childSelectMenu" size="1">
+                            <option value="fueyue">{{@message.selectAccount}}</option>
+                        </select>
+                    </div>
+                    <div class="withdraw_center">
+                        <div class="withdraw_container">
+                            <div id="fasteWithdraw" class="transfer-content">
+                                <div class="bank_bind clear">
+                                    <img class="bankIMG" src="img/userCenter/myChild_withdraw/CIB.png">
+                                    <span class="bankNum">{{@message.accountNumber}}</span>
+                                </div>
+                                <table class="bank_withdraw">
+                                    <tbody>
+                                    <tr>
+                                        <td><label>账户余额：</label></td>
+                                        <td><span class="color-ms"><label>{{@message.accountBalance}}</label></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>提现金额：</label></td>
+                                        <td><input type="text" class="tx_txt" placeholder="请输入提现金额">元</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>手续费：</label></td>
+                                        <td><span class="color000"><label>2.00</label>元</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>到账金额：</label></td>
+                                        <td><span class="color000"><label class="accountMoney">0</label>元</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label></label></td>
+                                        <td><a href="#" class="btn-default">提现</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text_tips">
+                                    <p class="font18">温馨提示</p>
+                                    <p>
+                                        1、请确保您输入的提现金额，以及银行帐号信息准确无误。<br>
+                                        2、如果您填写的提现信息不正确可能会导致提现失败，由此产生的提现费用将不予返还。<br>
+                                        3、提现费用每笔2元，到账金额=（提现金额-2元）。<br>
+                                        4、在双休日和法定节假日期间，用户可以申请提现，海投汇会在下一个工作日进行处理。由此造成的不便，请多多谅解！<br>
+                                        5、平台禁止洗钱、信用卡套现、虚假交易等行为，一经发现并确认，将终止该账户的使用。<br>
+                                        6、第三方资金托管机构规定，当日充值的钱，当日不能提现，需第二日后才可提现。<br>
+                                        7、平台禁止洗钱、信用卡套现、虚假交易等行为，一经发现并确认，将终止该账户的使用。<br>
+                                        8、受第三方资金托管机影响，提现资金T+1到账。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myChild_withdraw.bundle.js"></script>
+
+</body>
+</html>

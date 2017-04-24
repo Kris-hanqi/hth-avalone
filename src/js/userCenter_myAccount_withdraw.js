@@ -22,6 +22,9 @@ $.ajax({
     success:function(response){
         vmWithdraw.message=response.message;
 
+        var bankNum=$('.bankNum').html();
+        $('.bankNum').html(bankNum.substr(0,3)+' **** **** '+bankNum.substr(bankNum.length-3));
+
         $(function() {
             var accountMoney = "";
             if(navigator.userAgent.indexOf('MSIE') >= 0)        // IEä¯ÀÀÆ÷

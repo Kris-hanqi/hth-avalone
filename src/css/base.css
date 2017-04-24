@@ -132,7 +132,44 @@ input,select,button,a {
     cursor: default;
 }
 
-
+/*搜索框*/
+.slidings_condition {
+    padding: 20px 0;
+}
+.slidings_condition div {
+    border: 1px solid #dddddd;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding: .5em 1em;
+}
+.slidings_condition div button {
+    color: #333333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+    background-color: #f5f5f5;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: .1em;
+    text-decoration: none!important;
+    text-align: center;
+    padding: .3em 1em;
+}
+.slidings_condition div input {
+    padding: 4px;
+    font-size: 1em;
+    height: 20px;
+    cursor: text;
+    background: none #ffffff;
+    border: 1px solid #bfbfbf;
+    border-radius: 3px;
+    color: #333333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+.slidings_condition div button:hover {
+    background-color: #ECECEC;
+}
 
 
 /*header*/

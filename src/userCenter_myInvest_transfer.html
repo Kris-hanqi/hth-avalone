@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">债权转让</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="transfer ms-controller" ms-controller="transfer">
+                    <h3 class="account_title">债权转让</h3>
+                    <div class="slidings">
+                        <ul>
+                            <li>
+                                <a href="#" class="choose_list">已转入的债权</a>
+                            </li>
+                            <li>
+                                <a href="#">可转出的债权</a>
+                            </li>
+                            <li>
+                                <a href="#">转让中的债权</a>
+                            </li>
+                            <li>
+                                <a href="#">已转出的债权</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <table border="0" cellspacing="0" cellpadding="0" class="tableStyle">
+                        <tr>
+                            <th class="table-oneTh">项目名称</th>
+                            <th>投资时间</th>
+                            <th>投资金额</th>
+                            <th>剩余时间</th>
+                            <th>债权价格</th>
+                            <th>待收本息</th>
+                            <th>其它</th>
+                        </tr>
+                        <tr ms-for="el in @transfer">
+                            <td>
+                                <a target="_blank" ms-attr="{href: el.loanUrl}">{{el.loanName}}</a>
+                                利率：{{el.ratePercent}} 期数：{{el.period}}
+                            </td>
+                            <td>{{el.investTime}}</td>
+                            <td style="color: #ff7460;">{{el.investMoney}}</td>
+                            <td>{{el.remainingTime}}</td>
+                            <td style="color: #ff7460;">{{el.creditorValue}}</td>
+                            <td>{{el.unpaidMoney}}</td>
+                            <td><a ms-attr="{href: el.contractUrl}">{{el.others}}</a></td>
+                        </tr>
+                    </table>
+                    <div class="pages">
+                        <a href="">上一页</a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">下一页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- end -->
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myInvest_transfer.bundle.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <div class="tag">
+            <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">近期还款</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right ms-controller" ms-controller="recentPaymentsCtrl">
+                <div class="recentPayments">
+                    <h3 class="account_title">近期还款</h3>
+                    <table class="tableStyle" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <th ms-for="el in @userMessage">{{el.name}}</th>
+                        </tr>
+                        <tr>
+                            <td ms-for="el in @userMessage">￥{{el.money}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="tableStyle repaying" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <th ms-for="el in @title">{{el}}</th>
+                            </tr>
+                            <tr ms-for="el in @data">
+                                <td><a ms-attr="{href:el.hrefUrl}" target="_blank">{{el.loanName}}--{{el.loanNum}}</a></td>
+                                <td width="100px">{{el.time}}</td>
+                                <td><span style="color: #ff7460;" ms-attr="{title:el.other}">￥{{el.periods}}</span></td>
+                                <td>￥{{el.capital}}</td>
+                                <td>￥{{el.interest}}</td>
+                                <td>￥{{el.defaultInterest}}</td>
+                                <td>￥{{el.paidMoney}}</td>
+                                <td>{{el.nextDay}}</td>
+                                <td>{{el.state}}</td>
+                                <td>{{el.managementPlatform}}</td>
+                                <td>{{el.other}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pages">
+                        <a href="">上一页</a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">下一页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_myBorrow_recentPayments.bundle.js"></script>
+
+</body>
+</html>

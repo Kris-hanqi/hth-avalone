@@ -11,33 +11,33 @@
     <link rel="stylesheet" href="css/userCenterCommon.css"/>
 </head>
 <body>
-<div ms-controller="headerCtrl" class="header ms-controller">
-    <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
-</div>
-
-<div class="h-main clear">
-    <div class="tag">
-        <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
-        >
-        <a class="thisPage" href="javascript:void(0)">H计划</a>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
     </div>
-    <div class="account-center">
-        <!--我的账户左侧导航通栏-->
-        <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
-            <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+
+    <div class="h-main clear">
+        <div class="tag">
+            <a href="userCenter_myAccount_accountSummary.html">我的账户</a>
+            >
+            <a class="thisPage" href="javascript:void(0)">H计划</a>
         </div>
-        <!--我的账户右侧-->
-        <div class="center_right ms-controller" ms-controller="hPlanCtrl">
-            <div class="hPlan">
-                <h3 class="account_title">H计划</h3>
-                <div class="center_hplan">
-                    <div class="center_hplan_01">
-                        <p>
-                            <a ms-attr="{href:hPlan.href}" target="_blank">
-                                <img src="img/userCenter/myInvest_hPlan/h_plan.png" width="115px" height="115px">
-                            </a>
-                        </p>
-                        <p>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right ms-controller" ms-controller="hPlanCtrl">
+                <div class="hPlan">
+                    <h3 class="account_title">H计划</h3>
+                    <div class="center_hplan">
+                        <div class="center_hplan_01">
+                            <p>
+                                <a ms-attr="{href:hPlan.href}" target="_blank">
+                                    <img src="img/userCenter/myInvest_hPlan/h_plan.png" width="115px" height="115px">
+                                </a>
+                            </p>
+                            <p>
                                 <span>
                                     年化收益
                                     <label style="color: #fb7156;font-size: 24px;">{{@hPlan.annualInterestRate}}%</label>
@@ -45,81 +45,81 @@
                                 <span>
                                     <a ms-attr="{href:hPlan.otherHref}" target="_blank">{{@hPlan.otherTxt}}</a>
                                 </span>
-                        </p>
-                    </div>
-                    <div class="center_hplan_02">
-                        <ul class="center_hplan_top">
-                            <li>
-                                <span>昨日收益：</span>
-                                <label style="color: #ea544a;">￥{{@hPlan.yesterdayEarn}}</label>
-                            </li>
-                        </ul>
-                        <p>
-                            <span>锁定期本金：</span>
-                            <span class="color000">￥{{@hPlan.capital}}</span>
-                        </p>
-                        <p>
-                            <span>H计划总资产：</span>
-                            <span class="color000">￥{{@hPlan.totalProperty}}</span>
-                        </p>
-                        <p>
-                            <span>累计收益：</span>
-                            <span class="color000">￥{{@hPlan.earnings}}</span>
-                        </p>
-                    </div>
-                    <div class="center_hplan_03">
-                        <p>
-                            <span>可赎回金额：</span>
-                            <label class="color000">￥{{@hPlan.canRedemptionMoney}}</label>
-                        </p>
-                        <p>
-							    <span class="center_hplan_txt">
+                            </p>
+                        </div>
+                        <div class="center_hplan_02">
+                            <ul class="center_hplan_top">
+                                <li>
+                                    <span>昨日收益：</span>
+                                    <label style="color: #ea544a;">￥{{@hPlan.yesterdayEarn}}</label>
+                                </li>
+                            </ul>
+                            <p>
+                                <span>锁定期本金：</span>
+                                <span class="color000">￥{{@hPlan.capital}}</span>
+                            </p>
+                            <p>
+                                <span>H计划总资产：</span>
+                                <span class="color000">￥{{@hPlan.totalProperty}}</span>
+                            </p>
+                            <p>
+                                <span>累计收益：</span>
+                                <span class="color000">￥{{@hPlan.earnings}}</span>
+                            </p>
+                        </div>
+                        <div class="center_hplan_03">
+                            <p>
+                                <span>可赎回金额：</span>
+                                <label class="color000">￥{{@hPlan.canRedemptionMoney}}</label>
+                            </p>
+                            <p>
+                                <span class="center_hplan_txt">
                                     <input type="text" placeholder="请输入赎回金额">
                                 </span>
-                            <span class="center_hplan_no_invest">赎回</span>
-                        </p>
+                                <span class="center_hplan_no_invest">赎回</span>
+                            </p>
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
-                <div class="slidings">
-                    <ul>
-                        <li>
-                            <a href="#" class="choose_list" type="0">投资记录</a>
-                        </li>
-                        <li>
-                            <a href="#" type="1">赎回记录</a>
-                        </li>
-                    </ul>
-                </div>
-                <table class="tableStyle tableHPlan" border="0" cellspacing="0" cellpadding="0">
-                    <tbody>
-                    <tr>
-                        <th ms-for="el in @title">{{el}}</th>
-                    </tr>
-                    <tr ms-for="el in @data">
-                        <td class="colora3">{{el.time}}</td>
-                        <td class="colorea544a">￥{{el.investmentAccount}}</td>
-                        <td class="colorea544a">{{el.state}}</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="pages">
-                    <a href="">上一页</a>
-                    <a href="">1</a>
-                    <a href="">2</a>
-                    <a href="">下一页</a>
+                    <div class="slidings">
+                        <ul>
+                            <li>
+                                <a href="#" class="choose_list" type="0">投资记录</a>
+                            </li>
+                            <li>
+                                <a href="#" type="1">赎回记录</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <table class="tableStyle tableHPlan" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <th ms-for="el in @title">{{el}}</th>
+                        </tr>
+                        <tr ms-for="el in @data">
+                            <td class="colora3">{{el.time}}</td>
+                            <td class="colorea544a">￥{{el.investmentAccount}}</td>
+                            <td class="colorea544a">{{el.state}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="pages">
+                        <a href="">上一页</a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">下一页</a>
+                    </div>
                 </div>
             </div>
+            <div class="clear"></div>
         </div>
-        <div class="clear"></div>
     </div>
-</div>
 
-<div ms-controller="footer" class="footer ms-controller">
-    <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
-</div>
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
 
-<!--start-backtop-->
+    <!--start-backtop-->
 
 <script src="../dist/header_footer.bundle.js"></script>
 <script src="../dist/userCenter_left.bundle.js"></script>

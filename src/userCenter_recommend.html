@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>海投汇-互联网理财平台_小额投资理财！</title>
+    <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link type="text/css" href="css/jquery-ui.css" rel="stylesheet" />
+    <link type="text/css" href="css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/userCenterCommon.css"/>
+</head>
+<body>
+    <div ms-controller="headerCtrl" class="header ms-controller">
+        <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
+    </div>
+
+    <div class="h-main clear">
+        <!-- start -->
+        <div class="tag">
+            <a href="index.html">我的账户</a>><a class="thisPage" href="javascript:void(0)">推荐好友</a>
+        </div>
+        <div class="account-center">
+            <!--我的账户左侧导航通栏-->
+            <div ms-controller="accountLeftCtrl" class="account_left ms-controller">
+                <wbr ms-widget="{is:'account_left',userName:@userName,MenuArray:@MenuArray}" />
+            </div>
+            <!--我的账户右侧-->
+            <div class="center_right">
+                <div class="recommend ms-controller" ms-controller="recommend">
+                    <h3 class="account_title">我的推荐</h3>
+                    <div class="recommend_link">
+                        <span class="tui_link">推荐链接：</span>
+                        <a class="copy text-overflow" ms-attr="{title: @referrerUrl}" href="javascript:void(0)">{{@referrerUrl}}</a>
+                        <a class="btn_copy" href="javascript:void(0)">复制</a>
+                    </div>
+                    <h3 class="account_title" style="float: left;line-height: 60px;">推荐列表</h3>
+                    <ul class="recommend_data">
+                        <li style="margin-right: 20px;">已推荐：<span class="color-ms">{{@referrerSum}}人</span></li>
+                    </ul>
+                    <div class="clear"></div>
+                    <div class="sliding_recommend">
+                        <label>投资时间：</label>
+                        <span id="dataTable:startDate" class="date_span">
+                            <input id="beginTime" type="text"/>
+                        </span>
+                        -
+                        <span class="date_span">
+                            <input id="endTime" type="text"/>
+                        </span>
+                        <label>推荐用户名：</label>
+                        <input type="text" class="date_txt" />
+                        <a href="#" class="recommend_btn re_cx">查询</a>
+                        <a href="#" class="recommend_btn re_cx">重置</a>
+                    </div>
+                    <table border="0" cellspacing="0" cellpadding="0" class="tableStyle">
+                        <tr>
+                            <th>投资时间</th>
+                            <th>被推荐人用户名</th>
+                            <th>被推荐人手机号</th>
+                            <th>投资金额</th>
+                        </tr>
+                        <tr ms-for="el in @recommend">
+                            <td>{{el.investTime}}</td>
+                            <td style="color: #ff7460;">{{el.recommendName}}</td>
+                            <td>{{el.recommendNumber}}</td>
+                            <td>{{el.investMoney}}</td>
+                        </tr>
+                    </table>
+                    <div class="pages">
+                        <a href="">上一页</a>
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">下一页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <!-- end -->
+    </div>
+
+    <div ms-controller="footer" class="footer ms-controller">
+        <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
+    </div>
+
+    <!--start-backtop-->
+
+    <script src="js/lib/jquery-1.11.3.js"></script>
+    <script src="js/timepicker/jquery-ui-1.11.4.js"></script>
+    <script src="js/timepicker/jquery-ui-timepicker-addon.js"></script>
+    <script src="js/timepicker/jquery-ui-timepicker-zh-CN.js"></script>
+<script src="../dist/header_footer.bundle.js"></script>
+<script src="../dist/userCenter_left.bundle.js"></script>
+<script src="../dist/userCenter_recommend.bundle.js"></script>
+    <script>
+        //起止时间
+        $("#beginTime").datetimepicker({
+            defaultDate: $('#beginTime').val(),
+            dateFormat: "yy-mm-dd",
+            showSecond: true,
+            timeFormat: 'hh:mm:ss',
+            stepHour: 1,
+            stepMinute: 1,
+            stepSecond: 1
+        });
+        $("#endTime").datetimepicker({
+            defaultDate: $('#endTime').val(),
+            dateFormat: "yy-mm-dd",
+            showSecond: true,
+            timeFormat: 'hh:mm:ss',
+            stepHour: 1,
+            stepMinute: 1,
+            stepSecond: 1
+        });
+    </script>
+
+</body>
+</html>

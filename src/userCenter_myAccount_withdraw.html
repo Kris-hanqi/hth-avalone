@@ -35,31 +35,31 @@
                             <div id="fasteWithdraw" class="transfer-content">
                                 <div class="bank_bind clear">
                                     <img class="bankIMG" src="img/userCenter/myAccount_withdraw/CIB.png">
-                                    <span class="bankNum">2222 **** **** 2222</span>
+                                    <span class="bankNum">{{@message.accountNumber}}</span>
                                 </div>
                                 <table class="bank_withdraw">
                                     <tbody>
-                                    <tr>
-                                        <td><label>账户余额：</label></td>
-                                        <td><span class="color-ms"><label>{{@message.accountBalance}}</label></span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label>提现金额：</label></td>
-                                        <td><input type="text" class="tx_txt" placeholder="请输入提现金额">元</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label>手续费：</label></td>
-                                        <td><span class="color000"><label>0.00</label>元</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label>到账金额：</label></td>
-                                        <td><span class="color000"><label class="accountMoney">0</label>元</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label></label></td>
-                                        <td><a href="#" class="btn-default">提现</a></td>
-                                    </tr>
+                                        <tr>
+                                            <td><label>账户余额：</label></td>
+                                            <td><span class="color-ms"><label>{{@message.accountBalance}}</label></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>提现金额：</label></td>
+                                            <td><input type="text" class="tx_txt" placeholder="请输入提现金额">元</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>手续费：</label></td>
+                                            <td><span class="color000"><label>0.00</label>元</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>到账金额：</label></td>
+                                            <td><span class="color000"><label class="accountMoney">0</label>元</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label></label></td>
+                                            <td><a href="#" class="btn-default">提现</a></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <div class="text_tips">
@@ -75,95 +75,6 @@
                                         8、如果提现出现任何疑问，请联系客服，400-698-8810
                                     </p>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--模态弹出框-->
-                    <div class="modal">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <p class="modal-close"></p>
-                                <h1>支持快捷支付的银行与限额参考表</h1>
-                                <table class="tableStyle alertView" border="0" cellspacing="0" cellpadding="0">
-                                    <tbody>
-                                    <tr>
-                                        <th>支持银行</th>
-                                        <th colspan="2">交易限额</th>
-                                        <th>备注</th>
-                                    </tr>
-                                    <tr>
-                                        <td>工商银行</td>
-                                        <td>单笔5.0万</td>
-                                        <td>单日5.0万</td>
-                                        <td title="不支持9558开头的卡，且不支持18位的卡号">不支持9558开头的卡，且不支持18位的卡号</td>
-                                    </tr>
-                                    <tr>
-                                        <td>农业银行</td>
-                                        <td>单笔10.0万</td>
-                                        <td>单日10.0万</td>
-                                        <td title="不支持9559开头的卡">不支持9559开头的卡</td>
-                                    </tr>
-                                    <tr>
-                                        <td>中国银行</td>
-                                        <td>单笔1.0万</td>
-                                        <td>单日1.0万</td>
-                                        <td title="部分中行卡需开通银联无卡支付业务">部分中行卡需开通银联无卡支付业务</td>
-                                    </tr>
-                                    <tr>
-                                        <td>建设建行</td>
-                                        <td>单笔10.0万</td>
-                                        <td>单日10.0万</td>
-                                        <td title="部分需开通银联无卡支付业务，才能提现">部分需开通银联无卡支付业务，才能提现</td>
-                                    </tr>
-                                    <tr>
-                                        <td>兴业银行</td>
-                                        <td>单笔10.0万</td>
-                                        <td>单日10.0万</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>光大银行</td>
-                                        <td>单笔10.0万</td>
-                                        <td>单日10.0万</td>
-                                        <td title="在光大银行柜面或个人网银开通电子支付功能">在光大银行柜面或个人网银开通电子支付功能</td>
-                                    </tr>
-                                    <tr>
-                                        <td>中信银行</td>
-                                        <td>单笔0.5万</td>
-                                        <td>单日1.0万</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>民生银行</td>
-                                        <td>单笔10.0万</td>
-                                        <td>单日10.0万</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>广发银行</td>
-                                        <td>单笔10.0万</td>
-                                        <td>单日10.0万</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>平安银行</td>
-                                        <td>单笔10.0万</td>
-                                        <td>单日10.0万</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>邮储储蓄</td>
-                                        <td>单笔0.0万</td>
-                                        <td>单日0.0万</td>
-                                        <td title="可开户，但只能通过人行二代渠道汇款转入">可开户，但只能通过人行二代渠道汇款转入</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="4">
-                                            <span>充值限额可参考上表，具体的额度以发卡银行为准。<br>如果您在发卡银行设置的支付额度低于此表额度，以您的设置为准。</span>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
                     </div>

@@ -344,10 +344,6 @@ img.person-img{
     margin-right: 20px;
 }
 
-/* 表格-查询*/
-.slidings_condition{
-    padding: 20px 0;
-}
 /*-- table表格 --*/
 .slidings_db {
     margin: 20px;
@@ -410,7 +406,6 @@ table.tableStyle tr td a {
 .slidings_invitation{
     padding: 25px 0;
     border-top: 1px solid #e2e0e1;
-    border-bottom: 1px solid #e2e0e1;
     margin-top: 20px;
 }
 .slidings_invitation label{
@@ -910,22 +905,388 @@ table.tableHPlan tr th {
     width: 33%;
 }
 
+/*我的投资--H计划******************************************/
+.transfer {
+    padding: 20px;
+}
+.transfer .slidings li a {
+    width: 140px;
+}
+.transfer .table-oneTh {
+    width: 340px;
+}
 
 
 
 
+/*我的子账户--交易明细******************************************/
+.childCashFlow {
+    padding: 20px;
+}
+.childAccount {
+    font-size: 14px;
+    color: #aeaeae;
+    float: left;
+    line-height: 40px;
+    margin-right: 10px;
+}
+.childSelectMenu {
+    font-size: 15px;
+    width: 242px;
+    padding-left: 10px;
+    height: 40px;
+    border-radius: 5px;
+}
+.childCashFlow table tr th {
+    line-height: 45px;
+}
+.childCashFlow table tr th:first-child {
+    width: 170px;
+}
+.cashflow_mark{
+    width: 200px;
+    padding: 0 15px;
+}
+
+
+/*我的子账户--投资记录******************************************/
+.childInvestRecord {
+    padding: 20px;
+}
+.childAccount {
+    font-size: 14px;
+    color: #aeaeae;
+    float: left;
+    line-height: 40px;
+    margin-right: 10px;
+}
+.childSelectMenu {
+    font-size: 15px;
+    width: 242px;
+    padding-left: 10px;
+    height: 40px;
+    border-radius: 5px;
+}
+.childInvestRecord table tr th,.childInvestRecord table tr td {
+    line-height: 18px;
+    padding: 3px 0;
+}
+.childInvestRecord table tr td:first-child a {
+    width: 100px;
+    display: inline-block;
+}
+.childInvestRecord table tr td:first-child+td {width: 100px;}
+.childInvestRecord table tr td:first-child+td+td+td+td+td {width: 65px;}
+.childInvestRecord table tr td a {
+    display: block;
+}
+
+
+/*我的子账户--投资记录******************************************/
+ul.myChild_settings {
+    border-top: none;
+}
+ul.myChild_settings li {
+    height: 75px;
+}
+ul.myChild_settings li p span {
+    line-height: 40px;
+}
+ul.myChild_settings a.btn-xiugai {
+    margin-top: 10px;
+}
+
+
+/*我的借款--借款记录******************************************/
+.borrowHistory {
+    padding: 20px;
+}
+.borrowHistory table.repaying tr th:first-child+th+th+th+th+th+th {
+    width: 60px;
+}
+.borrowHistory table.repaying tr th, table.repaying tr td {
+    line-height: 18px;
+    padding: 2px 0;
+}
+
+
+/*我的借款--近期还款******************************************/
+.recentPayments {
+    padding: 20px;
+}
+
+
+/*绑定邮箱******************************************/
+.bindEmail {
+    padding: 20px;
+}
+.bindEmail .get-mobileCode {
+    width: 130px;
+    height: 50px;
+}
+
+
+/*修改邮箱******************************************/
+.changeEmail {
+    padding: 20px;
+}
+.changeEmail .get-mobileCode {
+    width: 130px;
+    height: 50px;
+}
 
 
 
+/*修改登录密码******************************************/
+.changePwd {
+    padding: 20px;
+}
+.change_pwd tr td>label {
+    width: 100px;
+}
+.change_pwd .btn-default {
+    margin-top: 20px;
+}
 
 
+/* 站内通知************************************************/
+.webNotice {
+    padding: 20px;
+}
+.webNotice h3 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.web-info{
+    padding: 20px 10px;
+    border-bottom: 1px dashed #e7e2e2;
+}
+.web-info-l{
+    float: left;
+}
+a.web-link {
+    color: #000000;
+    font-weight: bold;
+    font-size: 14px;
+}
+a.web-link:hover {
+    color: #1d6bd9;
+    font-size: 14px;
+}
+.web-info label{
+    color: #a3a3a3;
+    font-size: 12px;
+    padding-top: 8px;
+    display: block;
+}
+.web-mrg{
+    float: right;
+    margin-top: 24px;
+    margin-left: 20px;
+}
+.web-mrg a{
+    font-size: 12px;
+    color: #2173dc;
+    margin: 0 5px;
+}
+.web-time{
+    margin-top: 19px;
+    float: right;
+}
 
 
+/*我的优惠券*********************************************/
+.coupon {
+    padding: 20px;
+}
+.sliding_sm{
+    margin-top: 20px;
+    padding: 20px 0 0;
+    border-top: 1px solid #ccc;
+}
+.sliding_sm span{
+    color: #8a8a8a;
+    margin: 0 10px;
+}
+.sliding_sm span label{
+    color: #fb6e52;
+}
+.sliding_sm span a {
+    width: 110px;
+    display: inline-block;
+    text-align: right;
+    color: #fb6e52;
+}
+.sliding_sm span a:hover{
+    color: #bc351a;
+}
+.sliding_sm span a.instruction{
+    color: #2875d9;
+}
+.sliding_sm span a.instruction:hover{
+    color: #0c4fa5;
+}
+.coupon table tr td:first-child {
+    width: 160px;
+}
+.coupon table tr td:first-child+td+td+td {
+    width: 120px;
+    line-height: 18px;
+    height: 45px;
+}
 
 
+/*推荐好友*********************************************/
+.recommend {
+    padding: 20px;
+}
+.recommend_link {
+    height: 90px;
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #e2e0e1;
+}
+.recommend_link .tui_link {
+    color: #666;
+    float: left;
+    font-size: 15px;
+    margin-left: 30px;
+    margin-top: 35px;
+}
+.recommend_link >a {
+    float: left;
+    display: inline-block;
+    color: #565960;
+    font-size: 16px;
+    margin-left: 8px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 25px;
+}
+.recommend_link .copy {
+    width: 560px;
+    height: 40px;
+    margin-right: 5px;
+    background: #f5f5f5;
+    border: 1px solid #e3e3e3;
+}
+.recommend_link .copy:hover {
+    color: #2875d9;
+    text-decoration: underline;
+}
+.recommend_link .btn_copy {
+    height: 50px;
+    width: 125px;
+    background: #2173dc;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 50px;
+    font-size: 18px;
+    border: 1px solid #2173dc;
+    margin-top: 20px;
+}
+.recommend_link .btn_copy:hover{background: #2063b9;}
+.recommend_data {
+    float: right;
+}
+.recommend_data li {
+    float: right;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #b2b2b2;
+    line-height: 60px;
+}
+.sliding_recommend{
+    padding: 25px 0;
+    border-top: 1px solid #e2e0e1;
+}
+.sliding_recommend label{
+    font-size: 12px;
+    color: #a6a6a6;
+    margin-left: 15px;
+}
+.date_txt {
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #b3b9bd;
+    padding: 0 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+.date_span input {
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #b3b9bd;
+    padding: 0 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+.recommend_btn{
+    display: inline-block;
+    border-radius: 5px;
+    width: 85px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background: #2875d9;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+}
+.re_cx:hover {background: #2063b9;}
+.re_cz {
+    background: #fff;
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+.re_cz:hover {
+    background: #f1f1f1;
+    color: #ccc;
+    border: 1px solid #ccc;
+}
+.recommend table tr td:first-child {
+    width: 200px;
+}
 
 
-
+/*存管开户*********************************************/
+.openAccount {
+    padding: 20px;
+}
+.withdraw_center {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px dashed #ccc;
+}
+.bank_withdraw tr td>label {
+    width: 75px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 20px;
+}
+.bank_withdraw tr+tr {
+    line-height: 80px;
+}
+.open_txt {
+    width: 430px;
+}
+.openAccount .text_tips {
+    border-top: none;
+}
+.bank_withdraw .xieyi {
+    color: #2875d9;
+    text-decoration: underline;
+    margin-left: 20px;
+}
+.bank_withdraw .xieyi:hover {
+    color: #0c4fa5;
+}
 
 
 

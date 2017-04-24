@@ -80,6 +80,10 @@
 	            }
 	        });
 
+	        var bankNum=$('.bankNum').html();
+	        $('.bankNum').html(bankNum.substr(0,3)+' **** **** '+bankNum.substr(bankNum.length-3));
+
+
 	        /*快捷充值支付金额*/
 	        $(function() {
 	            var payMoney = "";
