@@ -49,68 +49,43 @@
 	var mockjax = __webpack_require__(3)($, window);
 
 	$.mockjax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
+	    url:'http://XXX/web-api/userCenter_recommend',
 	    status:200,
 	    responseText:{
-	        "message": {
-	            name:"���޶�",
-	            accountNumber:"1111111111111111111",
-	            bank:"�������л�������ҵ����",
-	            accountOpen:"����ʡ�ϲ���",
-	            accountBank:"�������йɷ����޹�˾����Ӫҵ��",
-	            accountBalance:"666"
-	        }
+	        referrerUrl: "#",
+	        referrerSum: "3",
+	        recommend:[
+	            {
+	                investTime:'2017-02-27 09:00:05',
+	                recommendName:'李丽丽',
+	                recommendNumber:'18800001111',
+	                investMoney:'1000元'
+	            },
+	            {
+	                investTime:'2017-02-27 09:00:05',
+	                recommendName:'李丽丽',
+	                recommendNumber:'18800001111',
+	                investMoney:'1000元'
+	            }
+	        ]
 	    }
 	});
 
-	var vmWithdraw=avalon.define({
-	    $id:"withdrawCtrl",
-	    message:[]
+	var vmRecommend =avalon.define({
+	    $id: "recommend",
+	    referrerUrl: "",
+	    referrerSum: "",
+	    recommend:[]
 	});
 
 	$.ajax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
+	    url:'http://XXX/web-api/userCenter_recommend',
 	    success:function(response){
-	        vmWithdraw.message=response.message;
-
-	        var bankNum=$('.bankNum').html();
-	        $('.bankNum').html(bankNum.substr(0,3)+' **** **** '+bankNum.substr(bankNum.length-3));
-
-	        $(function() {
-	            var accountMoney = "";
-	            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IE������
-	            {
-	                $(".tx_txt").get(0).onpropertychange = setJsUserName;
-	                $(".accountMoney").get(0).onpropertychange = handle;
-	            } else {
-	                var intervalName;        // ��ʱ������
-	                $(".tx_txt").get(0).addEventListener("input",setJsUserName,false);
-	                // ���ý���ʱ��������ʱ��
-	                $(".tx_txt").focus(function(){
-	                    intervalName = setInterval(handle,1000);
-	                });
-
-	                // ʧȥ����ʱ��������ʱ��
-	                $(".tx_txt").blur(function() {
-	                    clearInterval(intervalName);
-	                });
-	            }
-	            // ����accountMoney input��ֵ
-	            function setJsUserName() {
-	                $(".accountMoney").html($(this).val());
-	            }
-	            // accountMoney input��ֵ�ı�ʱִ�еĺ���
-	            function handle() {
-	                if($(".accountMoney").val() != accountMoney) {
-	                    accountMoney = $(".accountMoney").html();
-	                }
-	            }
-	        });
+	        vmRecommend.referrerUrl=response.referrerUrl;
+	        vmRecommend.referrerSum=response.referrerSum;
+	        vmRecommend.recommend=response.recommend;
 	    }
 	});
-
-
-
 
 
 

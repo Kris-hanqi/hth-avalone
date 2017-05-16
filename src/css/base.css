@@ -23,7 +23,6 @@ input,select,button,a {
 
 .fl-l{float: left;}
 .fl-r{float: right;}
-
 .clear{ clear: both;}
 
 .font12{ font-size:12px;}
@@ -83,7 +82,30 @@ input,select,button,a {
     display: block;
 }
 
-/*面包屑*/
+/*注册&登录提示信息*/
+.hint_message {
+    width: 120px;
+    height: 25px;
+    line-height: 23px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background: #fff;
+    position: absolute;
+}
+.hint_message p {
+    color: #CC0F13;
+}
+.hint_message span {
+    background: url(../img/down_arrow.png) no-repeat center;
+    width: 13px;
+    height: 8px;
+    position: absolute;
+    bottom: -8px;
+    left: 5px;
+}
+
+    /*面包屑*/
 .tag {
     width: 1080px;
     margin: 0 auto;

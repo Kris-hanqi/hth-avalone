@@ -128,8 +128,8 @@
 	                                '<img class="person-img" src="img/userCenter/account_head_default.png" /> '+
 	                                '<a href="javascript:void(0);" class="person-name" ms-attr="{title: @userName}">{{@userName}}</a>'+
 	                                '<div class="person-ico-prove clearfix">'+
-	                                    '<a href="#" class="person_ico1" title="开户"></a>'+
-	                                    '<a href="userCenter_openAccount.html" class="person_ico2" title="开户"></a>'+
+	                                    '<a href="userCenter_openAccount.html" class="person_ico1" title="开户"></a>'+
+	                                    '<a href="#" class="person_ico2" title="绑定银行卡"></a>'+
 	                                    '<a href="userCenter_bindEmail.html" class="person_ico3" title="绑定邮箱"></a>'+
 	                                    '<a href="userCenter_changePwd.html" class="person_ico4" title="修改登录密码"></a>'+
 	                                '</div>'+

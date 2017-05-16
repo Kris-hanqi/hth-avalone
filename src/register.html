@@ -29,29 +29,53 @@
                 <div class="register_box">
                     <div class="register_message">
                         <i class="userPhone_bg"></i>
-                        <input class="userPhone" id="userPhone" type="text" maxlength="11" placeholder="请输入手机号码"/>
+                        <input class="userPhone inputClass" id="userPhone" type="text" maxlength="11" placeholder="请输入手机号码"/>
+                        <div class="hint_message hint_message_userPhone">
+                            <p>手机号不可以为空</p>
+                            <span></span>
+                        </div>
                     </div>
                     <div class="register_message">
                         <i class="userPassward_bg"></i>
-                        <input class="userPassward" id="userPassward" type="password" maxlength="16" placeholder="6至16位字母和数字组合"/>
+                        <input class="userPassward inputClass" id="userPassward" type="password" maxlength="16" placeholder="6至16位字母和数字组合"/>
+                        <div class="hint_message hint_message_userPassward">
+                            <p>密码不可以为空</p>
+                            <span></span>
+                        </div>
                     </div>
                     <div class="register_message">
                         <i class="userPassward_bg"></i>
-                        <input class="userPassward_again" id="userPassward_again" type="password" maxlength="16" placeholder="再次输入密码"/>
+                        <input class="userPassward_again inputClass" id="userPassward_again" type="password" maxlength="16" placeholder="再次输入密码"/>
+                        <div class="hint_message hint_message_userPassward_again">
+                            <p>密码不可以为空</p>
+                            <span></span>
+                        </div>
                     </div>
                     <div class="register_message">
                         <i class="imgCode_bg"></i>
-                        <input class="imgCode" id="imgCode" type="text"  placeholder="请输入图片验证码"/>
+                        <input class="imgCode inputClass" id="imgCode" type="text"  placeholder="请输入图片验证码"/>
                         <img style="margin-top: 18px; margin-left: 20px;" alt="点击刷新" src="">
+                        <div class="hint_message hint_message_imgCode">
+                            <p>验证码不可以为空</p>
+                            <span></span>
+                        </div>
                     </div>
                     <div class="register_message">
                         <i class="smsCode_bg"></i>
-                        <input class="smsCode" id="smsCode" type="text" maxlength="6" placeholder="请输入验证码"/>
+                        <input class="smsCode inputClass" id="smsCode" type="text" maxlength="6" placeholder="请输入验证码"/>
                         <button class="getSmsCode" >获取短信验证码</button>
+                        <div class="hint_message hint_message_smsCode">
+                            <p>验证码不可以为空</p>
+                            <span></span>
+                        </div>
                     </div>
                     <div class="register_message">
                         <i class="referrerPhone_bg"></i>
-                        <input class="referrerPhone" id="referrerPhone" type="text" maxlength="50" placeholder="请输入推荐人手机号（选填）"/>
+                        <input class="referrerPhone inputClass" id="referrerPhone" type="text" maxlength="11" placeholder="请输入推荐人手机号（选填）"/>
+                        <div class="hint_message hint_message_referrerPhone">
+                            <p>手机号格式不正确</p>
+                            <span></span>
+                        </div>
                     </div>
                     <div class="register_message">
                         <p class="serviceAgreement reg">
@@ -60,7 +84,7 @@
                         </p>
                     </div>
                     <div class="register_message">
-                        <button class="register_btn">注册</button>
+                        <button class="register_btn" id="registerForm">注册</button>
                     </div>
                 </div>
             </form>

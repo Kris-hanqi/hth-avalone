@@ -48,70 +48,51 @@
 	var $ = __webpack_require__(2);
 	var mockjax = __webpack_require__(3)($, window);
 
+
 	$.mockjax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
+	    url:'http://XXX/web-api/userCenter_coupon',
 	    status:200,
 	    responseText:{
-	        "message": {
-	            name:"���޶�",
-	            accountNumber:"1111111111111111111",
-	            bank:"�������л�������ҵ����",
-	            accountOpen:"����ʡ�ϲ���",
-	            accountBank:"�������йɷ����޹�˾����Ӫҵ��",
-	            accountBalance:"666"
-	        }
+	        AvailableCoupon:"1",
+	        usedCoupon:"2",
+	        coupon:[
+	            {
+	                getTime:'2017-02-27 09:00:05',
+	                couponName:'生日送1%加息券',
+	                couponType:'加息券',
+	                useCondition:'投资100元可用，最高100000元',
+	                validUntil:'2017-03-30 09:00:05',
+	                state:'超期',
+	                value:'	1%'
+	            },
+	            {
+	                getTime:'2017-02-27 09:00:05',
+	                couponName:'100元现金券',
+	                couponType:'现金券',
+	                useCondition:'投资50000元可用',
+	                validUntil:'2017-03-30 09:00:05',
+	                state:'超期',
+	                value:'100元'
+	            }
+	        ]
 	    }
 	});
 
-	var vmWithdraw=avalon.define({
-	    $id:"withdrawCtrl",
-	    message:[]
+	var vmCoupon =avalon.define({
+	    $id: "coupon",
+	    AvailableCoupon:"",
+	    usedCoupon:"",
+	    coupon:[]
 	});
 
 	$.ajax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
+	    url:'http://XXX/web-api/userCenter_coupon',
 	    success:function(response){
-	        vmWithdraw.message=response.message;
-
-	        var bankNum=$('.bankNum').html();
-	        $('.bankNum').html(bankNum.substr(0,3)+' **** **** '+bankNum.substr(bankNum.length-3));
-
-	        $(function() {
-	            var accountMoney = "";
-	            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IE������
-	            {
-	                $(".tx_txt").get(0).onpropertychange = setJsUserName;
-	                $(".accountMoney").get(0).onpropertychange = handle;
-	            } else {
-	                var intervalName;        // ��ʱ������
-	                $(".tx_txt").get(0).addEventListener("input",setJsUserName,false);
-	                // ���ý���ʱ��������ʱ��
-	                $(".tx_txt").focus(function(){
-	                    intervalName = setInterval(handle,1000);
-	                });
-
-	                // ʧȥ����ʱ��������ʱ��
-	                $(".tx_txt").blur(function() {
-	                    clearInterval(intervalName);
-	                });
-	            }
-	            // ����accountMoney input��ֵ
-	            function setJsUserName() {
-	                $(".accountMoney").html($(this).val());
-	            }
-	            // accountMoney input��ֵ�ı�ʱִ�еĺ���
-	            function handle() {
-	                if($(".accountMoney").val() != accountMoney) {
-	                    accountMoney = $(".accountMoney").html();
-	                }
-	            }
-	        });
+	        vmCoupon.AvailableCoupon=response.AvailableCoupon;
+	        vmCoupon.usedCoupon=response.usedCoupon;
+	        vmCoupon.coupon=response.coupon;
 	    }
 	});
-
-
-
-
 
 
 /***/ },

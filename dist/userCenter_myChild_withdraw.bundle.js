@@ -49,16 +49,11 @@
 	var mockjax = __webpack_require__(3)($, window);
 
 	$.mockjax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
+	    url:'http://XXX/web-api/userCenter_myChild_withdraw',
 	    status:200,
 	    responseText:{
 	        "message": {
-	            name:"���޶�",
-	            accountNumber:"1111111111111111111",
-	            bank:"�������л�������ҵ����",
-	            accountOpen:"����ʡ�ϲ���",
-	            accountBank:"�������йɷ����޹�˾����Ӫҵ��",
-	            accountBalance:"666"
+	            name:"���޶�",accountNumber:"11111111111111111",bank:"��ҵ����",accountBalance:"666",selectAccount:"lalala15011455508"
 	        }
 	    }
 	});
@@ -69,7 +64,7 @@
 	});
 
 	$.ajax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
+	    url:'http://XXX/web-api/userCenter_myChild_withdraw',
 	    success:function(response){
 	        vmWithdraw.message=response.message;
 
@@ -83,7 +78,7 @@
 	                $(".tx_txt").get(0).onpropertychange = setJsUserName;
 	                $(".accountMoney").get(0).onpropertychange = handle;
 	            } else {
-	                var intervalName;        // ��ʱ������
+	                var intervalName;
 	                $(".tx_txt").get(0).addEventListener("input",setJsUserName,false);
 	                // ���ý���ʱ��������ʱ��
 	                $(".tx_txt").focus(function(){
@@ -97,7 +92,7 @@
 	            }
 	            // ����accountMoney input��ֵ
 	            function setJsUserName() {
-	                $(".accountMoney").html($(this).val());
+	                $(".accountMoney").html($(this).val()-2);
 	            }
 	            // accountMoney input��ֵ�ı�ʱִ�еĺ���
 	            function handle() {

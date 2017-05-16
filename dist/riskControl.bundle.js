@@ -48,70 +48,24 @@
 	var $ = __webpack_require__(2);
 	var mockjax = __webpack_require__(3)($, window);
 
+
 	$.mockjax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
+	    url:'http://XXX/web-api/riskControl',
 	    status:200,
 	    responseText:{
-	        "message": {
-	            name:"���޶�",
-	            accountNumber:"1111111111111111111",
-	            bank:"�������л�������ҵ����",
-	            accountOpen:"����ʡ�ϲ���",
-	            accountBank:"�������йɷ����޹�˾����Ӫҵ��",
-	            accountBalance:"666"
+	        data : {
+	            "nodebody":'<p><strong>　　1. 业务模式——严格风控，多层审核<br/></strong></p><p>　　海投汇凭借对产业的深入了解和丰富的投资经验，以严苛的品牌合作机构筛选机制和严谨的风控措施，核实资产端真实可靠;并且海投汇已在资产端、资金端和客户端形成完善的业务闭环和风控体系，核实平台的专业与可靠。</p><p style="text-align: center;"><img src="img/riskControl/26041478616860442.jpg" title="zzzz.jpg"/></p><p style="margin-left: 72px; text-indent: 0px; line-height: 150%; text-align: left;"><span style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;"></span></p><p><strong>　　</strong></p><p><strong>&nbsp;&nbsp;2.&nbsp;江西银行资金存管<br/><br/></strong>&nbsp;&nbsp;海投汇平台依据《网络借贷信息中介机构业务活动管理暂行办法》的规定，正式接入江西银行资金存管系统，为用户带来更安全、透明的服务。客户可通过网银、手机银行等充值方式，方便快捷。海投汇平台只负责匹配借贷双方信息,全程不经手投资人及借款人资金。&nbsp;</p><p style="margin-left: 72px; text-indent: 0px; line-height: 150%; text-align: left;"><span style="font-family: 微软雅黑, sans-serif; line-height: 150%;"></span><br/></p><p style="margin-left: 47px; line-height: 150%; text-align: center;"><br/></p><p style="margin-left: 72px; line-height: 150%; text-align: left;"><strong><span style="font-family:&#39;微软雅黑&#39;,&#39;sans-serif&#39;"></span></strong></p><p>　　<strong>3. 风控机制——多层信审，重重把关</strong></p><p>　　海投汇严格执行平台信审评级系统，用于筛选优质合作机构及投资项目，并保持贷后实时跟踪管理。</p><p>　　<strong>合作机构先行把关：</strong></p><p>　　机构甄选：对机构进行实地考察及信用评级，核实真正的担保实力;</p><p>　　实地考察：风控团队实地走访，尽职调查;</p><p>　　严格把控：对合作机构进行严格筛选，风控团队按月复核。</p><p>　<strong>　海投汇再次把关：</strong></p><p>　　背景调查：借款人资料二度审核，审贷会评审核实;</p><p>　　抵质押措施：签署合同落实担保反担保抵质押措施;</p><p>　　</p><p><br/></p><p style="text-indent: 2em;"><strong>4.网站建设——技术支持</strong></p><p style="text-indent: 2em;"><span style="line-height: 150%;">海投汇拥有一支曾在金融投资机构和互联网企业工作、具备丰富金融及互联网经验的高水准专业队伍进行网站运营及技术支持，数据实施两地三中心防灾备份功能，多重攻击防护。</span></p><p style="text-indent: 2em;"><span style="line-height: 150%;">平台对每一位投资人或用户进行四重身份认证，通过姓名、手机号、身份证号、银行账户对用户进行唯一性识别，保护账户。</span><span style="line-height: 150%;">平台要求投资用户绑定银行卡且与用户身份证姓名一致，投资资金到期后，资金只能在用户本人的第三方账户与本人银行卡账户之间流转，核实万无一失，且由众安保险提供账户资金承保。</span></p><p style="margin-left: 72px; text-indent: 0px; line-height: 150%; text-align: left;"><span style="line-height: 150%;">&nbsp;</span></p><p style="text-align: left; text-indent: 2em;"><strong><span style="line-height: 150%;">5.隐私保护</span></strong></p><p style="text-align: left; text-indent: 2em;"><span style="line-height: 150%;">海投汇平台上所有的隐私信息均进行多重加密处理，防止任何人通过各种方式盗取用户信息。同时，海投汇绝不出售、出租或以任何其他形式泄露用户的个人隐私。您的信息，我们严格保护！</span></p><p style="text-align: left; text-indent: 2em;"><strong>6.法律援助</strong></p><p style="text-align: left; text-indent: 2em;"><span style="line-height: 150%;">海投汇从公司自有资金中划拨100万人民币作为法律援助基金，为平台上的融资项目、投资人提供法律支持。如融资项目发生争议需通过法律程序解决时，海投汇将启用法律援助基金，为投资人聘请专业律师协助其追回投资收益。</span></p><p style="text-align: left; text-indent: 2em;"><strong><span style="line-height: 150%;">7.合法合规</span></strong></p><p style="text-align: left; text-indent: 2em;"><span style="line-height: 150%;">海投汇严格执行国家相关政策规定，引入第三方托管平台保护投资人资金。同时，海投汇坚决维护反洗钱法规，不自融不设资金池，坚持走可持续发展道路。</span></p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p style="text-align: left; text-indent: 0em;"><strong><span style="line-height: 150%;">关于投资人及借款人双方民间借贷的合法性：明确合法</span></strong></p></li></ul><p style="text-align: left; text-indent: 2em;"><span style="line-height: 150%;">根据《合同法》第196条规定&quot;借款合同是借款人向贷款人借款，到期返还借款并支付利息的合同&quot;，《合同法》允许普通民事主体之间发生借贷关系，并允许出借方到期可以收回本金和符合法律规定的利息。</span></p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p style="text-align: left; text-indent: 0em;"><strong><span style="line-height: 150%; text-indent: 2em;">关于海投汇提供居间撮合服务的合法性：明确合法</span></strong></p></li></ul><p style="text-align: left; text-indent: 2em;"><span style="line-height: 150%;">根据《合同法》第23章关于&quot;居间合同&quot;的规定，特别是第424条规定的&quot;居间合同是居间人向委托人报告订立合同的机会或者提供订立合同的媒介服务，委托人支付报酬的合同&quot;，海投汇为民间借贷提供撮合借贷双方形成借贷关系的居间服务有着明确的法律基础。</span></p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p style="text-align: left; text-indent: 0em;"><strong><span style="line-height: 150%;">关于电子合同的合法性及可执行性：现行法律明确确定了合同效力</span></strong></p></li></ul><p style="text-align: left; text-indent: 2em;"><span style="line-height: 150%;">根据《电子签名法》的规定，民事活动中的合同或者其他文件、单证等文书，当事人可以约定使用电子签名、数据电文，不能因为合同采用电子签名、数据电文就否定其法律效力。同时，《电子签名法》中还规定，可靠的电子签名与手写签名或者盖章具有同等的法律效力。明确肯定了符合条件的电子签名与手写签名或盖章具有同等的效力。</span></p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p style="text-align: left; text-indent: 0em;"><strong><span style="line-height: 150%;">关于投资人在海投汇获得的出借理财收益的合法性:为合法收益,受到法律保护。</span></strong></p></li></ul><p style="text-align: left; text-indent: 2em;"><span style="line-height: 150%;">根据最高人民法院《关于人民法院审理借贷案件的若干意见》第6条：&quot;民间借贷的利率可以适当高于银行的利率，各地人民法院可以根据本地区的实际情况具体掌握，但最高不得超过银行同类贷款利率的四倍，（包含利率本款）。超出此限度的，超出部分的利息不予保护。&quot;当期人民银行一年期基准贷款利率为6.00%，则当期基准贷款利率的四倍为24.00%，海投汇的出借理财收益低于24.00%，为合法利息收益，受到法律保护。</span></p><p style="text-align: left;"><br/></p>'
 	        }
 	    }
 	});
 
-	var vmWithdraw=avalon.define({
-	    $id:"withdrawCtrl",
-	    message:[]
-	});
-
 	$.ajax({
-	    url:'http://XXX/web-api/userCenter_myAccount_withdraw',
-	    success:function(response){
-	        vmWithdraw.message=response.message;
-
-	        var bankNum=$('.bankNum').html();
-	        $('.bankNum').html(bankNum.substr(0,3)+' **** **** '+bankNum.substr(bankNum.length-3));
-
-	        $(function() {
-	            var accountMoney = "";
-	            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IE������
-	            {
-	                $(".tx_txt").get(0).onpropertychange = setJsUserName;
-	                $(".accountMoney").get(0).onpropertychange = handle;
-	            } else {
-	                var intervalName;        // ��ʱ������
-	                $(".tx_txt").get(0).addEventListener("input",setJsUserName,false);
-	                // ���ý���ʱ��������ʱ��
-	                $(".tx_txt").focus(function(){
-	                    intervalName = setInterval(handle,1000);
-	                });
-
-	                // ʧȥ����ʱ��������ʱ��
-	                $(".tx_txt").blur(function() {
-	                    clearInterval(intervalName);
-	                });
-	            }
-	            // ����accountMoney input��ֵ
-	            function setJsUserName() {
-	                $(".accountMoney").html($(this).val());
-	            }
-	            // accountMoney input��ֵ�ı�ʱִ�еĺ���
-	            function handle() {
-	                if($(".accountMoney").val() != accountMoney) {
-	                    accountMoney = $(".accountMoney").html();
-	                }
-	            }
-	        });
+	    url:"http://XXX/web-api/riskControl",
+	    dataType:'json',
+	    success:function(data){
+	        $('.node').html(data.data.nodebody);
 	    }
 	});
-
-
-
-
 
 
 /***/ },

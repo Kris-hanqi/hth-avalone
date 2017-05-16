@@ -7,7 +7,12 @@ $.mockjax({
     status:200,
     responseText:{
         "message": {
-            name:"叫兽儿",accountNumber:"1111111111111111111",bank:"江西银行或城市商业银行",accountOpen:"江西省南昌市",accountBank:"江西银行股份有限公司总行营业部",accountBalance:"666"
+            name:"叫兽儿",
+            accountNumber:"1111111111111111111",
+            bank:"江西银行或城市商业银行",
+            accountOpen:"江西省南昌市",
+            accountBank:"江西银行股份有限公司总行营业部",
+            accountBalance:"666"
         }
     }
 });

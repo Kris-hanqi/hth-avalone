@@ -1,0 +1,17 @@
+.nodeHtml{
+    width: 1000px;
+    height: auto;
+    min-height: 500px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    border: 1px solid#e2e0e1;
+    margin-bottom: 45px;
+}
+.about-center {
+    padding: 35px;
+}
+.node-title{
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+}

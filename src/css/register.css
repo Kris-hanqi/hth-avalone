@@ -41,17 +41,17 @@
     clear: both;
     position: relative;
 }
-.register_message > input {
+.register_message input {
     width: 259px;
     height: 35px;
-    line-height: 17px;
+    line-height: 35px;
     border: 1px solid #d9d9d9;
     margin-top: 12px;
     padding-left: 47px;
     font-size: 14px;
     float: left;
 }
-.register_message > i {
+.register_message i {
     display: inline-block;
     position: absolute;
     left:60px;
@@ -59,6 +59,7 @@
     background: url(../img/loginRegister/icon-register.png) no-repeat;
     width:20px;
     height: 25px;
+    z-index: 50;
 }
 i.userPassward_bg {
     width:22px;
@@ -102,6 +103,7 @@ i.referrerPhone_bg {
     height: 18px;
     border: solid 1px #cfd1d3;
     vertical-align: bottom;
+    float: none;
     padding: 0;
     margin: 0
 }
@@ -134,13 +136,37 @@ i.referrerPhone_bg {
     border-bottom: 2px solid #2875d9;
 }
 
-
-
-
-
-
-
-
+/*验证提示信息*/
+.hint_message_userPhone {
+    right: 10px;
+    top: -20px;
+    display: none;
+}
+.hint_message_userPassward {
+    right: 10px;
+    top: -20px;
+    display: none;
+}
+.hint_message_userPassward_again {
+    right: 10px;
+    top: -20px;
+    display: none;
+}
+.hint_message_imgCode {
+    right: 110px;
+    top: -20px;
+    display: none;
+}
+.hint_message_smsCode {
+    right: 110px;
+    top: -20px;
+    display: none;
+}
+.hint_message_referrerPhone {
+    right: 10px;
+    top: -20px;
+    display: none;
+}
 
 
 
