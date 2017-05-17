@@ -132,27 +132,17 @@ i.userPassward_bg {
     border-bottom: 2px solid #2875d9;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*验证提示信息*/
+.hint_message_userPhone {
+    right: -30px;
+    top: -20px;
+    display: none;
+}
+.hint_message_userPassward {
+    right: -30px;
+    top: -20px;
+    display: none;
+}
 
 
 
