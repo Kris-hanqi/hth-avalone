@@ -1,4 +1,4 @@
-/*内容*/
+/*鍐呭*/
 .act_list {
     width: 1000px;
     height: 268px;
@@ -58,7 +58,7 @@
     text-align: center;
     border: 1px solid #a3a3a3;
     border-radius: 5px;
-    display:none;/*默认不显示，ajax调用成功后才决定显示与否*/
+    display:none;/*榛樿涓嶆樉绀猴紝ajax璋冪敤鎴愬姛鍚庢墠鍐冲畾鏄剧ず涓庡惁*/
     cursor: pointer;
 }
 .loadMore:hover{

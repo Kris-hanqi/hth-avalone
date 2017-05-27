@@ -59,7 +59,7 @@
     background: #4594fa;
 }
 
-/*ÆóÒµ½éÉÜ*/
+/*ä¼ä¸šä»‹ç»*/
 .introducePic{
     float: right;
     margin: 15px 35px;
@@ -89,7 +89,7 @@
     margin: 20px 0 0;
 }
 
-/*ÁªÏµÎÒÃÇ*/
+/*è”ç³»æˆ‘ä»¬*/
 .lxwm {
     width: 855px;
     padding: 30px;
@@ -110,7 +110,7 @@
     margin: 20px auto;
 }
 
-/*¹ÜÀíÍÅ¶Ó*/
+/*ç®¡ç†å›¢é˜Ÿ*/
 .gltd{
     padding: 0;
 }
@@ -199,7 +199,7 @@ ul.team-last li h4{
 #focus_Box .next:hover{background-position:right top;}
 
 
-/*ºÏ×÷»ï°é*/
+/*åˆä½œä¼™ä¼´*/
 .hzhb {
     width: 855px;
     padding: 30px;
@@ -242,7 +242,7 @@ ul.team-last li h4{
 }
 
 
-/*¼ÓÈëÎÒÃÇ*/
+/*åŠ å…¥æˆ‘ä»¬*/
 .jrwm {
     width: 855px;
     padding: 30px;
@@ -284,7 +284,7 @@ ul.team-last li h4{
     font-size: 14px;
 }
 
-/*Ò»Â·Ïà°é*/
+/*ä¸€è·¯ç›¸ä¼´*/
 .ylxb {
     padding-top: 0;
 }
@@ -376,7 +376,7 @@ ul.team-last li h4{
     display: block;
 }
 
-/*-- Æ½Ì¨±³¾° --*/
+/*-- å¹³å°èƒŒæ™¯ --*/
 .ptbj {
     padding: 0px;
 }

@@ -3,19 +3,19 @@ var $ = require("jquery");
 var backTop = require("backTop");
 var mockjax = require("mockjax")($, window);
 
-/*¼æÈİIE placeholder*/
+/*å…¼å®¹IE placeholder*/
 var JPlaceHolder = {
-    //¼ì²â
+    //æ£€æµ‹
     _check : function(){
         return 'placeholder' in document.createElement('input');
     },
-    //³õÊ¼»¯
+    //åˆå§‹åŒ–
     init : function(){
         if(!this._check()){
             this.fix();
         }
     },
-    //ĞŞ¸´
+    //ä¿®å¤
     fix : function(){
         $(':input[placeholder]').each(function(index, element) {
             var self = $(this), txt = self.attr('placeholder');
@@ -36,27 +36,27 @@ var JPlaceHolder = {
         });
     }
 };
-//Ö´ĞĞ
+//æ‰§è¡Œ
 $(function(){
     JPlaceHolder.init();
 });
 
 
 $(function(){
-    /*ÊäÈë¿òµÃµ½½¹µãÒş²Ø´íÎóĞÅÏ¢*/
+    /*è¾“å…¥æ¡†å¾—åˆ°ç„¦ç‚¹éšè—é”™è¯¯ä¿¡æ¯*/
     $(".inputClass").focus(function() {
-        var labelId = $(this).attr("id");//Í¨¹ıÊäÈë¿òÕÒµ½¶ÔÓ¦µÄid
+        var labelId = $(this).attr("id");//é€šè¿‡è¾“å…¥æ¡†æ‰¾åˆ°å¯¹åº”çš„id
         $("#" + labelId).siblings('.hint_message').css('display','none');
     });
 
-    /*ÊäÈë¿òÊ§È¥½¹µã½øĞĞĞ£Ñé*/
+    /*è¾“å…¥æ¡†å¤±å»ç„¦ç‚¹è¿›è¡Œæ ¡éªŒ*/
     $(".inputClass").blur(function() {
-        var id = $(this).attr("id");//»ñÈ¡µ±Ç°ÊäÈë¿òµÄid
-        var funName = "validate" + id.substring(0,1).toUpperCase() + id.substring(1) + "()";//µÃµ½¶ÔÓ¦µÄĞ£Ñéº¯ÊıÃû
-        eval(funName);//Ö´ĞĞº¯Êıµ÷ÓÃ
+        var id = $(this).attr("id");//è·å–å½“å‰è¾“å…¥æ¡†çš„id
+        var funName = "validate" + id.substring(0,1).toUpperCase() + id.substring(1) + "()";//å¾—åˆ°å¯¹åº”çš„æ ¡éªŒå‡½æ•°å
+        eval(funName);//æ‰§è¡Œå‡½æ•°è°ƒç”¨
     });
 
-    /*±íµ¥Ìá½»Ê±½øĞĞĞ£Ñé*/
+    /*è¡¨å•æäº¤æ—¶è¿›è¡Œæ ¡éªŒ*/
     $("#registerForm").submit(function(e) {
         if ( e && e.preventDefault ) {
             e.preventDefault();
@@ -64,7 +64,7 @@ $(function(){
             window.event.returnValue = false;
         }
 
-        var bool = true;//±íÊ¾Ğ£ÑéÍ¨¹ı
+        var bool = true;//è¡¨ç¤ºæ ¡éªŒé€šè¿‡
         if(!validateUserPhone()) {
             bool = false;
         }
@@ -76,41 +76,41 @@ $(function(){
 });
 
 
-/*ÏÔÊ¾´íÎóĞÅÏ¢*/
+/*æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯*/
 function hint(className){
     $(className).css('display','block');
 }
 
 /*
- *ÊÖ»úºÅĞ£Ñé·½·¨
+ *æ‰‹æœºå·æ ¡éªŒæ–¹æ³•
  */
 function validateUserPhone() {
     var id = "userPhone";
     var userPhone=$('#userPhone').val();
-    /*1. ·Ç¿ÕĞ£Ñé*/
+    /*1. éç©ºæ ¡éªŒ*/
     if(userPhone == '') {
         hint('.hint_message_userPhone');
         return false;
     }
-    /* 2. ¸ñÊ½Ğ£Ñé*/
+    /* 2. æ ¼å¼æ ¡éªŒ*/
     if((userPhone != '') && (!(/^1[34578]\d{9}$/.test(userPhone)))) {
-        $('.hint_message_userPhone p').html('ÊÖ»úºÅ¸ñÊ½²»ÕıÈ·');
+        $('.hint_message_userPhone p').html('æ‰‹æœºå·æ ¼å¼ä¸æ­£ç¡®');
         hint('.hint_message_userPhone');
         return false;
     }
     /*
-     /!* 3. ÊÇ·ñ×¢²áĞ£Ñé*!/
+     /!* 3. æ˜¯å¦æ³¨å†Œæ ¡éªŒ*!/
      $.ajax({
-     url:"/goods/UserServlet",//ÒªÇëÇóµÄservlet
-     data:{method:"ajaxValidateLoginname", loginname:value},//¸ø·şÎñÆ÷µÄ²ÎÊı
+     url:"/goods/UserServlet",//è¦è¯·æ±‚çš„servlet
+     data:{method:"ajaxValidateLoginname", loginname:value},//ç»™æœåŠ¡å™¨çš„å‚æ•°
      type:"POST",
      dataType:"json",
-     async:false,//ÊÇ·ñÒì²½ÇëÇó£¬Èç¹ûÊÇÒì²½£¬ÄÇÃ´²»»áµÈ·şÎñÆ÷·µ»Ø£¬ÎÒÃÇÕâ¸öº¯Êı¾ÍÏòÏÂÔËĞĞÁË¡£
+     async:false,//æ˜¯å¦å¼‚æ­¥è¯·æ±‚ï¼Œå¦‚æœæ˜¯å¼‚æ­¥ï¼Œé‚£ä¹ˆä¸ä¼šç­‰æœåŠ¡å™¨è¿”å›ï¼Œæˆ‘ä»¬è¿™ä¸ªå‡½æ•°å°±å‘ä¸‹è¿è¡Œäº†ã€‚
      cache:false,
      success:function(result) {
      if(!result) {
-     //Èç¹ûĞ£ÑéÊ§°Ü
-     $('.hint_message_userPhone p').html('ÊÖ»úºÅÒÑ×¢²á');
+     //å¦‚æœæ ¡éªŒå¤±è´¥
+     $('.hint_message_userPhone p').html('æ‰‹æœºå·å·²æ³¨å†Œ');
      hint('.hint_message_userPhone');
      return false;
      }
@@ -120,19 +120,19 @@ function validateUserPhone() {
 }
 
 /*
- * µÇÂ¼ÃÜÂëĞ£Ñé·½·¨
+ * ç™»å½•å¯†ç æ ¡éªŒæ–¹æ³•
  */
 function validateUserPassward() {
     var id = "userPassward";
     var userPassward=$('#userPassward').val();
-    /*1. ·Ç¿ÕĞ£Ñé*/
+    /*1. éç©ºæ ¡éªŒ*/
     if(userPassward == '') {
         hint('.hint_message_userPassward');
         return false;
     }
-    /*2. ¸ñÊ½Ğ£Ñé*/
+    /*2. æ ¼å¼æ ¡éªŒ*/
     if((userPassward != '') && (!(/^(?![A-Za-z]+$)(?![0-9]+$)[A-Za-z0-9]{6,16}$/.test(userPassward)))) {
-        $('.hint_message_userPassward p').html('ÃÜÂë¸ñÊ½²»ÕıÈ·');
+        $('.hint_message_userPassward p').html('å¯†ç æ ¼å¼ä¸æ­£ç¡®');
         hint('.hint_message_userPassward');
         return false;
     }

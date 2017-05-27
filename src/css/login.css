@@ -11,7 +11,7 @@
     padding-top: 55px;
     padding-bottom: 55px;
 }
-/*登录注册选择*/
+/*鐧诲綍娉ㄥ唽閫夋嫨*/
 .box_title {
     width: 412px;
     height:53px;
@@ -30,7 +30,7 @@
     height:40px;
     padding-top:12px;
 }
-/*信息填写区域*/
+/*淇℃伅濉啓鍖哄煙*/
 .login_box {
     background-color: #fff;
     height: 520px;
@@ -132,7 +132,7 @@ i.userPassward_bg {
     border-bottom: 2px solid #2875d9;
 }
 
-/*验证提示信息*/
+/*楠岃瘉鎻愮ず淇℃伅*/
 .hint_message_userPhone {
     right: -30px;
     top: -20px;

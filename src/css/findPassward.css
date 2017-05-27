@@ -1,4 +1,4 @@
-/*Íü¼ÇÃÜÂëÒ³Ãæ*/
+/*å¿˜è®°å¯†ç é¡µé¢*/
 .main {
     border:1px solid transparent;
 }
@@ -46,7 +46,7 @@
     margin-left: 140px;
 }
 
-/*°ó¶¨ÓÊÏäÕÒ»ØÃÜÂë*/
+/*ç»‘å®šé‚®ç®±æ‰¾å›å¯†ç */
 .find-tab {
     margin-top: 60px;
     color: #a3a3a3;
@@ -68,7 +68,7 @@
     font-size: 14px;
     float: left;
     border-radius: 5px;
-    font-family: "Î¢ÈíÑÅºÚ";
+    font-family: "å¾®è½¯é›…é»‘";
 }
 .find-tab .imgCode {
     width: 90px;
@@ -107,7 +107,7 @@
     margin-top: 30px;
 }
 
-/*°ó¶¨ÊÖ»úºÅÕÒ»ØÃÜÂë*/
+/*ç»‘å®šæ‰‹æœºå·æ‰¾å›å¯†ç */
 .find-tab .getSmsCode {
     border: none;
     width: 108px;
