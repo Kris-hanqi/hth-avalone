@@ -20,7 +20,7 @@ sit_build:
  environment:
     name: sit
     
- sit_deploy:
+sit_deploy:
  stage: deploy
  script:
    - echo "start sit deploy...."
