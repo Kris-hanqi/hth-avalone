@@ -9,8 +9,26 @@ sit_build:
    - export deploy_path=/mnt/gitlab_htouhui_web_front_end_deploy/$CI_BUILD_REF_NAME
    - env
    - pwd
-   - mkdir -p $deploy_path
+   - mkdir -p $deploy_path/html
    - webpack ./src/* --output-path ./dist
+   - cp -rf ./dist $deploy_path
+   - cp -rf ./src/* $deploy_path/html
+ except:
+   - production
+ tags:
+   - sit
+ environment:
+    name: sit
+    
+ sit_deploy:
+ stage: deploy
+ script:
+   - echo "start sit deploy...."
+   - export deploy_path=/mnt/gitlab_htouhui_web_front_end_deploy/$CI_BUILD_REF_NAME
+   - env
+   - pwd
+   - mkdir -p $deploy_path/html
+   - cp -rf $deploy_path/* /data/new_frontend
  except:
    - production
  tags:
