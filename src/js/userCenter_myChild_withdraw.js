@@ -7,7 +7,7 @@ $.mockjax({
     status:200,
     responseText:{
         "message": {
-            name:"½ĞÊŞ¶ù",accountNumber:"11111111111111111",bank:"ĞËÒµÒøĞĞ",accountBalance:"666",selectAccount:"lalala15011455508"
+            name:"å«å…½å„¿",accountNumber:"11111111111111111",bank:"æ±Ÿè¥¿é“¶è¡Œæˆ–åŸå¸‚å•†ä¸šé“¶è¡Œ",accountBalance:"666",selectAccount:"lalala15011455508"
         }
     }
 });
@@ -27,28 +27,28 @@ $.ajax({
 
         $(function() {
             var accountMoney = "";
-            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IEä¯ÀÀÆ÷
+            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IEæµè§ˆå™¨
             {
                 $(".tx_txt").get(0).onpropertychange = setJsUserName;
                 $(".accountMoney").get(0).onpropertychange = handle;
             } else {
-                var intervalName;
+                var intervalName;  // å®šæ—¶å™¨å¥æŸ„
                 $(".tx_txt").get(0).addEventListener("input",setJsUserName,false);
-                // »ñµÃ½¹µãÊ±£¬Æô¶¯¶¨Ê±Æ÷
+                // è·å¾—ç„¦ç‚¹æ—¶ï¼Œå¯åŠ¨å®šæ—¶å™¨
                 $(".tx_txt").focus(function(){
                     intervalName = setInterval(handle,1000);
                 });
 
-                // Ê§È¥½¹µãÊ±£¬Çå³ı¶¨Ê±Æ÷
+                // å¤±å»ç„¦ç‚¹æ—¶ï¼Œæ¸…é™¤å®šæ—¶å™¨
                 $(".tx_txt").blur(function() {
                     clearInterval(intervalName);
                 });
             }
-            // ÉèÖÃaccountMoney inputµÄÖµ
+            // è®¾ç½®accountMoney inputçš„å€¼
             function setJsUserName() {
                 $(".accountMoney").html($(this).val()-2);
             }
-            // accountMoney inputµÄÖµ¸Ä±äÊ±Ö´ĞĞµÄº¯Êı
+            // accountMoney inputçš„å€¼æ”¹å˜æ—¶æ‰§è¡Œçš„å‡½æ•°
             function handle() {
                 if($(".accountMoney").val() != accountMoney) {
                     accountMoney = $(".accountMoney").html();

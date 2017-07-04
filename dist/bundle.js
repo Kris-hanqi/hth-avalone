@@ -58,15 +58,15 @@
 	            "<div class='header_box'>"+
 	            "<div class=\"header_left\"><span>客服热线：400-698-8810 （工作日 09:00 - 18:00）</span></div>"+
 	            "<div class=\"header_right1\">"+
-	            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"img/header_phone.png\"/>手机客户端</span>"+
+	            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><images id=\"app_client\" src=\"images/header_phone.png\"/>手机客户端</span>"+
 	            "<div class=\"qrcode-outer header-arrow\">"+
 	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/smart_download.png\"/><span>手机客户端下载</span></div>"+
+	            "<div class=\"qrcode\"><images src=\"images/smart_download.png\"/><span>手机客户端下载</span></div>"+
 	            "</div>"+
-	            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"img/header_weixin.png\"/>微信公众号</span>"+
+	            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><images id=\"app_weixin\" src=\"images/header_weixin.png\"/>微信公众号</span>"+
 	            "<div class=\"qrcode-weixin header-arrow\">"+
 	            "<i></i>"+
-	            "<div class=\"qrcode\"><img src=\"img/weixin-upload.png\"/><span>微信公众号</span></div>"+
+	            "<div class=\"qrcode\"><images src=\"images/weixin-upload.png\"/><span>微信公众号</span></div>"+
 	            "</div>"+
 	            "</div>"+
 	            "<div class=\"header_right2\">"+
@@ -76,9 +76,9 @@
 	            "<div class=\"top\">"+
 	            "<div class=\"top_box\">"+
 	            "<div class=\"logo\">"+
-	            "<a href=\"#\"><img src=\"img/logo.png\"/></a>"+
+	            "<a href=\"#\"><images src=\"images/logo.png\"/></a>"+
 	            "</div>"+
-	            "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
+	            "<div class=\"two-code\"><images src=\"images/logo-jxbank.png\"/></div>"+
 	            "<ul class=\"nav\">"+
 	            "<li class=\"nLi selectMenu\"><a href=\"#\">首页</a></li>"+
 	            "<li class=\"nLi\" ms-for='el in @navArr'><a href=\"#\">{{el}}</a></li>"+
@@ -114,13 +114,13 @@
 	        status: 200,
 	        responseText: {
 	            "data":[
-	                { "imgUrl": "../src/img/banner/banner-01.jpg", "targetUrl": "#"},
-	                { "imgUrl": "../src/img/banner/banner-02.jpg", "targetUrl": "#"},
-	                { "imgUrl": "../src/img/banner/banner-03.jpg", "targetUrl": "#"},
-	                { "imgUrl": "../src/img/banner/banner-04.jpg", "targetUrl": "#"},
-	                { "imgUrl": "../src/img/banner/banner-05.jpg", "targetUrl": "#"},
-	                { "imgUrl": "../src/img/banner/banner-06.jpg", "targetUrl": "#"},
-	                { "imgUrl": "../src/img/banner/banner-07.jpg", "targetUrl": "#"}
+	                { "imgUrl": "../src/images/banner/banner-01.jpg", "targetUrl": "#"},
+	                { "imgUrl": "../src/images/banner/banner-02.jpg", "targetUrl": "#"},
+	                { "imgUrl": "../src/images/banner/banner-03.jpg", "targetUrl": "#"},
+	                { "imgUrl": "../src/images/banner/banner-04.jpg", "targetUrl": "#"},
+	                { "imgUrl": "../src/images/banner/banner-05.jpg", "targetUrl": "#"},
+	                { "imgUrl": "../src/images/banner/banner-06.jpg", "targetUrl": "#"},
+	                { "imgUrl": "../src/images/banner/banner-07.jpg", "targetUrl": "#"}
 	            ]
 	        }
 	    });
@@ -429,8 +429,8 @@
 	                    "<div class=\"home_products sxb\">"+
 	                        "<div class=\"home_products_left\">"+
 	                            "<label>预期收益并非平台承诺收益</label>"+
-	                            "<h2>升薪宝<i><img src=\"img/product_hot_ico.png\"/></i></h2>"+
-	                            "<img src=\"img/product_line_ico.png\"/>"+
+	                            "<h2>升薪宝<i><images src=\"images/product_hot_ico.png\"/></i></h2>"+
+	                            "<images src=\"images/product_line_ico.png\"/>"+
 	                            "<p>定期理财，严格风控<br>100元起投<br>放款后生息</p>"+
 	                            "<a class=\"more\" href=\"#\">查看更多</a>"+
 	                        "</div>"+
@@ -445,7 +445,7 @@
 	                                "<p>预期年化利率</p>"+
 	                                "<p class=\"sxb_des clearfix\"><span>期限<strong class=\"font24\">{{el.loanType.repayTimePeriod}}</strong>个月</span><span>规模<strong class=\"font24\">{{el.loanMoney}}</strong>万</span></p>"+
 	                                "<ul class=\"pro_data clearfix\"><li>进度</li><li>{{el.sumMoney}}%</li></ul>"+
-	                                "<div class=\"pro_progress\"><img ms-css=\"@styleObj\" src=\"img/progress_line.png\"/></div>"+
+	                                "<div class=\"pro_progress\"><images ms-css=\"@styleObj\" src=\"images/progress_line.png\"/></div>"+
 	                                "<ul class=\"pro_data clearfix\"><li>余额</li><li>{{el.moneyNeedRaised}}元</li></ul>"+
 	                                "<a ms-attr='{href:el.targetUrl}' class=\"box_button\">{{el.loanStatus}}</a>"+
 	                            "</div>"+
@@ -455,7 +455,7 @@
 	                        "<div class=\"home_products_left\">"+
 	                            "<label>预期收益并非平台承诺收益</label>"+
 	                            "<h2>直投项目</h2>"+
-	                            "<img src=\"img/product_line_ico.png\"/>"+
+	                            "<images src=\"images/product_line_ico.png\"/>"+
 	                            "<p>多层审核，稳定收益<br>100元起投<br />放款后生息</p>"+
 	                            "<a class=\"more\" href=\"#\">查看更多</a>"+
 	                        "</div>"+
@@ -471,7 +471,7 @@
 	                                    "<li>"+
 	                                        "<a ms-attr='{href:el.targetUrl}' class=\"box_button\">{{el.loanStatus}}</a>"+
 	                                        "<ul class=\"pro_data clearfix\"><li>进度</li><li>{{el.sumMoney}}%</li></ul>"+
-	                                        "<div class=\"box_progress\"> <img ms-css=\"@styleObj2\" src=\"img/progress_line.png\"/> </div>"+
+	                                        "<div class=\"box_progress\"> <images ms-css=\"@styleObj2\" src=\"images/progress_line.png\"/> </div>"+
 	                                        "<ul class=\"pro_data clearfix\"><li>余额</li><li>{{el.moneyNeedRaised}}元</li></ul>"+
 	                                    "</li>"+
 	                                "</ul>"+
@@ -517,31 +517,31 @@
 	        "data":{
 	            newsCenter:[
 	                {
-	                    "imgUrl": "img/index/media-photo-01.jpg",
+	                    "imgUrl": "images/index/media-photo-01.jpg",
 	                    "title": "海投汇好友邀请：千五荐面礼 史上最高霸气来袭",
 	                    "createTime": "2017/2/1",
 	                    "targetUrl": "#"
 	                },
 	                {
-	                    "imgUrl": "img/index/media-photo-01.jpg",
+	                    "imgUrl": "images/index/media-photo-01.jpg",
 	                    "title": "理财大揭秘，海投汇新手标,老带新活动感恩来...",
 	                    "createTime": "2017/3/1",
 	                    "targetUrl": "#"
 	                },
 	                {
-	                    "imgUrl": "img/index/media-photo-01.jpg",
+	                    "imgUrl": "images/index/media-photo-01.jpg",
 	                    "title": "海投汇引领P2P合规时代，银行存管不是终点...",
 	                    "createTime": "2017/4/1",
 	                    "targetUrl": "#"
 	                },
 	                {
-	                    "imgUrl": "img/index/media-photo-01.jpg",
+	                    "imgUrl": "images/index/media-photo-01.jpg",
 	                    "title": "海投汇第二届投资人见面会成功举办",
 	                    "createTime": "2017/5/1",
 	                    "targetUrl": "#"
 	                },
 	                {
-	                    "imgUrl": "img/index/media-photo-01.jpg",
+	                    "imgUrl": "images/index/media-photo-01.jpg",
 	                    "title": "海投汇李鲁一：修己惠人 笃行致远",
 	                    "createTime": "2017/6/1",
 	                    "targetUrl": "#"
@@ -584,7 +584,7 @@
 	            "<h3 class=\"news-title\">新闻中心</h3>"+
 	            "<span class=\"gengduo\"><a href=\"#\">更多...</a></span>"+
 	            "<div class=\"news-latest\">"+
-	            "<a ms-for='value in @newsCenter | limitBy(10) as items' ms-attr='{href:value.targetUrl}'><img ms-attr='{src:value.imgUrl}'/><label><span>福布斯中国公布”互联网金融50” 票据理财平台仅有海投汇</span></label></a>"+
+	            "<a ms-for='value in @newsCenter | limitBy(10) as items' ms-attr='{href:value.targetUrl}'><images ms-attr='{src:value.imgUrl}'/><label><span>福布斯中国公布”互联网金融50” 票据理财平台仅有海投汇</span></label></a>"+
 	            "</div>"+
 	            "<ul>"+
 	            "<li ms-for='el in @newsCenter'><a ms-attr='{href:el.targetUrl}'><span>{{el.title}}</span><span class=\"news-date\">{{el.createTime}}</span></a></li>"+
@@ -635,31 +635,31 @@
 	    responseText: {
 	        "data":[
 	            {
-	                headPicUrl: 'img/index/29481485055670889.png',
+	                headPicUrl: 'images/index/29481485055670889.png',
 	                nickName: "许女士",
 	                work: "全职太太",
 	                leaveMsg: "经身边已经在海投汇投资的朋友强烈推荐，开始关注海投汇。了解到海投汇自成立后业绩一直增长，没有一笔坏账，比较放心，自此与海投汇结缘。去年底资金存管也上线了，刚刚又得知海投汇获得融资，衷心希望海投汇的影响力越来越大、越做做强、越办越好，发布更多更好的产品给大家，给广大的客户带来福利！"
 	            },
 	            {
-	                headPicUrl: 'img/index/33551485055652270.png',
+	                headPicUrl: 'images/index/33551485055652270.png',
 	                nickName: "好好好老师",
 	                work: "教师",
 	                leaveMsg: "2015年开始接触互联网金融平台并投资，陆续接触了很多家成熟的互金平台。海投汇不管是安全上还是管理上都比较严谨，借款人的身份证、基本信息、借款用途和借款资料等等都会有明确披露，可以说风控很成熟，资料也很全面。在比较了多个互金平台后，最终选择了海投汇作为我的大部分资金的首选，虽然鸡蛋不可能放在同一个篮子里，但是多年的经验告诉我，海投汇是一个值得信赖的互金投资平台。"
 	            },
 	            {
-	                headPicUrl: 'img/index/56131485055626978.png',
+	                headPicUrl: 'images/index/56131485055626978.png',
 	                nickName: "惠明",
 	                work: "家庭主妇",
 	                leaveMsg: "从2015年海投汇初成立起就深深的关注着他。开头有点担心，小心翼翼试探的小投几把。日子久了，更多的关注着互金相关新闻；一有空就搜索海投汇的消息，看到海投汇各项功能日趋完善，银行资金存管也上线了，越来越符合国家相关规定。每个月都有各种活动开展，我也越来越信赖他了。祝海投汇越办越好，安安全全，成为日久传承的“老店”。"
 	            },
 	            {
-	                headPicUrl: 'img/index/35311485055688654.png',
+	                headPicUrl: 'images/index/35311485055688654.png',
 	                nickName: "一切皆好",
 	                work: "厨师",
 	                leaveMsg: "我与海投汇的缘分要感谢空中网的一款游戏《坦克世界》。海投汇经常推出投资送金币、送装备的活动，从未让我失望！每一次，我不但获得了游戏各种配件，投资的本金、利息也都如期回来了，投资稳健和收益可观，很靠谱！海投汇微信公众账号后期也开始搞活动，现在我已经把大中小号“小海公仔”都纳入囊中。谢谢海投汇给我一个投资的渠道。希望海投汇做的更好，走的更远。"
 	            },
 	            {
-	                headPicUrl: 'img/index/4561485055715766.png',
+	                headPicUrl: 'images/index/4561485055715766.png',
 	                nickName: "小华",
 	                work: "IT 运营经理",
 	                leaveMsg: "我也算《坦克世界》的老玩家了，去年一个偶然的机会看到海投汇和坦克世界合作搞活动，因为我一直在投资互联网金融平台理财，所以毫不犹豫的就注册了帐号，开始了投资，于是期期活动都参加，也给海投汇提了好多的意见和建议，大部分都惊喜地被海投汇采纳了。我想今后我会更积极的参与到海投汇的发展中，也希望海投汇越做越大，生意兴隆，更希望海投汇在稳定中发展，为投资人开创美好未来。"
@@ -687,13 +687,13 @@
 	avalon.component('footer', {
 	    template: '<div class="footer" ms-controller="footer">' +
 	    '<div class="footer_box clearfix">' +
-	    '<div class="logo02"><a href="#"><img src="img/logo02.png"/></a><span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span></div>'+
+	    '<div class="logo02"><a href="#"><images src="images/logo02.png"/></a><span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span></div>'+
 	    '<ul class="footer_ul"><li ms-for="el in @array"><ul class="footer_ul_li"><li ms-for="elem in el.arr"><a ms-attr="{href: elem.path}">{{elem.name}}</a></li></ul></li>' +
-	    '<li><span>扫二维码下载APP</span><br /><img src="img/smart_download.png" style="width: 125px;"/></li>'+
+	    '<li><span>扫二维码下载APP</span><br /><images src="images/smart_download.png" style="width: 125px;"/></li>'+
 	    '</ul></div>'+
 	    '<div class="belw clearfix"><div class="copy">' +
 	    '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>'+
-	    '<div ms-for="el in @copy"><a target="_blank" ms-attr="{href: el.path}"><img class="chengxin" ms-attr="{src: el.img}" /></a></div>'+
+	    '<div ms-for="el in @copy"><a target="_blank" ms-attr="{href: el.path}"><images class="chengxin" ms-attr="{src: el.images}" /></a></div>'+
 	    '</div></div>' +
 	    '</div>'
 	});
@@ -19002,11 +19002,11 @@
 			}
 			var app = '<li>'
 					+'<span class="right_qq_on"><a class="right_qq_app" href="javascript:;" title="手机app"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/smart_download.png"><span>手机客户端下载</span></div>'
+					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><images src="images/smart_download.png"><span>手机客户端下载</span></div>'
 		        	+'</li>';
 			var weixin = '<li>'
 					+'<span class="right_qq_on"><a rel="nofollow" class="right_qq_wx" title="微信公众号"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/weixin-upload.png"><span>微信公众号</span></div>'
+					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><images src="images/weixin-upload.png"><span>微信公众号</span></div>'
 		        	+'</li>';
 			var $backTop = this.$backTop = $('<div class="cbbfixed right_qq"><ul>'
 					+ kefu

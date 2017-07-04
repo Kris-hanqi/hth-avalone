@@ -97,7 +97,7 @@ input,select,button,a {
     color: #CC0F13;
 }
 .hint_message span {
-    background: url(../img/down_arrow.png) no-repeat center;
+    background: url(../images/down_arrow.png) no-repeat center;
     width: 13px;
     height: 8px;
     position: absolute;
@@ -257,7 +257,7 @@ input,select,button,a {
     left: 0;
     display: block;
     z-index: 1002;
-    background: url(../img/up_arrow.png) no-repeat center;
+    background: url(../images/up_arrow.png) no-repeat center;
 }
 .qrcode span {
     color: #7b7b7b;

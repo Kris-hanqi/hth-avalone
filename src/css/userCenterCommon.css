@@ -3,7 +3,7 @@
     width: 1200px;
 }
 .account-center {
-    background: #fff url(../img/userCenter/account_bg.jpg) repeat-y left top;
+    background: #fff url(../images/userCenter/account_bg.jpg) repeat-y left top;
     margin-bottom: 30px;
     border: 1px solid #e2e0e1;
 }
@@ -16,7 +16,7 @@
     height: auto;
     float: left;
     padding-bottom: 65px;
-    background: #747474 url(../img/userCenter/account_left_bg.jpg) no-repeat top center;
+    background: #747474 url(../images/userCenter/account_left_bg.jpg) no-repeat top center;
 }
 .account_person {
     padding-top: 35px;
@@ -41,7 +41,7 @@ img.person-img{
     height: 34px;
     display: block;
     float: left;
-    background: url(../img/userCenter/center_icon-1.png);
+    background: url(../images/userCenter/center_icon-1.png);
 }
 .person-ico-prove a.person_ico1{background-position: 0 0;}
 .person-ico-prove a.person_ico2{background-position: -34px 0;}
@@ -70,7 +70,7 @@ img.person-img{
     height: 73px;
     display: block;
     float: left;
-    background: url(../img/userCenter/center_icon-2.png) no-repeat;
+    background: url(../images/userCenter/center_icon-2.png) no-repeat;
 }
 .person-quota a.person-qt01{background-position: 0 -75px;}
 .person-quota a.person-qt02{
@@ -114,7 +114,7 @@ img.person-img{
     margin-right: 5px;
     float: left;
     display: block;
-    background: url(../img/userCenter/center_icon-3.png) no-repeat;
+    background: url(../images/userCenter/center_icon-3.png) no-repeat;
 }
 .mlnav li:first-child i{background-position: -25px 0;}
 .mlnav li:first-child+li i{background-position: -25px -30px;}
@@ -181,7 +181,7 @@ img.person-img{
     height: 243px;
     margin-right: 20px;
     text-align: center;
-    background: url(../img/userCenter/myAccount_accountSummary/bank_jx-hth.png) no-repeat;
+    background: url(../images/userCenter/myAccount_accountSummary/bank_jx-hth.png) no-repeat;
 }
 /*未开户状态*/
 .bank_jx_open {
@@ -191,7 +191,7 @@ img.person-img{
     height: 243px;
     margin-right: 20px;
     text-align: center;
-    background: url(../img/userCenter/myAccount_accountSummary/bank_jx-hth_cover.png) no-repeat;
+    background: url(../images/userCenter/myAccount_accountSummary/bank_jx-hth_cover.png) no-repeat;
 }
 /*开户状态*/
 .bank_jx span{
@@ -230,7 +230,7 @@ img.person-img{
     height: 15px;
     display: inline-block;
     margin: 0 5px;
-    background: url(../img/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
+    background: url(../images/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
     background-position: 0 0;
 }
 .wenhao:hover{
@@ -248,7 +248,7 @@ img.person-img{
     height: 38px;
     display: block;
     cursor: pointer;
-    background: url(../img/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
+    background: url(../images/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
     background-position: -38px -15px;
     margin-bottom: 55px;
     margin-left: 90px;
@@ -258,7 +258,7 @@ img.person-img{
     height: 38px;
     display: block;
     cursor: pointer;
-    background: url(../img/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
+    background: url(../images/userCenter/myAccount_accountSummary/center_icon02.png) no-repeat;
     background-position: 0 -15px;
     margin-bottom: 55px;
     margin-left: 90px;
@@ -300,7 +300,7 @@ img.person-img{
     margin-right: 5px;
     height: 52px;
     width: 52px;
-    background: url(../img/userCenter/myAccount_accountSummary/icon.png) no-repeat center;
+    background: url(../images/userCenter/myAccount_accountSummary/icon.png) no-repeat center;
     background-position: 0 0;
 }
 .center_feature p:first-child+p i {
@@ -413,7 +413,7 @@ table.tableStyle tr td a {
     color: #2875d9;
     margin-left: 15px;
     padding-left: 20px;
-    background: url(../img/userCenter/myAccount_transactionDetail/invitation-calender.png) no-repeat left;
+    background: url(../images/userCenter/myAccount_transactionDetail/invitation-calender.png) no-repeat left;
 }
 
 .selectOne {
@@ -689,7 +689,7 @@ table.tableStyle tr td a {
     top:-16px;
     cursor: pointer;
     font-size: 40px;
-    background: url(../img/userCenter/myAccount_recharge/idialog_s.png) no-repeat;
+    background: url(../images/userCenter/myAccount_recharge/idialog_s.png) no-repeat;
     background-position: 0 -60px;
 }
 .modal-close:hover {

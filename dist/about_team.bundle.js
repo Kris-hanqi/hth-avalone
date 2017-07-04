@@ -57,27 +57,27 @@
 	    responseText: {
 	        "aboutTeam": [
 	            {
-	                teamPic:"img/aboutUs/team-6.jpg",
+	                teamPic:"images/aboutUs/team-6.jpg",
 	                teamDesc:"海投汇团队：2017年度团建蟒山国家森林公园行"
 	            },
 	            {
-	                teamPic:"img/aboutUs/team-1.jpg",
+	                teamPic:"images/aboutUs/team-1.jpg",
 	                teamDesc:"海投汇精英管理团队"
 	            },
 	            {
-	                teamPic:"img/aboutUs/team-2.jpg",
+	                teamPic:"images/aboutUs/team-2.jpg",
 	                teamDesc:"海投汇团队：2017年度第一季度策略会"
 	            },
 	            {
-	                teamPic:"img/aboutUs/team-3.jpg",
+	                teamPic:"images/aboutUs/team-3.jpg",
 	                teamDesc:"海投汇精英管理团队"
 	            },
 	            {
-	                teamPic:"img/aboutUs/team-4.jpg",
+	                teamPic:"images/aboutUs/team-4.jpg",
 	                teamDesc:"海投汇精英管理团队"
 	            },
 	            {
-	                teamPic:"img/aboutUs/team-5.jpg",
+	                teamPic:"images/aboutUs/team-5.jpg",
 	                teamDesc:"海投汇团队：2017年度团建蟒山国家森林公园行"
 	            }
 	        ]

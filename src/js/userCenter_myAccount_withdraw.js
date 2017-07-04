@@ -7,12 +7,7 @@ $.mockjax({
     status:200,
     responseText:{
         "message": {
-            name:"½ĞÊŞ¶ù",
-            accountNumber:"1111111111111111111",
-            bank:"½­Î÷ÒøĞĞ»ò³ÇÊĞÉÌÒµÒøĞĞ",
-            accountOpen:"½­Î÷Ê¡ÄÏ²ıÊĞ",
-            accountBank:"½­Î÷ÒøĞĞ¹É·İÓĞÏŞ¹«Ë¾×ÜĞĞÓªÒµ²¿",
-            accountBalance:"666"
+            name:"å«å…½å„¿",accountNumber:"1111111111111111111",bank:"æ±Ÿè¥¿é“¶è¡Œæˆ–åŸå¸‚å•†ä¸šé“¶è¡Œ",accountOpen:"æ±Ÿè¥¿çœå—æ˜Œå¸‚",accountBank:"æ±Ÿè¥¿é“¶è¡Œè‚¡ä»½æœ‰é™å…¬å¸æ€»è¡Œè¥ä¸šéƒ¨",accountBalance:"666"
         }
     }
 });
@@ -27,33 +22,30 @@ $.ajax({
     success:function(response){
         vmWithdraw.message=response.message;
 
-        var bankNum=$('.bankNum').html();
-        $('.bankNum').html(bankNum.substr(0,3)+' **** **** '+bankNum.substr(bankNum.length-3));
-
         $(function() {
             var accountMoney = "";
-            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IEä¯ÀÀÆ÷
+            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IEæµè§ˆå™¨
             {
                 $(".tx_txt").get(0).onpropertychange = setJsUserName;
                 $(".accountMoney").get(0).onpropertychange = handle;
             } else {
-                var intervalName;        // ¶¨Ê±Æ÷¾ä±ú
+                var intervalName;        // å®šæ—¶å™¨å¥æŸ„
                 $(".tx_txt").get(0).addEventListener("input",setJsUserName,false);
-                // »ñµÃ½¹µãÊ±£¬Æô¶¯¶¨Ê±Æ÷
+                // è·å¾—ç„¦ç‚¹æ—¶ï¼Œå¯åŠ¨å®šæ—¶å™¨
                 $(".tx_txt").focus(function(){
                     intervalName = setInterval(handle,1000);
                 });
 
-                // Ê§È¥½¹µãÊ±£¬Çå³ı¶¨Ê±Æ÷
+                // å¤±å»ç„¦ç‚¹æ—¶ï¼Œæ¸…é™¤å®šæ—¶å™¨
                 $(".tx_txt").blur(function() {
                     clearInterval(intervalName);
                 });
             }
-            // ÉèÖÃaccountMoney inputµÄÖµ
+            // è®¾ç½®accountMoney inputçš„å€¼
             function setJsUserName() {
                 $(".accountMoney").html($(this).val());
             }
-            // accountMoney inputµÄÖµ¸Ä±äÊ±Ö´ĞĞµÄº¯Êı
+            // accountMoney inputçš„å€¼æ”¹å˜æ—¶æ‰§è¡Œçš„å‡½æ•°
             function handle() {
                 if($(".accountMoney").val() != accountMoney) {
                     accountMoney = $(".accountMoney").html();
@@ -62,7 +54,3 @@ $.ajax({
         });
     }
 });
-
-
-
-

@@ -125,7 +125,7 @@
 	    template: (function () {
 	        var AccountLeft ='<div class="center_left">'+
 	                            '<div class="account_person">'+
-	                                '<img class="person-img" src="img/userCenter/account_head_default.png" /> '+
+	                                '<images class="person-images" src="images/userCenter/account_head_default.png" /> '+
 	                                '<a href="javascript:void(0);" class="person-name" ms-attr="{title: @userName}">{{@userName}}</a>'+
 	                                '<div class="person-ico-prove clearfix">'+
 	                                    '<a href="userCenter_openAccount.html" class="person_ico1" title="开户"></a>'+

@@ -53,7 +53,7 @@
 	    status:200,
 	    responseText:{
 	        "message": {
-	            name:"���޶�",accountNumber:"11111111111111111",bank:"��ҵ����",accountBalance:"666",selectAccount:"lalala15011455508"
+	            name:"叫兽儿",accountNumber:"11111111111111111",bank:"江西银行或城市商业银行",accountBalance:"666",selectAccount:"lalala15011455508"
 	        }
 	    }
 	});
@@ -73,28 +73,28 @@
 
 	        $(function() {
 	            var accountMoney = "";
-	            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IE������
+	            if(navigator.userAgent.indexOf('MSIE') >= 0)        // IE浏览器
 	            {
 	                $(".tx_txt").get(0).onpropertychange = setJsUserName;
 	                $(".accountMoney").get(0).onpropertychange = handle;
 	            } else {
-	                var intervalName;
+	                var intervalName;  // 定时器句柄
 	                $(".tx_txt").get(0).addEventListener("input",setJsUserName,false);
-	                // ���ý���ʱ��������ʱ��
+	                // 获得焦点时，启动定时器
 	                $(".tx_txt").focus(function(){
 	                    intervalName = setInterval(handle,1000);
 	                });
 
-	                // ʧȥ����ʱ��������ʱ��
+	                // 失去焦点时，清除定时器
 	                $(".tx_txt").blur(function() {
 	                    clearInterval(intervalName);
 	                });
 	            }
-	            // ����accountMoney input��ֵ
+	            // 设置accountMoney input的值
 	            function setJsUserName() {
 	                $(".accountMoney").html($(this).val()-2);
 	            }
-	            // accountMoney input��ֵ�ı�ʱִ�еĺ���
+	            // accountMoney input的值改变时执行的函数
 	            function handle() {
 	                if($(".accountMoney").val() != accountMoney) {
 	                    accountMoney = $(".accountMoney").html();

@@ -33,15 +33,15 @@ avalon.component('header', {
             "<div class='header_box'>"+
             "<div class=\"header_left\"><span>客服热线：400-698-8810 （工作日 09:00 - 18:00）</span></div>"+
             "<div class=\"header_right1\">"+
-            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"img/header_phone.png\"/>手机客户端</span>"+
+            "<span id=\"header-ico00\" ms-mouseover=\"@outerMouseover\" ms-mouseout=\"@outerMouseout\"><img id=\"app_client\" src=\"images/header_phone.png\"/>手机客户端</span>"+
             "<div class=\"qrcode-outer header-arrow\">"+
             "<i></i>"+
-            "<div class=\"qrcode\"><img src=\"img/smart_download.png\"/><span>手机客户端下载</span></div>"+
+            "<div class=\"qrcode\"><img src=\"images/smart_download.png\"/><span>手机客户端下载</span></div>"+
             "</div>"+
-            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"img/header_weixin.png\"/>微信公众号</span>"+
+            "<span  id=\"header-ico01\" ms-mouseover=\"@weixinMouseover\" ms-mouseout=\"@weixinMouseout\"><img id=\"app_weixin\" src=\"images/header_weixin.png\"/>微信公众号</span>"+
             "<div class=\"qrcode-weixin header-arrow\">"+
             "<i></i>"+
-            "<div class=\"qrcode\"><img src=\"img/weixin-upload.png\"/><span>微信公众号</span></div>"+
+            "<div class=\"qrcode\"><img src=\"images/weixin-upload.png\"/><span>微信公众号</span></div>"+
             "</div>"+
             "</div>"+
             "<div class=\"header_right2\">"+
@@ -51,9 +51,9 @@ avalon.component('header', {
             "<div class=\"top\">"+
             "<div class=\"top_box\">"+
             "<div class=\"logo\">"+
-            "<a href=\"index.html\"><img src=\"img/logo.png\"/></a>"+
+            "<a href=\"index.html\"><img src=\"images/logo.png\"/></a>"+
             "</div>"+
-            "<div class=\"two-code\"><img src=\"img/logo-jxbank.png\"/></div>"+
+            "<div class=\"two-code\"><img src=\"images/logo-jxbank.png\"/></div>"+
             "<ul class=\"nav\">"+
             "<li class=\"nLi\" ms-for='item in @navArr'><a ms-attr='{href:item.href}'>{{item.title}}</a></li>"+
             "</ul>"    +
@@ -115,7 +115,7 @@ avalon.component('footer', {
         var footerContent ='<div>'+
                              '<div class="footer_box clearfix">' +
                                 '<div class="logo02">' +
-                                    '<a href="#"><img src="img/logo02.png"/></a>' +
+                                    '<a href="#"><img src="images/logo02.png"/></a>' +
                                     '<span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span>' +
                                 '</div>' +
                                 '<ul class="footer_ul">' +
@@ -129,7 +129,7 @@ avalon.component('footer', {
                                     '<li>' +
                                         '<span>扫二维码下载APP</span>' +
                                         '<br />' +
-                                        '<img src="img/smart_download.png" style="width: 125px;"/>' +
+                                        '<img src="images/smart_download.png" style="width: 125px;"/>' +
                                     '</li>' +
                                 '</ul>' +
                             '</div>' +
@@ -137,7 +137,7 @@ avalon.component('footer', {
                                 '<div class="copy">' +
                                     '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>' +
                                     '<div ms-for="el in @copy">' +
-                                        '<a target="_blank" ms-attr="{href: el.path}"><img class="chengxin" ms-attr="{src: el.img}" /></a>' +
+                                        '<a target="_blank" ms-attr="{href: el.path}"><images class="chengxin" ms-attr="{src: el.images}" /></a>' +
                                     '</div>' +
                                 '</div>' +
                             '</div>'+
@@ -176,8 +176,8 @@ var vmFooter=avalon.define({
         ]}
     ],
     copy:[
-        {path:'',img:'img/icons_itrust.png'},
-        {path:'',img:'img/icons_norton.png'},
-        {path:'',img:'img/icons_chengxin.png'}
+        {path:'',img:'images/icons_itrust.png'},
+        {path:'',img:'images/icons_norton.png'},
+        {path:'',img:'images/icons_chengxin.png'}
     ]
 });

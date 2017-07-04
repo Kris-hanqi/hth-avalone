@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 100px;
     background: #f7f6f6;
-    background: url(../img/loginRegister/login_background.jpg) no-repeat center;
+    background: url(../images/loginRegister/login_background.jpg) no-repeat center;
 }
 .login {
     width: 413px;
@@ -59,7 +59,7 @@
     position: absolute;
     left:60px;
     top:20px;
-    background: url(../img/loginRegister/icon-register.png) no-repeat;
+    background: url(../images/loginRegister/icon-register.png) no-repeat;
     width:20px;
     height: 25px;
 }
@@ -109,7 +109,7 @@ i.userPassward_bg {
     height:25px;
     display: inline-block;
     margin: 6px;
-    background: url(../img/loginRegister/ico-kz.png);
+    background: url(../images/loginRegister/ico-kz.png);
     background-position: -25px 0;
     vertical-align: middle;
 }

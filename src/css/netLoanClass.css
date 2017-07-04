@@ -17,7 +17,7 @@
     width: 920px;
     height: 72px;
     border-bottom: 1px solid #dbdbdb;
-    list-style-image: url(../img/diamonds.png);
+    list-style-image: url(../images/diamonds.png);
     list-style-position: inside;
 }
 .news_a{

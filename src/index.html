@@ -7,36 +7,67 @@
     <meta name="keywords" content="海投汇，投资理财，互联网理财，小额投资，小额理财，网络投资"/>
     <meta name="renderer" content="webkit"/>
     <meta name="description" content="【海投汇】真实透明，尽职风控的互联网金融理财平台；小额投资理财、短期投资、网上投资等，尽在海投汇金融服务平台。"/>
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/backtop.css"/>
+    <link rel="stylesheet" href="css/counter.css">
 </head>
 <body>
     <div ms-controller="headerCtrl" class="header ms-controller">
         <wbr ms-widget="{is:'header',headerRightArr:@headerRightArr,navArr:@navArr}" />
     </div>
 
-    <div class="banner clear">
-        <ul id=bannerImg></ul>
-        <span class="cut prev"></span>
-        <span class="cut next"></span>
-        <div class="indicator"></div>
-        <!--模态框-->
-        <div class="landbox">
-            <div class="land">
-                <div class="land_p01">预期年化收益率</div>
-                <div class="land_p02"><span>8</span>% -<span>10</span>%</div>
-                <div class="land_p04">
-                    <a href="register.html"><span>立即注册</span></a>
+    <div id="banner" class="clear">
+        <div class="banner01">
+            <div class="banner">
+                <!--模态框-->
+                <div class="landbox">
+                    <div class="land">
+                        <div class="land_p01">预期年化收益率</div>
+                        <div class="land_p02"><span>8</span>% -<span>10</span>%</div>
+                        <div class="land_p04">
+                            <a href="register.html"><span>注册领300元红包</span></a>
+                        </div>
+                        <div class="land_p05"><a href="login.html">已有账号登录</a></div>
+                    </div>
+                    <div class="land2"></div>
                 </div>
-                <div class="land_p05"><a href="login.html">已有账号登录</a></div>
+                <div class="banner_pic">
+                    <ul id="fcimg">
+
+                    </ul>
+                    <ul id="fcnum">
+
+                    </ul>
+                    <span class="banner-btn-prev banner-btn"><img src="images/index/button-prev.png" alt=""/></span>
+                    <span class="banner-btn-next banner-btn"><img src="images/index/button-next.png" alt=""/></span>
+                </div>
             </div>
-            <div class="land2"></div>
+            <div class="clear"></div>
         </div>
     </div>
 
-    <div ms-controller="safeCtrl" class="home-safe ms-controller">
-        <wbr ms-widget="{is:'safe',txt:@txt}">
+    <div class="home-safe">
+        <div class="home-main">
+            <a href="#" class="quick_link">
+                <span></span>
+                <strong>稳健运营</strong>完善的业务闭环，历史100%兑付
+            </a>
+            <a href="#" class="quick_link">
+                <span></span>
+                <strong>江西银行资金存管</strong>平台与用户资金分离，借贷双方交易信息安全
+            </a>
+            <a href="#" class="quick_link">
+                <span></span>
+                <strong>Pre-A轮融资</strong>获战略投资方—五星资本Pre-A轮融资
+            </a>
+            <a href="#" class="quick_link">
+                <span></span>
+                <strong>多重风控保障</strong>多级风控审核，抵押信息真实透明
+            </a>
+            <div class="clear"></div>
+        </div>
     </div>
 
     <div class="home-record"></div>
@@ -59,7 +90,7 @@
                 <span>{{el.nickName}}</span>
                 <span>{{el.work}}</span>
                 <p>{{el.leaveMsg}}</p>
-                <img class="unfoldImg" src="img/index/unfold.png"/>
+                <img class="unfoldImg" src="images/index/unfold.png"/>
             </div>
         </div>
     </div>
@@ -91,8 +122,7 @@
         <wbr ms-widget="{is:'footer',array:@array,copy:@copy}" />
     </div>
 
-    <!--start-backtop-->
-
+<script src="../dist/swiper.bundle.js"></script>
 <script src="../dist/index.bundle.js"></script>
 <script src="../dist/header_footer.bundle.js"></script>
 </body>

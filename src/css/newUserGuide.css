@@ -6,7 +6,7 @@
 .G-banner {
     width: 100%;
     height: 639px;
-    background: #6eccfc url(../img/newUserGuide/banner.jpg) no-repeat center;
+    background: #6eccfc url(../images/newUserGuide/banner.jpg) no-repeat center;
 }
 .section {
     padding: 80px 0;
@@ -36,7 +36,7 @@ img.img_title {
     width: 1100px;
     height: 200px;
     margin: 0 auto;
-    background: url(../img/newUserGuide/guide_02_ico.png) no-repeat center top;
+    background: url(../images/newUserGuide/guide_02_ico.png) no-repeat center top;
 }
 .guide_slogan span {
     display: block;
@@ -67,7 +67,7 @@ img.img_title {
     width: 960px;
     padding: 0 20px;
     height: 50px;
-    background: url(../img/newUserGuide/stepBg.png) no-repeat;
+    background: url(../images/newUserGuide/stepBg.png) no-repeat;
 }
 .stepBox li {
     float: left;
@@ -80,10 +80,10 @@ img.img_title {
     cursor: pointer;
 }
 .stepBox li:hover {
-    background: url(../img/newUserGuide/stepLabel_hover.png) no-repeat;
+    background: url(../images/newUserGuide/stepLabel_hover.png) no-repeat;
 }
 .stepBox li.on {
-    background: url(../img/newUserGuide/stepLabel_on.png) no-repeat;
+    background: url(../images/newUserGuide/stepLabel_on.png) no-repeat;
     color: #fff;
 }
 .stepBox .step_con {

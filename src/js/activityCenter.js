@@ -12,49 +12,49 @@ $.mockjax({
             {
                 actUrl:"#",
                 title:"年末放送-礼品礼金拿到手软",
-                actPicUrl:"img/activityCenter/activity01.jpg",
+                actPicUrl:"images/activityCenter/activity01.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             },
             {
                 actUrl:"#",
                 title:"一锤定金满标送现金",
-                actPicUrl:"img/activityCenter/activity02.jpg",
+                actPicUrl:"images/activityCenter/activity02.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             },
             {
                 actUrl:"#",
                 title:"年末放送-礼品礼金拿到手软",
-                actPicUrl:"img/activityCenter/activity01.jpg",
+                actPicUrl:"images/activityCenter/activity01.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             },
             {
                 actUrl:"#",
                 title:"一锤定金满标送现金",
-                actPicUrl:"img/activityCenter/activity02.jpg",
+                actPicUrl:"images/activityCenter/activity02.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             },
             {
                 actUrl:"#",
                 title:"一锤定金满标送现金",
-                actPicUrl:"img/activityCenter/activity02.jpg",
+                actPicUrl:"images/activityCenter/activity02.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             },
             {
                 actUrl:"#",
                 title:"年末放送-礼品礼金拿到手软",
-                actPicUrl:"img/activityCenter/activity01.jpg",
+                actPicUrl:"images/activityCenter/activity01.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             },
             {
                 actUrl:"#",
                 title:"一锤定金满标送现金",
-                actPicUrl:"img/activityCenter/activity02.jpg",
+                actPicUrl:"images/activityCenter/activity02.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             },
             {
                 actUrl:"#",
                 title:"一锤定金满标送现金",
-                actPicUrl:"img/activityCenter/activity02.jpg",
+                actPicUrl:"images/activityCenter/activity02.jpg",
                 actDate:"活动时间：2015-11-25至2015-12-06"
             }
         ]
@@ -100,7 +100,7 @@ function getData(offset,size){
                             '<a href="'+ data[i].actUrl +'" target="_blank">'+
                                 '<h3>'+ data[i].title +'</h3>'+
                                 '<div class="act_img">'+
-                                    '<img src="'+ data[i].actPicUrl +'" />'+
+                                    '<images src="'+ data[i].actPicUrl +'" />'+
                                     '<div class="gray_hover" style="display: none;">'+
                                         '<span>点&nbsp;击&nbsp;查&nbsp;看&nbsp;详&nbsp;情</span>'+
                                     '</div>'+

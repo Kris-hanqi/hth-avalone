@@ -6,140 +6,130 @@ var mockjax = require("mockjax")($, window);
 
 //banner
 (function (){
-    /*模拟接口*/
-    $.mockjax({
-        url: ' http://XXX/homePage/bannerList',
-        status: 200,
-        responseText: {
-            "data":[
-                { "imgUrl": "../src/img/banner/banner-01.jpg", "targetUrl": "#"},
-                { "imgUrl": "../src/img/banner/banner-02.jpg", "targetUrl": "#"},
-                { "imgUrl": "../src/img/banner/banner-03.jpg", "targetUrl": "#"},
-                { "imgUrl": "../src/img/banner/banner-04.jpg", "targetUrl": "#"},
-                { "imgUrl": "../src/img/banner/banner-05.jpg", "targetUrl": "#"},
-                { "imgUrl": "../src/img/banner/banner-06.jpg", "targetUrl": "#"},
-                { "imgUrl": "../src/img/banner/banner-07.jpg", "targetUrl": "#"}
-            ]
-        }
-    });
     $.ajax({
-        url:' http://XXX/homePage/bannerList',
+        url:' http://192.168.1.89:21000/web-api/bannerList/index',
         type:'get',
-        success:function(response){
-            var html = '';
-            var text = '';
-            for(var i=0;i<response.data.length;i++){
-                html += '<li style="background: url('+ response.data[i].imgUrl +') center 0 no-repeat"><a href=" '+ response.data[i].targetUrl +'" class="link"></a></li>';
-                text += '<span></span>';
-            }
-            $("#bannerImg").html(html);
-
-            $(".indicator").html(text);
-
-            var number=$('.banner ul li').size()-1;
-            var cur=0;
-            var timer=0;
-            $(".indicator span:first-child").addClass('cur');
-            //定时器
-            timer=setInterval(slideNext,3000);
-            $('.banner').mouseover(function(){
-                clearInterval(timer);
-            });
-            $('.banner').mouseout(function(){
-                timer=setInterval(slideNext,3000);
-            });
-            $('.next').click(function(){
-                slideNext();
-            });
-            $('.prev').click(function(){
-                slidPrve();
-            });
-            //下一张
-            function slideNext(){
-                if(cur<number){
-                    $('.banner ul li').eq(cur).css({"z-index":10}).stop().fadeOut();
-                    $('.banner ul li').eq(cur+1).css({"z-index":20}).stop().fadeIn();
-                    $('.indicator span').removeClass().eq(cur+1).addClass('cur');
-                    cur += 1;
-                }else{
-                    $('.banner ul li').eq(cur).css({"z-index":10}).stop().fadeOut();
-                    $('.banner ul li').eq(0).css({"z-index":20}).stop().fadeIn();
-                    $('.indicator span').removeClass().eq(0).addClass('cur');
-                    cur = 0;
+        success:function(data){
+            if(data.meta.code == '200') {
+                var html = '';
+                var text = '';
+                for(var i=0;i<data.data.bannerList.length;i++){
+                    text += '<li><a href=" '+ data.data.bannerList[i].targetUrl +'"><img src="'+ data.data.bannerList[i].imgUrl +'" style="width: 100%;height: 100%" alt=""></a></li>';
+                    html += '<li><a href="javascript:void(0)"></a></li>';
                 }
-            }
-            //上一张
-            function slidPrve(){
-                if(cur>0){
-                    $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
-                    $('.banner ul li').eq(cur-1).css({'z-index':20}).stop().fadeIn();
-                    $('.indicator span').removeClass().eq(cur-1).addClass('cur');
-                    cur -= 1;
-                }else{
-                    $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
-                    $('.banner ul li').eq(number).css({'z-index':20}).stop().fadeIn();
-                    $('.indicator span').removeClass().eq(number).addClass('cur');
-                    cur=number;
+                $("#fcimg").html(text);
+                $("#fcnum").html(html);
+
+                var indx = 1;
+                var looper = 3500;
+                var myTimer;
+
+                function prev(il, nl, cs) {
+                    crobj = $(il).eq(indx);
+                    $(il).not(crobj).hide();
+                    $(nl).removeClass();
+                    $(nl).eq(indx).addClass(cs);
+                    crobj.stop(true, true).fadeIn('slow');
+                    indx = (--indx) % ($(il).length);
                 }
+                function showFImg(il,nl,cs){
+                    if($(il).length >1){
+                        crobj = $(il).eq(indx);
+                        $(il).not(crobj).hide();
+                        $(nl).removeClass();
+                        $(nl).eq(indx).addClass(cs);
+                        crobj.stop(true,true).fadeIn('slow');
+                        indx = (++indx) % ($(il).length);
+                    }
+                }
+
+                if ($("#fcimg li").length > 1) {
+                    $('#fcnum li:first-child').addClass('one');
+
+                    myTimer = setInterval(function(){
+                        crobj = $("#fcimg li").eq(indx);
+                        $("#fcimg li").not(crobj).hide();
+                        $("#fcnum li").removeClass();
+                        $("#fcnum li").eq(indx).addClass("crn");
+                        crobj.stop(true,true).fadeIn('slow');
+                        indx = (++indx) % ($("#fcimg li").length);
+                    }, looper);
+                    $("#fcnum li").click(function () {
+                        indx = $("#fcnum li").index(this);
+                        showFImg("#fcimg li", "#fcnum li", "crn");
+                        try {
+                            clearInterval(myTimer);
+                            myTimer = setInterval(function(){
+                                crobj = $("#fcimg li").eq(indx);
+                                $("#fcimg li").not(crobj).hide();
+                                $("#fcnum li").removeClass();
+                                $("#fcnum li").eq(indx).addClass("crn");
+                                crobj.stop(true,true).fadeIn('slow');
+                                indx = (++indx) % ($("#fcimg li").length);
+                            }, looper);
+                        } catch (e) {
+                        }
+                        return false;
+                    });
+                    $("#fcimg").hover(function () {
+                        if (myTimer) {
+                            clearInterval(myTimer);
+                        }
+                    }, function () {
+                        myTimer = setInterval(function(){
+                            crobj = $("#fcimg li").eq(indx);
+                            $("#fcimg li").not(crobj).hide();
+                            $("#fcnum li").removeClass();
+                            $("#fcnum li").eq(indx).addClass("crn");
+                            crobj.stop(true,true).fadeIn('slow');
+                            indx = (++indx) % ($("#fcimg li").length);
+                        }, looper);
+                    });
+
+                    /*banner-btn*/
+                    $('.banner_pic .banner-btn-prev').on("click", function () {
+                        prev("#fcimg li", "#fcnum li", "crn");
+                    });
+                    $(".banner_pic .banner-btn-next").on("click", function () {
+                        showFImg("#fcimg li", "#fcnum li", "crn");
+                    });
+
+                    $('.banner_pic .banner-btn-prev').bind("mouseenter", function () {
+                        clearInterval(myTimer);
+                    }).bind("mouseleave", function () {
+                        myTimer = setInterval(function(){
+                            crobj = $("#fcimg li").eq(indx);
+                            $("#fcimg li").not(crobj).hide();
+                            $("#fcnum li").removeClass();
+                            $("#fcnum li").eq(indx).addClass("crn");
+                            crobj.stop(true,true).fadeIn('slow');
+                            indx = (++indx) % ($("#fcimg li").length);
+                        }, looper);
+                    });
+                    $('.banner_pic .banner-btn-next').bind("mouseenter", function () {
+                        clearInterval(myTimer);
+                    }).bind("mouseleave", function () {
+                        myTimer = setInterval(function(){
+                            crobj = $("#fcimg li").eq(indx);
+                            $("#fcimg li").not(crobj).hide();
+                            $("#fcnum li").removeClass();
+                            $("#fcnum li").eq(indx).addClass("crn");
+                            crobj.stop(true,true).fadeIn('slow');
+                            indx = (++indx) % ($("#fcimg li").length);
+                        }, looper);
+                    });
+                }
+            }else {
+                console.log(data.meta.message);
             }
-            //指示器
-            $('.indicator span').mouseover(function(){
-                var now=$(this).index();
-                $('.indicator span').removeClass();
-                $(this).addClass('cur');
-                $('.banner ul li').eq(cur).css({'z-index':10}).stop().fadeOut();
-                $('.banner ul li').eq(now).css({'z-index':20}).stop().fadeIn();
-                cur=now;
-            });
         }
     });
-
-
-
 })();
-
-//home-safe
-avalon.component("safe",{
-    template: (function(){
-        var homeSafe="<div class=\"home-main\">"+
-            "<a href=\"#\" class=\"quick_link\" ms-for='el in @txt'>"+
-            "<span></span>"+
-            "<strong>{{el.strongTxt}}</strong>{{el.txtArr}}"+
-            "</a>"+
-            "<div class=\"clear\"></div>"+
-            "</div>";
-        return homeSafe;
-    }).call(this),
-    defaults: {
-        txt:[]
-    }
-});
-var vmSafe=avalon.define({
-    $id:"safeCtrl",
-    txt:[
-        {strongTxt:"稳健运营",txtArr:"完善的业务闭环，历史100%兑付"},
-        {strongTxt:"江西银行资金存管",txtArr:"平台与用户资金分离，借贷双方交易信息安全"},
-        {strongTxt:"Pre-A轮融资",txtArr:"获战略投资方—五星资本Pre-A轮融资"},
-        {strongTxt:"多重风控保障",txtArr:"多级风控审核，抵押信息真实透明"}
-    ]
-});
 
 //home-record
 (function(){
-    /*模拟接口*/
-    $.mockjax({
-        url: 'http://XXX/web-api/platformData',
-        status: 200,
-        responseText: {
-            "data": {
-                "allInvestSum": "8亿2396万7916",
-                "allUserInterestSum": "2413万7475",
-                "userCount": "5万1592"
-            }
-        }
-    });
     $.ajax({
-        url:'http://XXX/web-api/platformData',
+        url:'http://192.168.1.89:21000/web-api/platformData',
         type:'get',
         success:function(response){
             var html = '';
@@ -336,8 +326,8 @@ avalon.component("main",{
                     "<div class=\"home_products sxb\">"+
                         "<div class=\"home_products_left\">"+
                             "<label>预期收益并非平台承诺收益</label>"+
-                            "<h2>升薪宝<i><img src=\"img/product_hot_ico.png\"/></i></h2>"+
-                            "<img src=\"img/product_line_ico.png\"/>"+
+                            "<h2>升薪宝<i><images src=\"images/product_hot_ico.png\"/></i></h2>"+
+                            "<images src=\"images/product_line_ico.png\"/>"+
                             "<p>定期理财，严格风控<br>100元起投<br>放款后生息</p>"+
                             "<a class=\"more\" href=\"#\">查看更多</a>"+
                         "</div>"+
@@ -352,7 +342,7 @@ avalon.component("main",{
                                 "<p>预期年化利率</p>"+
                                 "<p class=\"sxb_des clearfix\"><span>期限<strong class=\"font24\">{{el.loanType.repayTimePeriod}}</strong>个月</span><span>规模<strong class=\"font24\">{{el.loanMoney}}</strong>万</span></p>"+
                                 "<ul class=\"pro_data clearfix\"><li>进度</li><li>{{el.sumMoney}}%</li></ul>"+
-                                "<div class=\"pro_progress\"><img ms-css=\"@styleObj\" src=\"img/progress_line.png\"/></div>"+
+                                "<div class=\"pro_progress\"><images ms-css=\"@styleObj\" src=\"images/progress_line.png\"/></div>"+
                                 "<ul class=\"pro_data clearfix\"><li>余额</li><li>{{el.moneyNeedRaised}}元</li></ul>"+
                                 "<a ms-attr='{href:el.targetUrl}' class=\"box_button\">{{el.loanStatus}}</a>"+
                             "</div>"+
@@ -362,7 +352,7 @@ avalon.component("main",{
                         "<div class=\"home_products_left\">"+
                             "<label>预期收益并非平台承诺收益</label>"+
                             "<h2>直投项目</h2>"+
-                            "<img src=\"img/product_line_ico.png\"/>"+
+                            "<images src=\"images/product_line_ico.png\"/>"+
                             "<p>多层审核，稳定收益<br>100元起投<br />放款后生息</p>"+
                             "<a class=\"more\" href=\"#\">查看更多</a>"+
                         "</div>"+
@@ -378,7 +368,7 @@ avalon.component("main",{
                                     "<li>"+
                                         "<a ms-attr='{href:el.targetUrl}' class=\"box_button\">{{el.loanStatus}}</a>"+
                                         "<ul class=\"pro_data clearfix\"><li>进度</li><li>{{el.sumMoney}}%</li></ul>"+
-                                        "<div class=\"box_progress\"> <img ms-css=\"@styleObj2\" src=\"img/progress_line.png\"/> </div>"+
+                                        "<div class=\"box_progress\"> <images ms-css=\"@styleObj2\" src=\"images/progress_line.png\"/> </div>"+
                                         "<ul class=\"pro_data clearfix\"><li>余额</li><li>{{el.moneyNeedRaised}}元</li></ul>"+
                                     "</li>"+
                                 "</ul>"+
@@ -430,31 +420,31 @@ $.mockjax({
         "data":{
             newsCenter:[
                 {
-                    "imgUrl": "img/index/media-photo-01.jpg",
+                    "imgUrl": "images/index/media-photo-01.jpg",
                     "title": "海投汇好友邀请：千五荐面礼 史上最高霸气来袭",
                     "createTime": "2017/2/1",
                     "targetUrl": "#"
                 },
                 {
-                    "imgUrl": "img/index/media-photo-01.jpg",
+                    "imgUrl": "images/index/media-photo-01.jpg",
                     "title": "理财大揭秘，海投汇新手标,老带新活动感恩来...",
                     "createTime": "2017/3/1",
                     "targetUrl": "#"
                 },
                 {
-                    "imgUrl": "img/index/media-photo-01.jpg",
+                    "imgUrl": "images/index/media-photo-01.jpg",
                     "title": "海投汇引领P2P合规时代，银行存管不是终点...",
                     "createTime": "2017/4/1",
                     "targetUrl": "#"
                 },
                 {
-                    "imgUrl": "img/index/media-photo-01.jpg",
+                    "imgUrl": "images/index/media-photo-01.jpg",
                     "title": "海投汇第二届投资人见面会成功举办",
                     "createTime": "2017/5/1",
                     "targetUrl": "#"
                 },
                 {
-                    "imgUrl": "img/index/media-photo-01.jpg",
+                    "imgUrl": "images/index/media-photo-01.jpg",
                     "title": "海投汇李鲁一：修己惠人 笃行致远",
                     "createTime": "2017/6/1",
                     "targetUrl": "#"
@@ -497,7 +487,7 @@ avalon.component("news",{
             "<h3 class=\"news-title\">新闻中心</h3>"+
             "<span class=\"gengduo\"><a href=\"#\">更多...</a></span>"+
             "<div class=\"news-latest\">"+
-            "<a ms-for='value in @newsCenter | limitBy(10) as items' ms-attr='{href:value.targetUrl}'><img ms-attr='{src:value.imgUrl}'/><label><span>福布斯中国公布”互联网金融50” 票据理财平台仅有海投汇</span></label></a>"+
+            "<a ms-for='value in @newsCenter | limitBy(10) as items' ms-attr='{href:value.targetUrl}'><images ms-attr='{src:value.imgUrl}'/><label><span>福布斯中国公布”互联网金融50” 票据理财平台仅有海投汇</span></label></a>"+
             "</div>"+
             "<ul>"+
             "<li ms-for='el in @newsCenter'><a ms-attr='{href:el.targetUrl}'><span>{{el.title}}</span><span class=\"news-date\">{{el.createTime}}</span></a></li>"+
@@ -553,31 +543,31 @@ $.mockjax({
     responseText: {
         "data":[
             {
-                headPicUrl: 'img/index/29481485055670889.png',
+                headPicUrl: 'images/index/29481485055670889.png',
                 nickName: "许女士",
                 work: "全职太太",
                 leaveMsg: "经身边已经在海投汇投资的朋友强烈推荐，开始关注海投汇。了解到海投汇自成立后业绩一直增长，没有一笔坏账，比较放心，自此与海投汇结缘。去年底资金存管也上线了，刚刚又得知海投汇获得融资，衷心希望海投汇的影响力越来越大、越做做强、越办越好，发布更多更好的产品给大家，给广大的客户带来福利！"
             },
             {
-                headPicUrl: 'img/index/33551485055652270.png',
+                headPicUrl: 'images/index/33551485055652270.png',
                 nickName: "好好好老师",
                 work: "教师",
                 leaveMsg: "2015年开始接触互联网金融平台并投资，陆续接触了很多家成熟的互金平台。海投汇不管是安全上还是管理上都比较严谨，借款人的身份证、基本信息、借款用途和借款资料等等都会有明确披露，可以说风控很成熟，资料也很全面。在比较了多个互金平台后，最终选择了海投汇作为我的大部分资金的首选，虽然鸡蛋不可能放在同一个篮子里，但是多年的经验告诉我，海投汇是一个值得信赖的互金投资平台。"
             },
             {
-                headPicUrl: 'img/index/56131485055626978.png',
+                headPicUrl: 'images/index/56131485055626978.png',
                 nickName: "惠明",
                 work: "家庭主妇",
                 leaveMsg: "从2015年海投汇初成立起就深深的关注着他。开头有点担心，小心翼翼试探的小投几把。日子久了，更多的关注着互金相关新闻；一有空就搜索海投汇的消息，看到海投汇各项功能日趋完善，银行资金存管也上线了，越来越符合国家相关规定。每个月都有各种活动开展，我也越来越信赖他了。祝海投汇越办越好，安安全全，成为日久传承的“老店”。"
             },
             {
-                headPicUrl: 'img/index/35311485055688654.png',
+                headPicUrl: 'images/index/35311485055688654.png',
                 nickName: "一切皆好",
                 work: "厨师",
                 leaveMsg: "我与海投汇的缘分要感谢空中网的一款游戏《坦克世界》。海投汇经常推出投资送金币、送装备的活动，从未让我失望！每一次，我不但获得了游戏各种配件，投资的本金、利息也都如期回来了，投资稳健和收益可观，很靠谱！海投汇微信公众账号后期也开始搞活动，现在我已经把大中小号“小海公仔”都纳入囊中。谢谢海投汇给我一个投资的渠道。希望海投汇做的更好，走的更远。"
             },
             {
-                headPicUrl: 'img/index/4561485055715766.png',
+                headPicUrl: 'images/index/4561485055715766.png',
                 nickName: "小华",
                 work: "IT 运营经理",
                 leaveMsg: "我也算《坦克世界》的老玩家了，去年一个偶然的机会看到海投汇和坦克世界合作搞活动，因为我一直在投资互联网金融平台理财，所以毫不犹豫的就注册了帐号，开始了投资，于是期期活动都参加，也给海投汇提了好多的意见和建议，大部分都惊喜地被海投汇采纳了。我想今后我会更积极的参与到海投汇的发展中，也希望海投汇越做越大，生意兴隆，更希望海投汇在稳定中发展，为投资人开创美好未来。"
@@ -605,12 +595,12 @@ $.mockjax({
     status: 200,
     responseText: {
         "data":[
-            {mediaPicUrl: '#',mediaPic: 'img/index/media-01.jpg'},
-            {mediaPicUrl: '#',mediaPic: 'img/index/media-02.jpg'},
-            {mediaPicUrl: '#',mediaPic: 'img/index/media-03.jpg'},
-            {mediaPicUrl: '#',mediaPic: 'img/index/media-04.jpg'},
-            {mediaPicUrl: '#',mediaPic: 'img/index/media-05.jpg'},
-            {mediaPicUrl: '#',mediaPic: 'img/index/media-06.jpg'}
+            {mediaPicUrl: '#',mediaPic: 'images/index/media-01.jpg'},
+            {mediaPicUrl: '#',mediaPic: 'images/index/media-02.jpg'},
+            {mediaPicUrl: '#',mediaPic: 'images/index/media-03.jpg'},
+            {mediaPicUrl: '#',mediaPic: 'images/index/media-04.jpg'},
+            {mediaPicUrl: '#',mediaPic: 'images/index/media-05.jpg'},
+            {mediaPicUrl: '#',mediaPic: 'images/index/media-06.jpg'}
         ]
     }
 });

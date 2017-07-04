@@ -5,6 +5,7 @@ var srcDir = path.resolve(process.cwd(), 'src');
 var nodeModPath = path.resolve(__dirname, './node_modules');
 module.exports = {
     entry: {
+        swiper:"./src/js/swiper.min.js",
         index:"./src/js/index.js",
         header_footer:"./src/js/header_footer.js",
         register:"./src/js/register.js",

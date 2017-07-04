@@ -1,0 +1,103 @@
+.counter-box {
+  width: 318px;
+  height: 469px;
+  background-image: url("../images/index/counter/counter-bg.png");
+  background-repeat: no-repeat;
+  color: #4c4c4c;
+}
+.counter-box .counter {
+  padding: 90px 25px 45px;
+}
+.counter-box .counter .counter-m span {
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+}
+.counter-box .counter .counter-m .deadline {
+  vertical-align: top;
+  margin-top: 25px;
+}
+.counter-box .counter .counter-m input,
+.counter-box .counter .counter-m .earnings {
+  width: 176px;
+  height: 40px;
+  border: none;
+  background-color: #ebf3ff;
+  outline: none;
+  padding-left: 10px;
+}
+.counter-box .counter .counter-m .earnings {
+  width: 186px;
+  margin-right: 0;
+  line-height: 40px;
+  text-align: center;
+  padding: 0;
+}
+.counter-box .counter .counter-m form {
+  display: inline-block;
+  width: 186px;
+  margin: 20px 0;
+  text-align: left;
+}
+.counter-box .counter .counter-m form .select {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/index/counter/select.png") no-repeat;
+  background-size: 100% 100%;
+  border: none;
+  cursor: pointer;
+}
+.counter-box .counter .counter-m form i.select-icon {
+  display: inline-block !important;
+  width: 16px!important;
+  height: 16px!important;
+  box-sizing: border-box !important;
+  border: 1px solid #aaa!important;
+  border-radius: 50%!important;
+  vertical-align: middle!important;
+  cursor: pointer!important;
+}
+.counter-box .counter .counter-m form .none {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.counter-box .counter .counter-m form span {
+  padding: 0;
+  margin: 0;
+  line-height: 26px;
+  font-family: "microsoft yahei", Arial, sans-serif;
+}
+.counter-box .counter .counter-m form span:nth-child(2n) {
+  /*width: 60px;*/
+  margin-left: 10px;
+}
+/*.counter-box .counter .counter-m form span:nth-child(2n-1) {*/
+  /*color: #ff5f5f;*/
+/*}*/
+.counter-box .counter .counter-m form span.red {
+  color: #ff5f5f;
+}
+.counter-box .counter .counter-m form span,black {
+  color: black;
+}
+.counter-box .counter .counter-b {
+  width: 219px;
+  height: 65px;
+  margin: 0 auto;
+  text-align: center;
+}
+.counter-box .counter .counter-b .calculate {
+  display: block;
+  width: 219px;
+  height: 65px;
+  background-image: url("../images/index/counter/counter-btn.png");
+  background-repeat: no-repeat;
+  margin-top: 28px;
+  cursor: pointer;
+}
+.counter-box .counter .counter-b span {
+  color: #dfdfdf;
+  font-size: 12px;
+}

@@ -70,7 +70,7 @@
     text-indent: 0;
     line-height: 28px;
     color: #242424;
-    background: url(../img/aboutUs/listIco.png) no-repeat left 7px;
+    background: url(../images/aboutUs/listIco.png) no-repeat left 7px;
 }
 .qyjs .introduceList span{
     display: block;
@@ -193,8 +193,8 @@ ul.team-last li h4{
 #focus_Box li p{position:relative;left:0;bottom:0;width:85%;height:40px;line-height:40px;text-align:center;color:#979696;font-size: 16px;text-indent: 0;}
 #focus_Box li p span{display:inline-block;width:100%;height:40px;overflow:hidden;}
 #focus_Box .prev,#focus_Box .next{display:block;z-index:100;overflow:hidden;cursor:pointer;position:absolute;width:52px;height:52px;top:175px;}
-#focus_Box .prev{background:url(../img/aboutUs/btn.png) left bottom no-repeat;left:-25px}
-#focus_Box .next{background:url(../img/aboutUs/btn.png) right bottom no-repeat;right:18px}
+#focus_Box .prev{background:url(../images/aboutUs/btn.png) left bottom no-repeat;left:-25px}
+#focus_Box .next{background:url(../images/aboutUs/btn.png) right bottom no-repeat;right:18px}
 #focus_Box .prev:hover{background-position:left top;}
 #focus_Box .next:hover{background-position:right top;}
 
@@ -301,7 +301,7 @@ ul.team-last li h4{
     display: block;
     color: #fb6e52;
     font-size: 20px;
-    background: url(../img/aboutUs/icon_arrowDown.png) no-repeat right center;
+    background: url(../images/aboutUs/icon_arrowDown.png) no-repeat right center;
     position: absolute;
     left: -125px;
     top: -35px;
@@ -326,7 +326,7 @@ ul.team-last li h4{
     margin-top: 16px;
     font-size: 18px;
     color: #535353;
-    background: url(../img/aboutUs/position_icon.jpg) no-repeat right;
+    background: url(../images/aboutUs/position_icon.jpg) no-repeat right;
 }
 .event span{
     display: block;
@@ -345,7 +345,7 @@ ul.team-last li h4{
     display: block;
     color: #fb6e52;
     font-size: 20px;
-    background: url(../img/aboutUs/icon_arrowDown.png) no-repeat right center;
+    background: url(../images/aboutUs/icon_arrowDown.png) no-repeat right center;
     position: absolute;
     left: -125px;
     margin-top: 30px;
@@ -369,7 +369,7 @@ ul.team-last li h4{
     padding-left: 12px;
     height: 326px;
     text-align: center;
-    background: url(../img/aboutUs/bg_alertImg.png) no-repeat;
+    background: url(../images/aboutUs/bg_alertImg.png) no-repeat;
     overflow: hidden;
 }
 .event span:hover .alertBox {
@@ -423,5 +423,5 @@ ul.team-last li h4{
     font-size: 18px;
     color: #010109;
     line-height: 28px;
-    background: url(../img/aboutUs/listIco.png) no-repeat left 7px;
+    background: url(../images/aboutUs/listIco.png) no-repeat left 7px;
 }

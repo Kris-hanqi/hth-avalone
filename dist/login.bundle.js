@@ -49,19 +49,19 @@
 	var backTop = __webpack_require__(5);
 	var mockjax = __webpack_require__(3)($, window);
 
-	/*����IE placeholder*/
+	/*兼容IE placeholder*/
 	var JPlaceHolder = {
-	    //����
+	    //检测
 	    _check : function(){
 	        return 'placeholder' in document.createElement('input');
 	    },
-	    //��ʼ��
+	    //初始化
 	    init : function(){
 	        if(!this._check()){
 	            this.fix();
 	        }
 	    },
-	    //�޸�
+	    //修复
 	    fix : function(){
 	        $(':input[placeholder]').each(function(index, element) {
 	            var self = $(this), txt = self.attr('placeholder');
@@ -82,27 +82,27 @@
 	        });
 	    }
 	};
-	//ִ��
+	//执行
 	$(function(){
 	    JPlaceHolder.init();
 	});
 
 
 	$(function(){
-	    /*�������õ��������ش�����Ϣ*/
+	    /*输入框得到焦点隐藏错误信息*/
 	    $(".inputClass").focus(function() {
-	        var labelId = $(this).attr("id");//ͨ���������ҵ���Ӧ��id
+	        var labelId = $(this).attr("id");//通过输入框找到对应的id
 	        $("#" + labelId).siblings('.hint_message').css('display','none');
 	    });
 
-	    /*������ʧȥ��������У��*/
+	    /*输入框失去焦点进行校验*/
 	    $(".inputClass").blur(function() {
-	        var id = $(this).attr("id");//��ȡ��ǰ��������id
-	        var funName = "validate" + id.substring(0,1).toUpperCase() + id.substring(1) + "()";//�õ���Ӧ��У�麯����
-	        eval(funName);//ִ�к�������
+	        var id = $(this).attr("id");//获取当前输入框的id
+	        var funName = "validate" + id.substring(0,1).toUpperCase() + id.substring(1) + "()";//得到对应的校验函数名
+	        eval(funName);//执行函数调用
 	    });
 
-	    /*�����ύʱ����У��*/
+	    /*表单提交时进行校验*/
 	    $("#registerForm").submit(function(e) {
 	        if ( e && e.preventDefault ) {
 	            e.preventDefault();
@@ -110,7 +110,7 @@
 	            window.event.returnValue = false;
 	        }
 
-	        var bool = true;//��ʾУ��ͨ��
+	        var bool = true;//表示校验通过
 	        if(!validateUserPhone()) {
 	            bool = false;
 	        }
@@ -122,41 +122,41 @@
 	});
 
 
-	/*��ʾ������Ϣ*/
+	/*显示错误信息*/
 	function hint(className){
 	    $(className).css('display','block');
 	}
 
 	/*
-	 *�ֻ���У�鷽��
+	 *手机号校验方法
 	 */
 	function validateUserPhone() {
 	    var id = "userPhone";
 	    var userPhone=$('#userPhone').val();
-	    /*1. �ǿ�У��*/
+	    /*1. 非空校验*/
 	    if(userPhone == '') {
 	        hint('.hint_message_userPhone');
 	        return false;
 	    }
-	    /* 2. ��ʽУ��*/
+	    /* 2. 格式校验*/
 	    if((userPhone != '') && (!(/^1[34578]\d{9}$/.test(userPhone)))) {
-	        $('.hint_message_userPhone p').html('�ֻ��Ÿ�ʽ����ȷ');
+	        $('.hint_message_userPhone p').html('手机号格式不正确');
 	        hint('.hint_message_userPhone');
 	        return false;
 	    }
 	    /*
-	     /!* 3. �Ƿ�ע��У��*!/
+	     /!* 3. 是否注册校验*!/
 	     $.ajax({
-	     url:"/goods/UserServlet",//Ҫ������servlet
-	     data:{method:"ajaxValidateLoginname", loginname:value},//���������Ĳ���
+	     url:"/goods/UserServlet",//要请求的servlet
+	     data:{method:"ajaxValidateLoginname", loginname:value},//给服务器的参数
 	     type:"POST",
 	     dataType:"json",
-	     async:false,//�Ƿ��첽�������������첽����ô�����ȷ��������أ������������������������ˡ�
+	     async:false,//是否异步请求，如果是异步，那么不会等服务器返回，我们这个函数就向下运行了。
 	     cache:false,
 	     success:function(result) {
 	     if(!result) {
-	     //����У��ʧ��
-	     $('.hint_message_userPhone p').html('�ֻ�����ע��');
+	     //如果校验失败
+	     $('.hint_message_userPhone p').html('手机号已注册');
 	     hint('.hint_message_userPhone');
 	     return false;
 	     }
@@ -166,19 +166,19 @@
 	}
 
 	/*
-	 * ��¼����У�鷽��
+	 * 登录密码校验方法
 	 */
 	function validateUserPassward() {
 	    var id = "userPassward";
 	    var userPassward=$('#userPassward').val();
-	    /*1. �ǿ�У��*/
+	    /*1. 非空校验*/
 	    if(userPassward == '') {
 	        hint('.hint_message_userPassward');
 	        return false;
 	    }
-	    /*2. ��ʽУ��*/
+	    /*2. 格式校验*/
 	    if((userPassward != '') && (!(/^(?![A-Za-z]+$)(?![0-9]+$)[A-Za-z0-9]{6,16}$/.test(userPassward)))) {
-	        $('.hint_message_userPassward p').html('������ʽ����ȷ');
+	        $('.hint_message_userPassward p').html('密码格式不正确');
 	        hint('.hint_message_userPassward');
 	        return false;
 	    }
@@ -19443,94 +19443,121 @@
 	var $ = __webpack_require__(2);
 	function backTop() {
 		this.init();
-		/*$(document).ready(function() {
-			if ($(".main").length != 0) {
-				var xx = 0;
-				var windowWidth = $(window).width();
-				var mainx = $(".main").offset().left + $(".main").width();
-				$(".cbbfixed").css("right", windowWidth - mainx - 160);
-			}
-		});*/
 	}
 
 	backTop.prototype = {
-		constructor : backTop,
-		init : function() {
-			this._initBackTop();
-		},
-		_initBackTop : function() {
-			var url = window.location.href;
-			var kefu = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_zx" rel="nofollow" title="在线客服" href="javascript:;"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><span>工作日</span><span>（9:00-18:00）</span></div>'
-		        	+'</li>';
-			if (url.indexOf('/activity/') != -1) {
-				if (url.indexOf('exclusive-benefits') != -1
-						|| url.indexOf('common-register') != -1
-						|| url.indexOf('beauty-plan-bd') != -1
-						|| url.indexOf('tg') != -1
-						|| url.indexOf('anniversary-financial') != '-1') {
-					kefu='';
-				}
-			}
-			var app = '<li>'
-					+'<span class="right_qq_on"><a class="right_qq_app" href="javascript:;" title="手机app"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/smart_download.png"><span>手机客户端下载</span></div>'
-		        	+'</li>';
-			var weixin = '<li>'
-					+'<span class="right_qq_on"><a rel="nofollow" class="right_qq_wx" title="微信公众号"></a></span>'
-					+'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i></i><img src="img/weixin-upload.png"><span>微信公众号</span></div>'
-		        	+'</li>';
-			var $backTop = this.$backTop = $('<div class="cbbfixed right_qq"><ul>'
-					+ kefu
-					+ app
-					+ weixin
-					+ '<li class="goTop" style="margin-top: 10px;">'
-					+ '<span class="right_qq_on"><a rel="nofollow" id="goToTop" class="goTop" href="javascript:;" title="返回顶部"></a></span>'
-					+ '</li>'
-					+ '</ul></div>');
+	    constructor : backTop,
+	    init : function() {
+	        this._initBackTop();
+	    },
+	    _initBackTop : function() {
+	        var url = window.location.href;
+	        var counter = '<li>'
+	            +'<span class="right_qq_on"><a class="right_qq_counter" href="javascript:;" title="计算器"></a></span>'
+	            +'<div class="right_qq_wx_pic right_qq_hid right_qq_hid_counter" _pic="bt" style="position:absolute;right: 55px;top:-138px "><i class="arrow-icon"></i><div class="counter-box"> <div class="counter"><a href="#"></a><div class="counter-m"><span>投资金额</span><input type="text" class="money"> <span class="deadline">期<span style="visibility: hidden;margin: 0;padding: 0">哈哈</span>限 </span> <form> <i class="select-icon"></i><span>1</span><span>个月<span style="visibility: hidden">22</span></span><span class="red">7.2</span><span class="black">%</span> <br /> <i class="select-icon"></i><span>3</span><span>个月<span style="visibility: hidden">22</span></span><span class="red">8.0</span><span class="black">%</span> <br /> <i class="select-icon"></i><span>6</span><span>个月<span style="visibility: hidden">22</span></span><span class="red">9.5</span><span class="black">%</span> <br /> <i class="select-icon"></i><span>12</span><span>个月<span style="visibility: hidden">2</span></span><span class="red">11.0</span><span class="black">%</span> </form> <span>享受收益</span> <span class="earnings">0元</span> </div> <div class="counter-b"> <a href="#"><span class="calculate"></span></a> <span>以上结果为先息后本计算方式</span> </div> </div></div></div>'
+	            +'</li>';
+	        var kefu = '<li>'
+	            +'<span class="right_qq_on"><a class="right_qq_zx" rel="nofollow" title="在线客服" href="javascript:;"></a></span>'
+	            +'<div class="right_qq_wx_pic right_qq_hid" _pic="bt" style="right: 55px;"><i class="arrow-icon"></i><span>工作日</span><span>（9:00-18:00）</span></div>'
+	            +'</li>';
+	        if (url.indexOf('/activity/') != -1) {
+	            if (url.indexOf('exclusive-benefits') != -1
+	                || url.indexOf('common-register') != -1
+	                || url.indexOf('beauty-plan-bd') != -1
+	                || url.indexOf('tg') != -1
+	                || url.indexOf('anniversary-financial') != '-1') {
+	                kefu='';
+	            }
+	        }
 
-			$('body').append($backTop);
-			$($backTop.find("li[class='goTop']")).click(function() {
-				$("html, body").animate({
-					scrollTop : 0
-				}, 120);
-			});
+	        var app = '<li>'
+	            +'<span class="right_qq_on"><a class="right_qq_app" href="javascript:;" title="手机app"></a></span>'
+	            +'<div class="right_qq_wx_pic right_qq_hid right_qq_hid_code" _pic="bt" style="position:absolute;right: 55px;top:-65px""><i class="arrow-icon" style="top: 75px;"></i><div style="width: 250px"><div style="float: left"><img src="images/index/counter/QR-code.png"><span>手机客户端下载</span></div><div style="float: right"><img src="images/index/counter/weixin-upload.png"><span>微信公众号</span></div></div></div>'
+	            +'</li>';
 
-			$(".right_qq_on").mouseover(
-				function() {
-					var index = $(this).parent().find("div[_pic=bt]").index(this);
-						$(this).parent().find("div[_pic=bt]").show();
-						$(this).parent().find("div[_pic=bt]").slice(index,index+1).show();
-				}).mouseout(
-					function() {
-						$(".right_qq_on").parent().find("div[_pic=bt]").hide();
-					});
-					
-			$(".right_qq_hid").mouseover(
-				function() {
-					$(this).show(); 
-				}).mouseout(
-					function() {
-						$(this).hide(); 
-					});
+	        var $backTop = this.$backTop = $('<div class="cbbfixed right_qq"><ul>'
+	            + counter
+	            + kefu
+	            + app
+	            // + weixin
+	            + '<li class="goTop" style="margin-top: 10px;">'
+	            + '<span class="right_qq_on"><a rel="nofollow" id="goToTop" class="goTop" href="javascript:;" title="返回顶部"></a></span>'
+	            + '</li>'
+	            + '</ul></div>');
 
-			var timmer = null;
-			$backTop.css("bottom", "140px");
-			$backTop.find(".goTop").hide();
-			$(window).bind("scroll", function() {
-				var d = $(document).scrollTop();
-				if (0 < d) {// 需要出现返回顶部按钮
-					$backTop.find(".goTop").show();
-				} else {// 不需要出现
-					$backTop.find(".goTop").hide();
-				}
-				clearTimeout(timmer);
-				timmer = setTimeout(function() {
-					clearTimeout(timmer);
-				}, 100);
-			});
-		}
+	        $('body').append($backTop);
+	        $($backTop.find("li[class='goTop']")).click(function() {
+	            $("html, body").animate({
+	                scrollTop : 0
+	            }, 120);
+	        });
+
+	        $(".right_qq_on").mouseover(
+	            function() {
+	                var index = $(this).parent().find("div[_pic=bt]").index(this);
+	                $(this).parent().find("div[_pic=bt]").show();
+	                $(this).parent().find("div[_pic=bt]").slice(index,index+1).show();
+	            }).mouseout(
+	            function() {
+	                $(".right_qq_on").parent().find("div[_pic=bt]").hide();
+	            });
+
+	        $(".right_qq_hid").mouseover(
+	            function() {
+	                $(this).show();
+	            }).mouseout(
+	            function() {
+	                $(this).hide();
+	            }
+			);
+
+	        var timmer = null;
+	        $backTop.css("bottom", "140px");
+	        $backTop.find(".goTop").hide();
+	        $(window).bind("scroll", function() {
+	            var d = $(document).scrollTop();
+	            if (0 < d) {// 需要出现返回顶部按钮
+	                $backTop.find(".goTop").show();
+	            } else {// 不需要出现
+	                $backTop.find(".goTop").hide();
+	            }
+	            clearTimeout(timmer);
+	            timmer = setTimeout(function() {
+	                clearTimeout(timmer);
+	            }, 100);
+	        });
+
+	        $('.right_qq_hid_counter form i.select-icon').on("click",function(e){
+	            $(this).siblings('i').removeClass('select');
+	            var radio_checked=$(this).attr('class');
+
+	            if(radio_checked == 'select-icon'){
+	                $(this).children('input').addClass('none');
+	                $(this).addClass('select');
+	            }else if(radio_checked == 'select'){
+	                $(this).children('input').removeClass('none');
+	                $(this).removeClass('select');
+	            }
+	        });
+
+
+	        $(".right_qq_hid_counter .calculate").on('click',function () {
+	            var money = $('.right_qq_hid_counter .money').val(),
+	                scale = $('.right_qq_hid_counter .counter-m form i.select').next().text(),
+	                day = $('.right_qq_hid_counter .counter-m form i.select').next().next().next().text();
+
+	            $.ajax({
+	                url: 'http://192.168.1.89:21000/web-api/invest-calculator/' + money + '/loan_type_3/' + scale + '/' + day ,
+	                type: 'get',
+	                success: function (data) {
+	                    $('.right_qq_hid_counter .earnings').text(data.data.anticipatedInterest +'元');
+	                },
+	                error: function () {
+
+	                }
+	            })
+	        });
+	    }
 	}
 	var backtop = new backTop();
 
