@@ -10,7 +10,7 @@ sit_build:
    - env
    - pwd
    - mkdir -p $deploy_path/html
-   - webpack ./src/* --output-path ./dist
+   - webpack
    - cp -rf ./dist $deploy_path
    - cp -rf ./src/* $deploy_path/html
  except:
