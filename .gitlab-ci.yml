@@ -1,0 +1,19 @@
+stages:
+  - build
+  - deploy
+  
+sit_build:
+ stage: build
+ script:
+   - echo "start sit build...."
+   - export deploy_path=/mnt/gitlab_htouhui_web_front_end_deploy/$CI_BUILD_REF_NAME
+   - env
+   - pwd
+   - mkdir -p $deploy_path
+   - webpack
+ except:
+   - production
+ tags:
+   - sit
+ environment:
+    name: sit
