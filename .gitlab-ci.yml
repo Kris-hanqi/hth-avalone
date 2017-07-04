@@ -10,7 +10,7 @@ sit_build:
    - env
    - pwd
    - mkdir -p $deploy_path
-   - webpack
+   - webpack ./src/* --output-path ./dist
  except:
    - production
  tags:
