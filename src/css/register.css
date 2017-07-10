@@ -41,25 +41,24 @@
     clear: both;
     position: relative;
 }
-.register_message input {
+.register_message > input {
     width: 259px;
     height: 35px;
-    line-height: 35px;
+    line-height: 17px;
     border: 1px solid #d9d9d9;
     margin-top: 12px;
-    padding-left: 47px;
+    padding-left: 55px;
     font-size: 14px;
     float: left;
 }
-.register_message i {
+.register_message > i {
     display: inline-block;
     position: absolute;
-    left:60px;
+    left:65px;
     top:20px;
     background: url(../images/loginRegister/icon-register.png) no-repeat;
     width:20px;
     height: 25px;
-    z-index: 50;
 }
 i.userPassward_bg {
     width:22px;
@@ -88,8 +87,68 @@ i.referrerPhone_bg {
     height: 39px;
     margin-left: 5px;
     margin-top: 12px;
-    cursor: pointer;
     background: #DDDDDD;
+}
+.register_message .getSmsCode_s {
+    cursor: pointer;
+}
+.register_message .login_txt02_eye {
+    width: 30px;
+    height: 35px;
+    line-height: 38px;
+    position: absolute;
+    top: 14px;
+    right: 55px;
+    text-align: center;
+    cursor: pointer;
+}
+.register_message .login_txt02_eye_open {
+    background: url("images/eye_open_icon.png") no-repeat;
+    margin-top: 9px;
+}
+.register_message .login_txt02_eye_close {
+    background: url("images/eye_close_icon.png") no-repeat;
+    margin-top: 15px;
+}
+.register_message {
+    position: relative;
+}
+.register_message span.promptBox_s {
+    display: none;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px 0 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: red;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    position: absolute;
+    top: -30px;
+}
+.register_message span.promptBox_s i{
+    width: 18px;
+    height: 9px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    background: url("../images/loginRegister/promptBox_icon.png") no-repeat;
+}
+.show {
+    display: block !important;
+}
+
+.register_message span.promptBox_s01 {
+    left: 225px;
+}
+.register_message span.promptBox_s02 {
+    left: 225px;
+}
+.register_message span.promptBox_s03 {
+    left: 120px;
+}
+.register_message span.promptBox_s04 {
+    left: 120px;
 }
 .serviceAgreement {
     padding-top: 12px;
@@ -103,7 +162,6 @@ i.referrerPhone_bg {
     height: 18px;
     border: solid 1px #cfd1d3;
     vertical-align: bottom;
-    float: none;
     padding: 0;
     margin: 0
 }
@@ -111,7 +169,6 @@ i.referrerPhone_bg {
     display: block;
     width: 316px;
     height: 47px;
-    background: #2875d9;
     line-height: 47px;
     text-align: center;
     font-size: 21px;
@@ -119,12 +176,19 @@ i.referrerPhone_bg {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 2px;
-    margin-top: 25px;
+    margin-top: 20px;
     margin-bottom: 15px;
     border:none;
+}
+.register_btn_blue {
+    background: #2875d9;
     cursor: pointer;
 }
-.register_btn:hover {
+.register_btn_gray {
+    background: #DDDDDD;
+}
+
+.register_btn_blue:hover {
     background: #fe6e4c;
 }
 .thisRegister {
@@ -136,37 +200,13 @@ i.referrerPhone_bg {
     border-bottom: 2px solid #2875d9;
 }
 
-/*验证提示信息*/
-.hint_message_userPhone {
-    right: 10px;
-    top: -20px;
-    display: none;
-}
-.hint_message_userPassward {
-    right: 10px;
-    top: -20px;
-    display: none;
-}
-.hint_message_userPassward_again {
-    right: 10px;
-    top: -20px;
-    display: none;
-}
-.hint_message_imgCode {
-    right: 110px;
-    top: -20px;
-    display: none;
-}
-.hint_message_smsCode {
-    right: 110px;
-    top: -20px;
-    display: none;
-}
-.hint_message_referrerPhone {
-    right: 10px;
-    top: -20px;
-    display: none;
-}
+
+
+
+
+
+
+
 
 
 

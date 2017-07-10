@@ -17,9 +17,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "main": "webpack.config.js",
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "http://hanqi@123.57.8.180/htouhui_projects/htouhuiWeb_new.git"
