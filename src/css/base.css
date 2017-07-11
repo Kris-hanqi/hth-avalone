@@ -1,5 +1,5 @@
 .ms-controller{
-    visibility: hidden
+    visibility: hidden;
 }
 body {
     font-family: "微软雅黑";
@@ -7,7 +7,7 @@ body {
     padding: 0;
     border: 0;
     margin: 0;
-    background: #f5f5f5;
+    background: #fff;
 }
 html {overflow-x:hidden;}
 img, h1, h2, h3, ul, li, dl, dt, dd, p, a {
