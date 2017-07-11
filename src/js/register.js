@@ -279,24 +279,26 @@ $(function () {
 //注册
 $(function () {
     $('.register_btn').on('click',function () {
-        var flag = true;
+        var isValidate = true;
         //手机号验证
         if(!userPhoneValidate()) {
-            flag = false;
+            isValidate = false;
         }
         //密码验证
         if(!userPasswordValidate()) {
-            flag = false;
+            isValidate = false;
         }
         //图片验证码验证
         if(!imgCodeValidate()) {
-            flag = false;
+            isValidate = false;
         }
         //短信验证码验证
         if(!smsCodeValidate()) {
-            flag = false;
+            isValidate = false;
         }
-        return flag;
+        if(isValidate == false) {
+            return isValidate;
+        };
         var registerPostData = {
             userPhone: $('#userPhone').val().toString().trim(),
             userPassword: $('#userPassward').val(),
