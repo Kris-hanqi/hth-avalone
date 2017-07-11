@@ -297,7 +297,7 @@ $(function () {
             isValidate = false;
         }
         if(isValidate == false) {
-            return isValidate;
+            return false;
         };
         var registerPostData = {
             userPhone: $('#userPhone').val().toString().trim(),
