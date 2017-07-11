@@ -1,32 +1,8 @@
 var avalon = require('avalon');
 var $ = require("jquery");
 var backTop = require("backTop");
-var mockjax = require("mockjax")($, window);
 
 //header
-
-/*模拟接口*/
-$.mockjax({
-    url:"http://XXX/web-api/header",
-    status: 200,
-    responseText:{
-        headerTop:[
-            {"title":"立即登录","href":"login.html"},
-            {"title":"免费注册","href":"register.html"},
-            {"title":"活动中心","href":"activityCenter.html"},
-            {"title":"新手指引","href":"newUserGuide.html"},
-            {"title":"网贷课堂","href":"netLoanClass.html"}
-        ],
-        headerBottom:[
-            {"title":"首页","href":"index.html"},
-            {"title":"我要投资","href":"loans.html"},
-            {"title":"债权转让","href":"transfer.html"},
-            {"title":"风控措施","href":"riskControl.html"},
-            {"title":"信息披露","href":"informationDisclosure.html"},
-            {"title":"关于我们","href":"about_htouhui.html"}
-        ]
-    }
-});
 avalon.component('header', {
     template: (function(){
         var slideContent="<div class='header'>"+
@@ -45,7 +21,11 @@ avalon.component('header', {
             "</div>"+
             "</div>"+
             "<div class=\"header_right2\">"+
-            "<a ms-for=\"el in @headerRightArr\" ms-attr='{href:el.href}'>{{el.title}}</a>"  +
+            "<a href='login.html'>立即登录</a>"  +
+            "<a href='register.html'>免费注册</a>"  +
+            "<a href='activityCenter.html'>活动中心</a>"  +
+            "<a href='newUserGuide.html'>新手指引</a>"  +
+            "<a href='netLoanClass.html'>网贷课堂</a>"  +
             "</div>"    +
             "</div>"+
             "<div class=\"top\">"+
@@ -55,7 +35,12 @@ avalon.component('header', {
             "</div>"+
             "<div class=\"two-code\"><img src=\"images/logo-jxbank.png\"/></div>"+
             "<ul class=\"nav\">"+
-            "<li class=\"nLi\" ms-for='item in @navArr'><a ms-attr='{href:item.href}'>{{item.title}}</a></li>"+
+            "<li class=\"nLi\"><a href='index.html'>首页</a></li>"+
+            "<li class=\"nLi\"><a href='loans.html'>我要投资</a></li>"+
+            "<li class=\"nLi\"><a href='transfer.html'>债权转让</a></li>"+
+            "<li class=\"nLi\"><a href='riskControl.html'>风控措施</a></li>"+
+            "<li class=\"nLi\"><a href='informationDisclosure.html'>信息披露</a></li>"+
+            "<li class=\"nLi\"><a href='about_htouhui.html'>关于我们</a></li>"+
             "</ul>"    +
             "</div>"    +
             "</div>"+
@@ -63,8 +48,6 @@ avalon.component('header', {
         return slideContent;
     }).call(this),
     defaults: {
-        headerRightArr:[],
-        navArr:[],
         outerMouseover:function(){
             $(".qrcode-outer").stop().slideDown(100);
         },
@@ -82,30 +65,21 @@ avalon.component('header', {
 
 //header
 var vmHeader=avalon.define({
-    $id:"headerCtrl",
-    headerRightArr:[],
-    navArr:[]
+    $id:"headerCtrl"
 });
-
-$.ajax({
-    url:"http://XXX/web-api/header",
-    success:function(response){
-        vmHeader.headerRightArr=response.headerTop;
-        vmHeader.navArr=response.headerBottom;
-
-        var str=window.location.href;
-        if(str.lastIndexOf('/')!=-1){
-            var navArr=str.substr(str.lastIndexOf('/')+1);
-        }
-
-        $(".header .nav li a").each(function(){
-            urlArr = $(this).attr('href');
-            if(navArr == urlArr){
-                $(".header .nav li a").removeClass();
-                $(this).addClass('chooseNav');
-            }
-        });
+$(function(){
+    var str=window.location.href;
+    if(str.lastIndexOf('/')!=-1){
+        var navArr=str.substr(str.lastIndexOf('/')+1);
     }
+
+    $(".header .nav li a").each(function(){
+        var urlArr = $(this).attr('href');
+        if(navArr == urlArr){
+            $(".header .nav li a").removeClass();
+            $(this).addClass('chooseNav');
+        }
+    });
 });
 
 
@@ -119,10 +93,57 @@ avalon.component('footer', {
                                     '<span style="font-size: 12px;">客服热线(工作时间 09:00-18:00)</span><span>400-698-8810</span>' +
                                 '</div>' +
                                 '<ul class="footer_ul">' +
-                                    '<li ms-for="el in @array">' +
+                                    '<li>' +
                                         '<ul class="footer_ul_li">' +
-                                            '<li ms-for="elem in el.arr">' +
-                                                '<a ms-attr="{href: elem.path}">{{elem.name}}</a>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/about/aboutus">关于我们</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/about/aboutus">企业介绍</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/about/team">管理团队</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/about/partners">合作伙伴</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/about/joinus">联系我们</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/about/contactus">加入我们</a>' +
+                                            '</li>' +
+                                        '</ul>' +
+                                    '</li>' +
+                                    '<li>' +
+                                        '<ul class="footer_ul_li">' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/falv/flgw">法律法规</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/falv/flgw">法律顾问</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/falv/flxy">法律协议</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="http://www.htouhui.com/falv/flsm">法律声明</a>' +
+                                            '</li>' +
+                                        '</ul>' +
+                                    '</li>' +
+                                    '<li>' +
+                                        '<ul class="footer_ul_li">' +
+                                            '<li>' +
+                                                '<a href="https://www.htouhui.com/help/touzibidu">帮助中心</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="https://www.htouhui.com/help/touzibidu">投资人必读</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="https://www.htouhui.com/help/chongzhibidu">充值提现必读</a>' +
+                                            '</li>' +
+                                            '<li>' +
+                                                '<a href="https://www.htouhui.com/help/zhaiquanzhuanrang">怎样债权转让</a>' +
                                             '</li>' +
                                         '</ul>' +
                                     '</li>' +
@@ -136,48 +157,23 @@ avalon.component('footer', {
                             '<div class="belw clearfix">' +
                                 '<div class="copy">' +
                                     '<span>©版权所有 北京冠城瑞富信息技术有限公司 Copyright Reserved&nbsp;&nbsp;|&nbsp;&nbsp;京ICP备15020986</span>' +
-                                    '<div ms-for="el in @copy">' +
-                                        '<a target="_blank" ms-attr="{href: el.path}"><images class="chengxin" ms-attr="{src: el.images}" /></a>' +
+                                    '<div>' +
+                                        '<a target="_blank" href="http://www.itrust.org.cn/Home/Index/itrust_certifi?wm=1335541052"><img class="chengxin" src="images/icons_itrust.png" /></a>' +
+                                    '</div>' +
+                                    '<div>' +
+                                        '<a target="_blank" href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=www.htouhui.com&lang=zh_cn"><img class="chengxin" src="images/icons_norton.png" /></a>' +
+                                    '</div>' +
+                                    '<div>' +
+                                        '<a target="_blank" href="https://credit.cecdc.com/CX20150617010820010588.html"><img class="chengxin" src="images/icons_chengxin.png" /></a>' +
                                     '</div>' +
                                 '</div>' +
                             '</div>'+
                           '</div>';
         return footerContent;
-    }).call(this),
-    defaults: {
-        array:[],
-        copy:[]
-    }
+    }).call(this)
 });
 
 //footer
 var vmFooter=avalon.define({
-    $id: "footer",
-    array: [
-        {arr: [
-            {path:'http://www.htouhui.com/about/aboutus',name:'关于我们'},
-            {path:'http://www.htouhui.com/about/aboutus',name:'企业介绍'},
-            {path:'http://www.htouhui.com/about/team',name:'管理团队'},
-            {path:'http://www.htouhui.com/about/partners',name:'合作伙伴'},
-            {path:'http://www.htouhui.com/about/joinus',name:'联系我们'},
-            {path:'http://www.htouhui.com/about/contactus',name:'加入我们'}
-        ]},
-        {arr: [
-            {path:'http://www.htouhui.com/falv/flgw',name:'法律法规'},
-            {path:'http://www.htouhui.com/falv/flgw',name:'法律顾问'},
-            {path:'http://www.htouhui.com/falv/flxy',name:'法律协议'},
-            {path:'http://www.htouhui.com/falv/flsm',name:'法律声明'}
-        ]},
-        {arr: [
-            {path:'',name:'帮助中心'},
-            {path:'',name:'投资人必读'},
-            {path:'',name:'充值提现必读'},
-            {path:'',name:'怎样债权转让'}
-        ]}
-    ],
-    copy:[
-        {path:'',img:'images/icons_itrust.png'},
-        {path:'',img:'images/icons_norton.png'},
-        {path:'',img:'images/icons_chengxin.png'}
-    ]
+    $id: "footer"
 });

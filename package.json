@@ -11,6 +11,10 @@
   "devDependencies": {
     "css-loader": "^0.21.0",
     "file-loader": "^0.8.5",
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-preprocess": "^5.1.0",
+    "grunt-replace": "^0.11.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "1.13.1",
